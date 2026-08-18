@@ -3,6 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/*
 !data/raw/.gitkeep
+data/processed/
 *.aux
 *.log
 *.out

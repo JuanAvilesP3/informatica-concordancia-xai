@@ -76,3 +76,9 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada.
 - Siguiente: `02_preprocess.py` — codificación de categóricas, imputación, escalado (mismo preprocesamiento para los 3 modelos).
 - Tiempo de computo consumido: ~5 min (descarga)
+
+## 18/08 - Día 1: preprocesamiento
+- Hecho: `02_preprocess.py` escrito y ejecutado sobre los 4 datasets. Decisión metodológica documentada: se binarizan las 4 variables objetivo a "riesgo" vs "no riesgo" (OULAD: Fail/Withdrawn vs Pass/Distinction; Dropout: Dropout vs Enrolled/Graduate; German Credit y Rice ya eran binarios) para que la comparación de τ de Kendall entre métodos de explicabilidad no dependa de la complejidad adicional de atribución multiclase — pendiente justificar esto explícitamente en la sección de metodología del manuscrito. Balances de clase razonables en los 4 (entre 30% y 57% de clase positiva). Salidas en `data/processed/` (no versionado en git, regenerable con el script).
+- Bloqueado en: nada.
+- Siguiente: `03_experiment.py` — 3 modelos × 4 datasets × 10 folds, generar atribuciones con SHAP, LIME e importancia por permutación.
+- Tiempo de computo consumido: ~1 min
