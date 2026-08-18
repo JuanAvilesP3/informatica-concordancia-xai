@@ -5,7 +5,7 @@
 
 ## Estado
 - [ ] Ficha de revista completa (JOURNAL.md)
-- [ ] Datos descargados (data/raw/)
+- [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
 - [ ] Experimento ejecutado (día 1)
 - [ ] Redacción y figuras (día 2)
 - [ ] Endurecimiento: DOIs verificados
@@ -51,10 +51,12 @@ La concordancia es alta entre particiones del mismo modelo (τ > 0,8) pero baja 
 ### Datasets
 | Nombre | Fuente | Licencia | Verificado |
 |--------|--------|----------|------------|
-| OULAD | Open University Learning Analytics Dataset | Verificar | No |
-| Predict Students' Dropout and Academic Success | UCI | Verificar | No |
-| Statlog German Credit Data | UCI | Verificar | No |
-| Cuarto dataset ambiental/agrícola tabular | UCI (por elegir) | Verificar | No |
+| OULAD | UCI Machine Learning Repository (id 349) | CC BY 4.0 | Sí — descargado 18/08, 8 archivos, se usará principalmente `studentInfo.csv` (target: `final_result`) |
+| Predict Students' Dropout and Academic Success | UCI (id 697) | CC BY 4.0 | Sí — descargado 18/08, `data.csv` |
+| Statlog German Credit Data | UCI (id 144) | CC BY 4.0 | Sí — descargado 18/08, `german.data` |
+| Rice (Cammeo and Osmancik) — dominio agrícola | UCI (id 545) | CC BY 4.0 | Sí — descargado 18/08, `Rice_Cammeo_Osmancik.arff` |
+
+Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estudio tabular — el target y las features vienen de `studentInfo.csv`.
 
 ### Citas obligatorias de la revista destino
 1. (pendiente — extraer de trabajos sobre aprendizaje automático, interpretabilidad y metodología experimental publicados en Computer Science AGH)
@@ -68,3 +70,9 @@ La concordancia es alta entre particiones del mismo modelo (τ > 0,8) pero baja 
 - Bloqueado en: pendiente ficha de revista y descarga de datos.
 - Siguiente: completar JOURNAL.md y descargar dataset.
 - Tiempo de computo consumido: 0h
+
+## 18/08 - Día 1: descarga de datos
+- Hecho: `01_download.py` escrito y ejecutado. Los 4 datasets descargados desde UCI ML Repository (OULAD id 349, Dropout id 697, German Credit id 144, Rice id 545 como el dataset agrícola). Todos con licencia CC BY 4.0.
+- Bloqueado en: nada.
+- Siguiente: `02_preprocess.py` — codificación de categóricas, imputación, escalado (mismo preprocesamiento para los 3 modelos).
+- Tiempo de computo consumido: ~5 min (descarga)
