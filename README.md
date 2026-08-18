@@ -78,7 +78,7 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Tiempo de computo consumido: ~5 min (descarga)
 
 ## 18/08 - Día 1: preprocesamiento
-- Hecho: `02_preprocess.py` escrito y ejecutado sobre los 4 datasets. Decisión metodológica documentada: se binarizan las 4 variables objetivo a "riesgo" vs "no riesgo" (OULAD: Fail/Withdrawn vs Pass/Distinction; Dropout: Dropout vs Enrolled/Graduate; German Credit y Rice ya eran binarios) para que la comparación de τ de Kendall entre métodos de explicabilidad no dependa de la complejidad adicional de atribución multiclase — pendiente justificar esto explícitamente en la sección de metodología del manuscrito. Balances de clase razonables en los 4 (entre 30% y 57% de clase positiva). Salidas en `data/processed/` (no versionado en git, regenerable con el script).
+- Hecho: `02_preprocess.py` escrito y ejecutado sobre los 4 datasets. Primera versión binarizaba los 4 targets a "riesgo"/"no riesgo"; **revertido a pedido del responsable** — se mantienen las clases originales: OULAD con 4 (Pass, Fail, Withdrawn, Distinction), Dropout con 3 (Dropout, Enrolled, Graduate); German Credit y Rice ya eran binarios de origen. Balances de clase razonables en los 4, sin clases degeneradas. Salidas en `data/processed/` (no versionado en git, regenerable con el script).
 - Bloqueado en: nada.
-- Siguiente: `03_experiment.py` — 3 modelos × 4 datasets × 10 folds, generar atribuciones con SHAP, LIME e importancia por permutación.
+- Siguiente: `03_experiment.py` — 3 modelos × 4 datasets × 10 folds, generar atribuciones con SHAP, LIME e importancia por permutación. **Nota para el diseño:** OULAD y Dropout ahora son multiclase, así que SHAP/LIME producirán una atribución por clase — hay que decidir y documentar explícitamente cómo se agrega/reporta eso (mismo principio que la ficha exige para la agregación de LIME).
 - Tiempo de computo consumido: ~1 min

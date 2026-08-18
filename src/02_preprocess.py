@@ -7,16 +7,14 @@ preprocesamiento para los 3 modelos (Random Forest, Gradient Boosting,
 Regresion Logistica), para que la comparacion de metodos de
 explicabilidad sea limpia (ver ficha tecnica, seccion 4).
 
-Decision metodologica (documentar en el manuscrito): los 4 datasets
-originales no tienen el mismo numero de clases (OULAD tiene 4,
-Dropout tiene 3, German Credit y Rice son binarios). Para que el
-diseno de tau de Kendall entre metodos/modelos/datasets sea comparable
-sin la complejidad adicional de atribucion multiclase, los 4 se
-binarizan a un problema de clasificacion "riesgo" vs "no riesgo":
-  - OULAD:      1 = Fail o Withdrawn   (riesgo), 0 = Pass o Distinction
-  - Dropout:    1 = Dropout            (riesgo), 0 = Enrolled o Graduate
-  - German Credit: 1 = Bad credit      (riesgo), 0 = Good credit (ya binario)
-  - Rice:       1 = Osmancik, 0 = Cammeo (ya binario; sin nocion de "riesgo")
+Decision metodologica (confirmada con el responsable el 18/08): se
+mantienen las clases originales de cada dataset, sin simplificar a
+binario. OULAD queda con sus 4 clases (Pass, Fail, Withdrawn,
+Distinction) y Dropout con sus 3 (Dropout, Enrolled, Graduate); German
+Credit y Rice ya eran binarios de origen. Esto implica que
+03_experiment.py debe manejar atribucion multiclase para SHAP/LIME en
+esos dos datasets (documentar explicitamente como se agrega/reporta,
+igual que la ficha pide documentar la agregacion de LIME).
 
 Salidas: data/processed/{dataset}_X.csv, {dataset}_y.csv,
 {dataset}_feature_names.json y el ColumnTransformer ajustado en
@@ -86,7 +84,7 @@ def _fit_transform_and_save(name: str, X: pd.DataFrame, y: pd.Series):
 
 def process_oulad():
     df = pd.read_csv(RAW_DIR / "oulad" / "studentInfo.csv")
-    y = df["final_result"].isin(["Fail", "Withdrawn"]).astype(int).rename("target")
+    y = df["final_result"].rename("target")  # Pass / Fail / Withdrawn / Distinction
     X = df.drop(columns=["final_result", "id_student"])
     _fit_transform_and_save("oulad", X, y)
 
@@ -94,7 +92,7 @@ def process_oulad():
 def process_dropout():
     df = pd.read_csv(RAW_DIR / "dropout" / "data.csv", sep=";", encoding="utf-8-sig")
     df.columns = [c.strip() for c in df.columns]
-    y = (df["Target"] == "Dropout").astype(int).rename("target")
+    y = df["Target"].rename("target")  # Dropout / Enrolled / Graduate
     X = df.drop(columns=["Target"])
     _fit_transform_and_save("dropout", X, y)
 
