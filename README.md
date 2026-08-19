@@ -7,7 +7,7 @@
 - [ ] Ficha de revista completa (JOURNAL.md)
 - [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
 - [x] Experimento ejecutado (día 1) — 360 combinaciones, `results/tables/attributions_long.csv`
-- [ ] Redacción y figuras (día 2)
+- [x] Figuras generadas (4/4) — falta redacción del manuscrito (día 2)
 - [ ] Endurecimiento: DOIs verificados
 - [ ] Endurecimiento: revisión adversarial ronda 1
 - [ ] Endurecimiento: revisión adversarial ronda 2
@@ -97,4 +97,10 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Hecho: `04_stats.py` corrido. Resultado limpio en los 4 datasets: τ entre folds (mismo método) alto (0.54–0.89), τ entre métodos (mismo modelo) bajo (0.28–0.47), τ entre modelos (mismo método) medio (0.50–0.55). Confirma la hipótesis del artículo: la elección del método de explicabilidad pesa más que la elección del modelo. ANOVA de dos factores (dataset × eje) significativo en ambos factores y su interacción (p < 0.001). Archivos: `kendall_tau_detail.csv` (2340 comparaciones), `kendall_tau_summary.csv`, `anova_tau.csv`.
 - Bloqueado en: nada.
 - Siguiente: `05_figures.py` (mapa de calor de τ, cajas por eje, top-10 paralelo, τ por dataset — ver ficha sección 6).
+- Tiempo de computo consumido: ~1 min
+
+## 19/08 - Día 1: figuras (cierre de Fase 1 para este artículo)
+- Hecho: `05_figures.py` corrido — 4 figuras generadas en `results/figures/` (PDF+PNG), revisadas visualmente. Fig. 1 (la que sostiene el argumento) muestra con claridad el bloque de alta concordancia intra-método vs. la baja concordancia entre métodos. Fig. 2 y Fig. 4 confirman el patrón en los 4 datasets. Fig. 3 (top-10 en columnas paralelas) funciona pero varios nombres de variable quedan truncados — **pendiente para Fase 2 (figuras finales)**: revisar legibilidad de etiquetas largas.
+- Bloqueado en: nada. **P10 tiene su versión completa: experimento, estadística y figuras. Falta la redacción del manuscrito (día 2) y luego Fase 2 (verificación de referencias + revisión adversarial).**
+- Siguiente: redactar `paper/main.tex` con los resultados ya generados, o pasar a otro artículo de la línea A.
 - Tiempo de computo consumido: ~1 min
