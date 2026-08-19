@@ -76,9 +76,10 @@ def fig1_heatmap(df):
                 taus.append(tau)
             mat[i, j] = np.mean(taus) if taus else np.nan
 
-        im = ax.imshow(mat, vmin=-1, vmax=1, cmap="RdBu_r")
+        im = ax.imshow(mat, vmin=-1, vmax=1, cmap="RdBu_r", interpolation="nearest")
         ax.set_xticks(range(n)); ax.set_xticklabels(arm_labels, rotation=90, fontsize=7)
         ax.set_yticks(range(n)); ax.set_yticklabels(arm_labels, fontsize=7)
+        ax.grid(False)  # el grid global cae en el centro de cada celda (mismo problema que P8)
         ax.set_title(DATASET_LABELS[dataset], fontsize=10)
         for i, j in itertools.product(range(n), range(n)):
             ax.text(j, i, f"{mat[i, j]:.2f}", ha="center", va="center", fontsize=5.5,
