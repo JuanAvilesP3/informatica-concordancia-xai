@@ -92,3 +92,9 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada.
 - Siguiente: `04_stats.py` — τ de Kendall entre rankings (por fold, por método, por modelo), ANOVA, IC bootstrap.
 - Tiempo de computo consumido: ~50 min (mayormente OULAD)
+
+## 19/08 - Día 1: estadística (hallazgo central confirmado)
+- Hecho: `04_stats.py` corrido. Resultado limpio en los 4 datasets: τ entre folds (mismo método) alto (0.54–0.89), τ entre métodos (mismo modelo) bajo (0.28–0.47), τ entre modelos (mismo método) medio (0.50–0.55). Confirma la hipótesis del artículo: la elección del método de explicabilidad pesa más que la elección del modelo. ANOVA de dos factores (dataset × eje) significativo en ambos factores y su interacción (p < 0.001). Archivos: `kendall_tau_detail.csv` (2340 comparaciones), `kendall_tau_summary.csv`, `anova_tau.csv`.
+- Bloqueado en: nada.
+- Siguiente: `05_figures.py` (mapa de calor de τ, cajas por eje, top-10 paralelo, τ por dataset — ver ficha sección 6).
+- Tiempo de computo consumido: ~1 min
