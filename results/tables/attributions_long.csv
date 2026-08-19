@@ -1,0 +1,883 @@
+dataset,model,method,fold,feature,importance,rank
+oulad,random_forest,shap,0,studied_credits,0.027465611558695258,1
+oulad,random_forest,shap,0,highest_education_Lower Than A Level,0.019331118126224706,2
+oulad,random_forest,shap,0,code_module_CCC,0.014906096021480636,3
+oulad,random_forest,shap,0,num_of_prev_attempts,0.009383165463613547,4
+oulad,random_forest,shap,0,highest_education_A Level or Equivalent,0.008784534963499714,5
+oulad,random_forest,shap,0,code_module_GGG,0.007399648969789277,6
+oulad,random_forest,shap,0,age_band_0-35,0.006210054031716322,7
+oulad,random_forest,shap,0,highest_education_HE Qualification,0.005568040441914878,8
+oulad,random_forest,shap,0,code_presentation_2014J,0.005370301488337269,9
+oulad,random_forest,shap,0,code_module_DDD,0.004810683385013571,10
+oulad,random_forest,shap,0,code_presentation_2013J,0.004717261898625235,11
+oulad,random_forest,shap,0,imd_band_0-10%,0.004515684975494201,12
+oulad,random_forest,shap,0,age_band_35-55,0.00423597071697602,13
+oulad,random_forest,shap,0,code_presentation_2014B,0.003694920037366589,14
+oulad,random_forest,shap,0,code_module_AAA,0.0034023045387112636,15
+oulad,random_forest,shap,0,imd_band_90-100%,0.0030438386887145204,16
+oulad,random_forest,shap,0,imd_band_10-20,0.0028063197333727838,17
+oulad,random_forest,shap,0,disability_Y,0.0027298126253215114,18
+oulad,random_forest,shap,0,imd_band_20-30%,0.002595824815274199,19
+oulad,random_forest,shap,0,region_Wales,0.002438603579445265,20
+oulad,random_forest,shap,0,region_Scotland,0.0023846561912115993,21
+oulad,random_forest,shap,0,code_presentation_2013B,0.002208746861946356,22
+oulad,random_forest,shap,0,imd_band_?,0.002116867666919089,23
+oulad,random_forest,shap,0,disability_N,0.0021122604300531428,24
+oulad,random_forest,shap,0,gender_F,0.0018749794068174917,25
+oulad,random_forest,shap,0,code_module_EEE,0.0017874778270214862,26
+oulad,random_forest,shap,0,gender_M,0.0017713022416287227,27
+oulad,random_forest,shap,0,code_module_FFF,0.0016777227927871462,28
+oulad,random_forest,shap,0,region_London Region,0.0016741933877260026,29
+oulad,random_forest,shap,0,code_module_BBB,0.0016181133553411697,30
+oulad,random_forest,shap,0,region_North Western Region,0.0013230116368024008,31
+oulad,random_forest,shap,0,imd_band_70-80%,0.0012828288232410398,32
+oulad,random_forest,shap,0,region_South Region,0.0012008700143435686,33
+oulad,random_forest,shap,0,imd_band_80-90%,0.001131435895290656,34
+oulad,random_forest,shap,0,region_West Midlands Region,0.0010221471853248485,35
+oulad,random_forest,shap,0,region_South West Region,0.0009370295930131057,36
+oulad,random_forest,shap,0,region_South East Region,0.0009251236784723644,37
+oulad,random_forest,shap,0,region_Ireland,0.0009043637122648594,38
+oulad,random_forest,shap,0,region_East Anglian Region,0.0008983789896028241,39
+oulad,random_forest,shap,0,imd_band_60-70%,0.0008881701796715362,40
+oulad,random_forest,shap,0,region_East Midlands Region,0.0008653728774228402,41
+oulad,random_forest,shap,0,imd_band_40-50%,0.0008127550793401167,42
+oulad,random_forest,shap,0,imd_band_30-40%,0.0007951373745025277,43
+oulad,random_forest,shap,0,imd_band_50-60%,0.000780077572739311,44
+oulad,random_forest,shap,0,highest_education_Post Graduate Qualification,0.0007501822050985293,45
+oulad,random_forest,shap,0,region_Yorkshire Region,0.0006247645356763622,46
+oulad,random_forest,shap,0,region_North Region,0.0006214440912322387,47
+oulad,random_forest,shap,0,highest_education_No Formal quals,0.0003617040294684779,48
+oulad,random_forest,shap,0,age_band_55lt=,0.00011914991051685441,49
+oulad,random_forest,lime,0,code_module_AAA,0.10149009453131626,1
+oulad,random_forest,lime,0,code_module_CCC,0.0832980948834182,2
+oulad,random_forest,lime,0,studied_credits,0.06643924342086308,3
+oulad,random_forest,lime,0,highest_education_Lower Than A Level,0.04512245512137702,4
+oulad,random_forest,lime,0,num_of_prev_attempts,0.040780648761510656,5
+oulad,random_forest,lime,0,code_module_GGG,0.03946733978667838,6
+oulad,random_forest,lime,0,imd_band_0-10%,0.02745666963826097,7
+oulad,random_forest,lime,0,highest_education_A Level or Equivalent,0.022318955981413122,8
+oulad,random_forest,lime,0,imd_band_?,0.022266966112375948,9
+oulad,random_forest,lime,0,highest_education_HE Qualification,0.020507875115971356,10
+oulad,random_forest,lime,0,disability_Y,0.01856354613729818,11
+oulad,random_forest,lime,0,imd_band_90-100%,0.018104117371706266,12
+oulad,random_forest,lime,0,imd_band_20-30%,0.01669630650733001,13
+oulad,random_forest,lime,0,imd_band_10-20,0.016107903018444437,14
+oulad,random_forest,lime,0,code_module_DDD,0.01602114028353979,15
+oulad,random_forest,lime,0,code_presentation_2013J,0.015272489926623084,16
+oulad,random_forest,lime,0,highest_education_No Formal quals,0.01446859101526206,17
+oulad,random_forest,lime,0,region_Wales,0.013176333582452541,18
+oulad,random_forest,lime,0,highest_education_Post Graduate Qualification,0.012519536985211976,19
+oulad,random_forest,lime,0,region_Ireland,0.011399680566664521,20
+oulad,random_forest,lime,0,code_presentation_2014B,0.010552237115994813,21
+oulad,random_forest,lime,0,age_band_0-35,0.010479448148716616,22
+oulad,random_forest,lime,0,code_module_EEE,0.010072982787813442,23
+oulad,random_forest,lime,0,region_London Region,0.009968870311526195,24
+oulad,random_forest,lime,0,code_presentation_2014J,0.007918693669040994,25
+oulad,random_forest,lime,0,region_North Western Region,0.007518314151674811,26
+oulad,random_forest,lime,0,age_band_35-55,0.007301907601648121,27
+oulad,random_forest,lime,0,region_Scotland,0.006842494395711028,28
+oulad,random_forest,lime,0,imd_band_80-90%,0.00643662068973786,29
+oulad,random_forest,lime,0,region_West Midlands Region,0.006177461048777167,30
+oulad,random_forest,lime,0,imd_band_70-80%,0.005538668639927802,31
+oulad,random_forest,lime,0,age_band_55lt=,0.005494700361644326,32
+oulad,random_forest,lime,0,region_Yorkshire Region,0.005458874965865025,33
+oulad,random_forest,lime,0,region_South Region,0.005246404706610923,34
+oulad,random_forest,lime,0,code_module_FFF,0.0044482953850429295,35
+oulad,random_forest,lime,0,region_East Midlands Region,0.004342042461395012,36
+oulad,random_forest,lime,0,code_presentation_2013B,0.004292505241500955,37
+oulad,random_forest,lime,0,imd_band_60-70%,0.00420997975542224,38
+oulad,random_forest,lime,0,region_North Region,0.0034196519236928346,39
+oulad,random_forest,lime,0,imd_band_30-40%,0.002815242984945031,40
+oulad,random_forest,lime,0,gender_F,0.002738977940065805,41
+oulad,random_forest,lime,0,region_South East Region,0.0026640499331186188,42
+oulad,random_forest,lime,0,imd_band_50-60%,0.002500794637597648,43
+oulad,random_forest,lime,0,gender_M,0.00233463381335459,44
+oulad,random_forest,lime,0,region_South West Region,0.002297013803186528,45
+oulad,random_forest,lime,0,region_East Anglian Region,0.002272748167765066,46
+oulad,random_forest,lime,0,code_module_BBB,0.002123061624118189,47
+oulad,random_forest,lime,0,imd_band_40-50%,0.0016762169098533304,48
+oulad,random_forest,lime,0,disability_N,0.0,49
+oulad,random_forest,permutation,0,studied_credits,0.03378166074480826,1
+oulad,random_forest,permutation,0,highest_education_Lower Than A Level,0.017011846622252563,2
+oulad,random_forest,permutation,0,code_module_CCC,0.00958944537165666,3
+oulad,random_forest,permutation,0,code_module_GGG,0.0065364754998627666,4
+oulad,random_forest,permutation,0,code_module_AAA,0.006296101742808406,5
+oulad,random_forest,permutation,0,num_of_prev_attempts,0.0055920640166390685,6
+oulad,random_forest,permutation,0,highest_education_A Level or Equivalent,0.005070452081568015,7
+oulad,random_forest,permutation,0,highest_education_HE Qualification,0.0027647266780640813,8
+oulad,random_forest,permutation,0,imd_band_10-20,0.0018641802907105969,9
+oulad,random_forest,permutation,0,imd_band_?,0.0017927351296198601,10
+oulad,random_forest,permutation,0,imd_band_90-100%,0.0017754885882593403,11
+oulad,random_forest,permutation,0,code_module_EEE,0.0016902094846196942,12
+oulad,random_forest,permutation,0,code_presentation_2014J,0.0016885390042389314,13
+oulad,random_forest,permutation,0,code_module_BBB,0.0016198675530273061,14
+oulad,random_forest,permutation,0,code_presentation_2014B,0.0015588881923812952,15
+oulad,random_forest,permutation,0,code_module_DDD,0.001549170152588412,16
+oulad,random_forest,permutation,0,disability_Y,0.001461990787813135,17
+oulad,random_forest,permutation,0,region_Ireland,0.001457789321692049,18
+oulad,random_forest,permutation,0,region_Wales,0.0011197918440637444,19
+oulad,random_forest,permutation,0,region_Scotland,0.0010764384371232023,20
+oulad,random_forest,permutation,0,region_East Anglian Region,0.0010283611610799603,21
+oulad,random_forest,permutation,0,disability_N,0.0009277271060795419,22
+oulad,random_forest,permutation,0,imd_band_20-30%,0.000924407358475691,23
+oulad,random_forest,permutation,0,age_band_0-35,0.000870976114958936,24
+oulad,random_forest,permutation,0,code_module_FFF,0.0006971900177123272,25
+oulad,random_forest,permutation,0,region_South Region,0.0006450961020202742,26
+oulad,random_forest,permutation,0,highest_education_No Formal quals,0.0004803597070575094,27
+oulad,random_forest,permutation,0,region_East Midlands Region,0.0003815295223223991,28
+oulad,random_forest,permutation,0,region_South East Region,0.0003586329041510942,29
+oulad,random_forest,permutation,0,imd_band_30-40%,0.0002918920701887225,30
+oulad,random_forest,permutation,0,imd_band_40-50%,0.000246767354696716,31
+oulad,random_forest,permutation,0,region_West Midlands Region,0.00019942391997836614,32
+oulad,random_forest,permutation,0,imd_band_70-80%,0.0001070566928486431,33
+oulad,random_forest,permutation,0,imd_band_0-10%,9.16725215744929e-05,34
+oulad,random_forest,permutation,0,age_band_55lt=,-6.526661423903827e-06,35
+oulad,random_forest,permutation,0,imd_band_60-70%,-0.00020018671130291507,36
+oulad,random_forest,permutation,0,region_Yorkshire Region,-0.00021274960711107718,37
+oulad,random_forest,permutation,0,imd_band_50-60%,-0.0002143741098722766,38
+oulad,random_forest,permutation,0,highest_education_Post Graduate Qualification,-0.00033687162043497904,39
+oulad,random_forest,permutation,0,region_North Region,-0.0003430393479336343,40
+oulad,random_forest,permutation,0,imd_band_80-90%,-0.00036442426552170854,41
+oulad,random_forest,permutation,0,region_North Western Region,-0.000490009614418104,42
+oulad,random_forest,permutation,0,region_London Region,-0.0005314734624878673,43
+oulad,random_forest,permutation,0,age_band_35-55,-0.0005627205349791146,44
+oulad,random_forest,permutation,0,code_presentation_2013J,-0.0006204622765273449,45
+oulad,random_forest,permutation,0,code_presentation_2013B,-0.0008844977693234964,46
+oulad,random_forest,permutation,0,gender_M,-0.0010071656045832118,47
+oulad,random_forest,permutation,0,region_South West Region,-0.001142136931644074,48
+oulad,random_forest,permutation,0,gender_F,-0.001784547422103655,49
+oulad,gradient_boosting,shap,0,highest_education_Lower Than A Level,0.18203546106815338,1
+oulad,gradient_boosting,shap,0,studied_credits,0.15945282578468323,2
+oulad,gradient_boosting,shap,0,num_of_prev_attempts,0.09733738005161285,3
+oulad,gradient_boosting,shap,0,code_module_DDD,0.07138572633266449,4
+oulad,gradient_boosting,shap,0,code_presentation_2014J,0.05727861076593399,5
+oulad,gradient_boosting,shap,0,code_module_CCC,0.05495462194085121,6
+oulad,gradient_boosting,shap,0,age_band_0-35,0.05291225016117096,7
+oulad,gradient_boosting,shap,0,code_module_GGG,0.052509039640426636,8
+oulad,gradient_boosting,shap,0,gender_F,0.05225696787238121,9
+oulad,gradient_boosting,shap,0,imd_band_0-10%,0.0493585467338562,10
+oulad,gradient_boosting,shap,0,imd_band_10-20,0.04200945422053337,11
+oulad,gradient_boosting,shap,0,code_presentation_2014B,0.03976064547896385,12
+oulad,gradient_boosting,shap,0,code_presentation_2013B,0.03740602359175682,13
+oulad,gradient_boosting,shap,0,region_Scotland,0.03706348314881325,14
+oulad,gradient_boosting,shap,0,imd_band_20-30%,0.03291301429271698,15
+oulad,gradient_boosting,shap,0,code_module_BBB,0.031896114349365234,16
+oulad,gradient_boosting,shap,0,age_band_35-55,0.03013341687619686,17
+oulad,gradient_boosting,shap,0,imd_band_90-100%,0.02707068622112274,18
+oulad,gradient_boosting,shap,0,highest_education_HE Qualification,0.026811035349965096,19
+oulad,gradient_boosting,shap,0,disability_N,0.026412254199385643,20
+oulad,gradient_boosting,shap,0,code_module_EEE,0.023426147177815437,21
+oulad,gradient_boosting,shap,0,code_presentation_2013J,0.023371903225779533,22
+oulad,gradient_boosting,shap,0,highest_education_A Level or Equivalent,0.02317677065730095,23
+oulad,gradient_boosting,shap,0,region_Wales,0.022905802354216576,24
+oulad,gradient_boosting,shap,0,region_London Region,0.022616026923060417,25
+oulad,gradient_boosting,shap,0,imd_band_?,0.02182355709373951,26
+oulad,gradient_boosting,shap,0,region_South Region,0.019816262647509575,27
+oulad,gradient_boosting,shap,0,imd_band_80-90%,0.019681459292769432,28
+oulad,gradient_boosting,shap,0,code_module_FFF,0.01941552571952343,29
+oulad,gradient_boosting,shap,0,region_South East Region,0.018911262974143028,30
+oulad,gradient_boosting,shap,0,imd_band_40-50%,0.01793096959590912,31
+oulad,gradient_boosting,shap,0,region_South West Region,0.017866846174001694,32
+oulad,gradient_boosting,shap,0,imd_band_70-80%,0.017447346821427345,33
+oulad,gradient_boosting,shap,0,region_East Anglian Region,0.017332838848233223,34
+oulad,gradient_boosting,shap,0,code_module_AAA,0.017294738441705704,35
+oulad,gradient_boosting,shap,0,imd_band_50-60%,0.016015945002436638,36
+oulad,gradient_boosting,shap,0,region_West Midlands Region,0.015738295391201973,37
+oulad,gradient_boosting,shap,0,region_East Midlands Region,0.015625683590769768,38
+oulad,gradient_boosting,shap,0,imd_band_60-70%,0.015065330080688,39
+oulad,gradient_boosting,shap,0,region_North Western Region,0.015020952560007572,40
+oulad,gradient_boosting,shap,0,region_Ireland,0.013448035344481468,41
+oulad,gradient_boosting,shap,0,imd_band_30-40%,0.01228525023907423,42
+oulad,gradient_boosting,shap,0,region_Yorkshire Region,0.011143719777464867,43
+oulad,gradient_boosting,shap,0,region_North Region,0.009232745505869389,44
+oulad,gradient_boosting,shap,0,highest_education_Post Graduate Qualification,0.007869407534599304,45
+oulad,gradient_boosting,shap,0,highest_education_No Formal quals,0.006052299402654171,46
+oulad,gradient_boosting,shap,0,age_band_55lt=,0.0020925106946378946,47
+oulad,gradient_boosting,shap,0,gender_M,0.0,48
+oulad,gradient_boosting,shap,0,disability_Y,0.0,49
+oulad,gradient_boosting,lime,0,studied_credits,0.16767374399305218,1
+oulad,gradient_boosting,lime,0,code_module_AAA,0.10509301857852914,2
+oulad,gradient_boosting,lime,0,code_module_CCC,0.09023248745092766,3
+oulad,gradient_boosting,lime,0,highest_education_No Formal quals,0.06711046629086068,4
+oulad,gradient_boosting,lime,0,highest_education_Lower Than A Level,0.06378833014939926,5
+oulad,gradient_boosting,lime,0,code_module_EEE,0.0630992435706733,6
+oulad,gradient_boosting,lime,0,imd_band_0-10%,0.05771098643717691,7
+oulad,gradient_boosting,lime,0,code_module_GGG,0.05755839517095178,8
+oulad,gradient_boosting,lime,0,imd_band_?,0.05471126670218558,9
+oulad,gradient_boosting,lime,0,highest_education_Post Graduate Qualification,0.0498741437107415,10
+oulad,gradient_boosting,lime,0,age_band_55lt=,0.047445197406715246,11
+oulad,gradient_boosting,lime,0,region_Scotland,0.041198358820293504,12
+oulad,gradient_boosting,lime,0,code_module_DDD,0.038763446182174165,13
+oulad,gradient_boosting,lime,0,region_Wales,0.03689600524495048,14
+oulad,gradient_boosting,lime,0,region_Yorkshire Region,0.0355095714517591,15
+oulad,gradient_boosting,lime,0,code_presentation_2013J,0.03392113276041459,16
+oulad,gradient_boosting,lime,0,imd_band_20-30%,0.03381833318401198,17
+oulad,gradient_boosting,lime,0,num_of_prev_attempts,0.030778257528598297,18
+oulad,gradient_boosting,lime,0,imd_band_70-80%,0.0295121512636236,19
+oulad,gradient_boosting,lime,0,region_Ireland,0.027466183966550307,20
+oulad,gradient_boosting,lime,0,imd_band_10-20,0.026744205773580124,21
+oulad,gradient_boosting,lime,0,imd_band_80-90%,0.026440246220583132,22
+oulad,gradient_boosting,lime,0,region_West Midlands Region,0.02605064642793776,23
+oulad,gradient_boosting,lime,0,code_module_BBB,0.024199635805763616,24
+oulad,gradient_boosting,lime,0,imd_band_30-40%,0.02383488699062865,25
+oulad,gradient_boosting,lime,0,imd_band_50-60%,0.022182218830938925,26
+oulad,gradient_boosting,lime,0,code_presentation_2014B,0.0208598394028533,27
+oulad,gradient_boosting,lime,0,region_South East Region,0.02045063793158358,28
+oulad,gradient_boosting,lime,0,code_presentation_2014J,0.02009813367716441,29
+oulad,gradient_boosting,lime,0,region_South Region,0.019470493022050752,30
+oulad,gradient_boosting,lime,0,imd_band_90-100%,0.019253434306572677,31
+oulad,gradient_boosting,lime,0,region_South West Region,0.017668409520530014,32
+oulad,gradient_boosting,lime,0,region_East Midlands Region,0.01755352659146252,33
+oulad,gradient_boosting,lime,0,region_North Region,0.016288736383966336,34
+oulad,gradient_boosting,lime,0,region_East Anglian Region,0.013846993909972353,35
+oulad,gradient_boosting,lime,0,code_module_FFF,0.013345715008419145,36
+oulad,gradient_boosting,lime,0,imd_band_40-50%,0.013150660604216427,37
+oulad,gradient_boosting,lime,0,region_London Region,0.012992110297542374,38
+oulad,gradient_boosting,lime,0,region_North Western Region,0.010178311691483009,39
+oulad,gradient_boosting,lime,0,gender_F,0.009895384368655351,40
+oulad,gradient_boosting,lime,0,code_presentation_2013B,0.008871422410976987,41
+oulad,gradient_boosting,lime,0,highest_education_HE Qualification,0.00813656226100899,42
+oulad,gradient_boosting,lime,0,highest_education_A Level or Equivalent,0.008041845189864266,43
+oulad,gradient_boosting,lime,0,age_band_0-35,0.006978466272680116,44
+oulad,gradient_boosting,lime,0,imd_band_60-70%,0.004574768807869106,45
+oulad,gradient_boosting,lime,0,disability_Y,0.004160434477281844,46
+oulad,gradient_boosting,lime,0,age_band_35-55,0.004141122519576613,47
+oulad,gradient_boosting,lime,0,gender_M,0.0024721489518455607,48
+oulad,gradient_boosting,lime,0,disability_N,0.0,49
+oulad,gradient_boosting,permutation,0,studied_credits,0.034006635348002114,1
+oulad,gradient_boosting,permutation,0,highest_education_Lower Than A Level,0.03022611141204834,2
+oulad,gradient_boosting,permutation,0,num_of_prev_attempts,0.023745179176330566,3
+oulad,gradient_boosting,permutation,0,imd_band_?,0.009558836619059244,4
+oulad,gradient_boosting,permutation,0,code_module_GGG,0.009505232175191244,5
+oulad,gradient_boosting,permutation,0,code_presentation_2014J,0.008670488993326822,6
+oulad,gradient_boosting,permutation,0,age_band_0-35,0.007632931073506673,7
+oulad,gradient_boosting,permutation,0,code_module_DDD,0.0071125030517578125,8
+oulad,gradient_boosting,permutation,0,code_module_CCC,0.006990313529968262,9
+oulad,gradient_boosting,permutation,0,disability_N,0.00640706221262614,10
+oulad,gradient_boosting,permutation,0,imd_band_0-10%,0.005727608998616536,11
+oulad,gradient_boosting,permutation,0,gender_F,0.005436380704243978,12
+oulad,gradient_boosting,permutation,0,code_module_AAA,0.005289236704508464,13
+oulad,gradient_boosting,permutation,0,code_module_BBB,0.0045623779296875,14
+oulad,gradient_boosting,permutation,0,age_band_55lt=,0.0031127134958902993,15
+oulad,gradient_boosting,permutation,0,highest_education_Post Graduate Qualification,0.0029624303181966147,16
+oulad,gradient_boosting,permutation,0,region_South Region,0.002570629119873047,17
+oulad,gradient_boosting,permutation,0,highest_education_No Formal quals,0.002440969149271647,18
+oulad,gradient_boosting,permutation,0,code_presentation_2013J,0.0024297237396240234,19
+oulad,gradient_boosting,permutation,0,imd_band_20-30%,0.0023158788681030273,20
+oulad,gradient_boosting,permutation,0,region_Ireland,0.0020023981730143228,21
+oulad,gradient_boosting,permutation,0,highest_education_HE Qualification,0.0019327402114868164,22
+oulad,gradient_boosting,permutation,0,code_module_EEE,0.0018648703893025715,23
+oulad,gradient_boosting,permutation,0,region_Scotland,0.0015115737915039062,24
+oulad,gradient_boosting,permutation,0,region_London Region,0.001304904619852702,25
+oulad,gradient_boosting,permutation,0,code_module_FFF,0.0009889602661132812,26
+oulad,gradient_boosting,permutation,0,region_South West Region,0.0009821653366088867,27
+oulad,gradient_boosting,permutation,0,region_Wales,0.0008857250213623047,28
+oulad,gradient_boosting,permutation,0,imd_band_40-50%,0.0007121562957763672,29
+oulad,gradient_boosting,permutation,0,age_band_35-55,0.0007023016611735026,30
+oulad,gradient_boosting,permutation,0,code_presentation_2013B,0.0006771087646484375,31
+oulad,gradient_boosting,permutation,0,region_East Anglian Region,0.00018505255381266275,32
+oulad,gradient_boosting,permutation,0,code_presentation_2014B,3.333886464436849e-05,33
+oulad,gradient_boosting,permutation,0,disability_Y,0.0,34
+oulad,gradient_boosting,permutation,0,gender_M,0.0,35
+oulad,gradient_boosting,permutation,0,region_North Region,-2.4159749348958332e-05,36
+oulad,gradient_boosting,permutation,0,imd_band_80-90%,-3.341833750406901e-05,37
+oulad,gradient_boosting,permutation,0,imd_band_90-100%,-6.747245788574219e-05,38
+oulad,gradient_boosting,permutation,0,imd_band_30-40%,-9.783109029134114e-05,39
+oulad,gradient_boosting,permutation,0,imd_band_70-80%,-0.00040551026662190753,40
+oulad,gradient_boosting,permutation,0,highest_education_A Level or Equivalent,-0.00043944517771402997,41
+oulad,gradient_boosting,permutation,0,region_East Midlands Region,-0.0005495548248291016,42
+oulad,gradient_boosting,permutation,0,region_Yorkshire Region,-0.0007755359013875326,43
+oulad,gradient_boosting,permutation,0,imd_band_60-70%,-0.0011355479558308919,44
+oulad,gradient_boosting,permutation,0,region_West Midlands Region,-0.0015685558319091797,45
+oulad,gradient_boosting,permutation,0,imd_band_50-60%,-0.0016522407531738281,46
+oulad,gradient_boosting,permutation,0,region_South East Region,-0.0017320315043131511,47
+oulad,gradient_boosting,permutation,0,imd_band_10-20,-0.002599954605102539,48
+oulad,gradient_boosting,permutation,0,region_North Western Region,-0.0033638477325439453,49
+oulad,logistic_regression,shap,0,highest_education_Lower Than A Level,0.1462146200542791,1
+oulad,logistic_regression,shap,0,studied_credits,0.10038322281549546,2
+oulad,logistic_regression,shap,0,num_of_prev_attempts,0.0816771669086685,3
+oulad,logistic_regression,shap,0,code_module_GGG,0.06454502938319316,4
+oulad,logistic_regression,shap,0,age_band_0-35,0.06391336057077263,5
+oulad,logistic_regression,shap,0,code_module_DDD,0.061712917498849613,6
+oulad,logistic_regression,shap,0,code_presentation_2014J,0.05597146807902934,7
+oulad,logistic_regression,shap,0,code_module_CCC,0.054989479613399644,8
+oulad,logistic_regression,shap,0,imd_band_0-10%,0.05333867276751004,9
+oulad,logistic_regression,shap,0,gender_F,0.045949718230817845,10
+oulad,logistic_regression,shap,0,highest_education_HE Qualification,0.045728056487036386,11
+oulad,logistic_regression,shap,0,highest_education_A Level or Equivalent,0.04521263781377283,12
+oulad,logistic_regression,shap,0,imd_band_10-20,0.04140219223034596,13
+oulad,logistic_regression,shap,0,code_presentation_2013B,0.03919221034868336,14
+oulad,logistic_regression,shap,0,imd_band_90-100%,0.03517771961318372,15
+oulad,logistic_regression,shap,0,region_Scotland,0.03263854398210371,16
+oulad,logistic_regression,shap,0,gender_M,0.03224154676641383,17
+oulad,logistic_regression,shap,0,age_band_35-55,0.031217847352226775,18
+oulad,logistic_regression,shap,0,imd_band_20-30%,0.030073322948236978,19
+oulad,logistic_regression,shap,0,code_presentation_2013J,0.023732269714769563,20
+oulad,logistic_regression,shap,0,code_module_FFF,0.02165795114460323,21
+oulad,logistic_regression,shap,0,region_Wales,0.016858215664432994,22
+oulad,logistic_regression,shap,0,code_module_AAA,0.016843972352634358,23
+oulad,logistic_regression,shap,0,region_South West Region,0.016372472306265318,24
+oulad,logistic_regression,shap,0,imd_band_?,0.016286940336983097,25
+oulad,logistic_regression,shap,0,disability_Y,0.01606881472436649,26
+oulad,logistic_regression,shap,0,disability_N,0.014483744573648441,27
+oulad,logistic_regression,shap,0,region_South Region,0.013860985576414419,28
+oulad,logistic_regression,shap,0,code_module_BBB,0.013819911719877105,29
+oulad,logistic_regression,shap,0,code_presentation_2014B,0.01359221421774379,30
+oulad,logistic_regression,shap,0,region_South East Region,0.012747266665835246,31
+oulad,logistic_regression,shap,0,imd_band_80-90%,0.012717752487446254,32
+oulad,logistic_regression,shap,0,region_London Region,0.012326790648974404,33
+oulad,logistic_regression,shap,0,region_East Midlands Region,0.011794833274048091,34
+oulad,logistic_regression,shap,0,imd_band_70-80%,0.011623605192286234,35
+oulad,logistic_regression,shap,0,region_North Region,0.01098848926526944,36
+oulad,logistic_regression,shap,0,code_module_EEE,0.010864865210128829,37
+oulad,logistic_regression,shap,0,region_Ireland,0.010622787117734643,38
+oulad,logistic_regression,shap,0,region_North Western Region,0.010424763298954,39
+oulad,logistic_regression,shap,0,imd_band_40-50%,0.00879034906280302,40
+oulad,logistic_regression,shap,0,imd_band_50-60%,0.008379475019179506,41
+oulad,logistic_regression,shap,0,imd_band_60-70%,0.008362030583435986,42
+oulad,logistic_regression,shap,0,region_West Midlands Region,0.00778169490500508,43
+oulad,logistic_regression,shap,0,region_East Anglian Region,0.006955217921613314,44
+oulad,logistic_regression,shap,0,highest_education_No Formal quals,0.00519796117523977,45
+oulad,logistic_regression,shap,0,highest_education_Post Graduate Qualification,0.0038796449153065946,46
+oulad,logistic_regression,shap,0,imd_band_30-40%,0.003483649417586734,47
+oulad,logistic_regression,shap,0,age_band_55lt=,0.0022316904472930326,48
+oulad,logistic_regression,shap,0,region_Yorkshire Region,0.000527675681721824,49
+oulad,logistic_regression,lime,0,code_module_CCC,0.1486011003089365,1
+oulad,logistic_regression,lime,0,code_module_AAA,0.1352793032311756,2
+oulad,logistic_regression,lime,0,studied_credits,0.09696840071057004,3
+oulad,logistic_regression,lime,0,imd_band_?,0.08991519840145575,4
+oulad,logistic_regression,lime,0,code_module_GGG,0.08926561644232699,5
+oulad,logistic_regression,lime,0,code_module_DDD,0.061723086075158196,6
+oulad,logistic_regression,lime,0,imd_band_0-10%,0.055383371189051435,7
+oulad,logistic_regression,lime,0,highest_education_A Level or Equivalent,0.04780157997912105,8
+oulad,logistic_regression,lime,0,imd_band_20-30%,0.0473188142614202,9
+oulad,logistic_regression,lime,0,highest_education_HE Qualification,0.04710745715613237,10
+oulad,logistic_regression,lime,0,region_Ireland,0.04618633726316338,11
+oulad,logistic_regression,lime,0,imd_band_10-20,0.042968939802644844,12
+oulad,logistic_regression,lime,0,highest_education_No Formal quals,0.04170784903033282,13
+oulad,logistic_regression,lime,0,region_Wales,0.03708342808908459,14
+oulad,logistic_regression,lime,0,highest_education_Lower Than A Level,0.03647391140460839,15
+oulad,logistic_regression,lime,0,imd_band_90-100%,0.03612969923046994,16
+oulad,logistic_regression,lime,0,age_band_55lt=,0.034292857726714504,17
+oulad,logistic_regression,lime,0,num_of_prev_attempts,0.03416183738496779,18
+oulad,logistic_regression,lime,0,region_Scotland,0.027893238448576173,19
+oulad,logistic_regression,lime,0,code_presentation_2014J,0.024949525807446256,20
+oulad,logistic_regression,lime,0,imd_band_80-90%,0.02375143300696699,21
+oulad,logistic_regression,lime,0,region_East Midlands Region,0.023679657901022687,22
+oulad,logistic_regression,lime,0,region_North Region,0.023575856732338637,23
+oulad,logistic_regression,lime,0,code_presentation_2013J,0.022381799435971315,24
+oulad,logistic_regression,lime,0,gender_F,0.02122216016411448,25
+oulad,logistic_regression,lime,0,code_presentation_2013B,0.019636156401624423,26
+oulad,logistic_regression,lime,0,region_London Region,0.019532273633601233,27
+oulad,logistic_regression,lime,0,region_North Western Region,0.018029343174867825,28
+oulad,logistic_regression,lime,0,code_presentation_2014B,0.017849889261271863,29
+oulad,logistic_regression,lime,0,age_band_35-55,0.01783343552269041,30
+oulad,logistic_regression,lime,0,imd_band_70-80%,0.017566755741795687,31
+oulad,logistic_regression,lime,0,highest_education_Post Graduate Qualification,0.016767025647343507,32
+oulad,logistic_regression,lime,0,imd_band_40-50%,0.016718526348701565,33
+oulad,logistic_regression,lime,0,region_West Midlands Region,0.016242373865246584,34
+oulad,logistic_regression,lime,0,region_South Region,0.01607606304940076,35
+oulad,logistic_regression,lime,0,disability_Y,0.01535105321176989,36
+oulad,logistic_regression,lime,0,code_module_BBB,0.013149170342280112,37
+oulad,logistic_regression,lime,0,region_South East Region,0.011704932497553487,38
+oulad,logistic_regression,lime,0,code_module_FFF,0.011407599452232468,39
+oulad,logistic_regression,lime,0,gender_M,0.01104602801872757,40
+oulad,logistic_regression,lime,0,region_South West Region,0.010432212215365676,41
+oulad,logistic_regression,lime,0,age_band_0-35,0.009899156602579727,42
+oulad,logistic_regression,lime,0,imd_band_60-70%,0.009056372400519295,43
+oulad,logistic_regression,lime,0,code_module_EEE,0.009046066623233977,44
+oulad,logistic_regression,lime,0,imd_band_30-40%,0.007437131831310346,45
+oulad,logistic_regression,lime,0,imd_band_50-60%,0.006787929430749437,46
+oulad,logistic_regression,lime,0,region_East Anglian Region,0.006483819718002042,47
+oulad,logistic_regression,lime,0,region_Yorkshire Region,0.0021864673622050824,48
+oulad,logistic_regression,lime,0,disability_N,0.0,49
+oulad,logistic_regression,permutation,0,studied_credits,0.028210599737613713,1
+oulad,logistic_regression,permutation,0,num_of_prev_attempts,0.018846522884603385,2
+oulad,logistic_regression,permutation,0,code_module_CCC,0.017472325306971737,3
+oulad,logistic_regression,permutation,0,highest_education_Lower Than A Level,0.017412103907959702,4
+oulad,logistic_regression,permutation,0,code_module_GGG,0.01167591646560795,5
+oulad,logistic_regression,permutation,0,code_module_DDD,0.009928891506342833,6
+oulad,logistic_regression,permutation,0,code_module_AAA,0.007714393821454187,7
+oulad,logistic_regression,permutation,0,imd_band_?,0.007294432612123665,8
+oulad,logistic_regression,permutation,0,highest_education_A Level or Equivalent,0.006287082616423263,9
+oulad,logistic_regression,permutation,0,gender_F,0.003554824392461612,10
+oulad,logistic_regression,permutation,0,imd_band_10-20,0.003181832511008601,11
+oulad,logistic_regression,permutation,0,imd_band_0-10%,0.003149396860975854,12
+oulad,logistic_regression,permutation,0,region_Wales,0.002516156768803605,13
+oulad,logistic_regression,permutation,0,code_presentation_2013B,0.002324915995875587,14
+oulad,logistic_regression,permutation,0,age_band_0-35,0.002324647947890298,15
+oulad,logistic_regression,permutation,0,code_presentation_2014J,0.0021498963883817,16
+oulad,logistic_regression,permutation,0,highest_education_HE Qualification,0.0020542953583382317,17
+oulad,logistic_regression,permutation,0,code_presentation_2013J,0.0018344191805788057,18
+oulad,logistic_regression,permutation,0,age_band_35-55,0.0017824671154983058,19
+oulad,logistic_regression,permutation,0,highest_education_Post Graduate Qualification,0.0015864129102372004,20
+oulad,logistic_regression,permutation,0,highest_education_No Formal quals,0.001354428372618936,21
+oulad,logistic_regression,permutation,0,imd_band_80-90%,0.0013458056199651864,22
+oulad,logistic_regression,permutation,0,disability_Y,0.00132224941381535,23
+oulad,logistic_regression,permutation,0,region_South Region,0.0008484111434293359,24
+oulad,logistic_regression,permutation,0,region_North Region,0.0007228716376550537,25
+oulad,logistic_regression,permutation,0,region_North Western Region,0.0005609455620718684,26
+oulad,logistic_regression,permutation,0,region_Ireland,0.0004965098840386725,27
+oulad,logistic_regression,permutation,0,code_presentation_2014B,0.00045282830518485656,28
+oulad,logistic_regression,permutation,0,imd_band_90-100%,0.0003556360023491134,29
+oulad,logistic_regression,permutation,0,imd_band_60-70%,0.00031863993505106453,30
+oulad,logistic_regression,permutation,0,code_module_FFF,0.0002872617388599193,31
+oulad,logistic_regression,permutation,0,code_module_EEE,0.00025200536726144307,32
+oulad,logistic_regression,permutation,0,imd_band_50-60%,0.0002469469861656008,33
+oulad,logistic_regression,permutation,0,region_Scotland,0.0001867285857618158,34
+oulad,logistic_regression,permutation,0,imd_band_40-50%,0.00018145495921192042,35
+oulad,logistic_regression,permutation,0,imd_band_20-30%,0.00012817822816961014,36
+oulad,logistic_regression,permutation,0,gender_M,0.00012344467255842595,37
+oulad,logistic_regression,permutation,0,region_East Midlands Region,8.947415896106332e-05,38
+oulad,logistic_regression,permutation,0,age_band_55lt=,5.6176074396156274e-05,39
+oulad,logistic_regression,permutation,0,imd_band_30-40%,8.657919425836269e-07,40
+oulad,logistic_regression,permutation,0,region_Yorkshire Region,-9.495441265997921e-05,41
+oulad,logistic_regression,permutation,0,code_module_BBB,-0.00012257389462266843,42
+oulad,logistic_regression,permutation,0,region_East Anglian Region,-0.0001460833583148228,43
+oulad,logistic_regression,permutation,0,region_South East Region,-0.00020749302282574433,44
+oulad,logistic_regression,permutation,0,disability_N,-0.00021566013040130727,45
+oulad,logistic_regression,permutation,0,region_West Midlands Region,-0.00038714200476223465,46
+oulad,logistic_regression,permutation,0,region_London Region,-0.0004278658065416015,47
+oulad,logistic_regression,permutation,0,region_South West Region,-0.0007151107904355136,48
+oulad,logistic_regression,permutation,0,imd_band_70-80%,-0.0009266034094406924,49
+oulad,random_forest,shap,1,studied_credits,0.02472443363063364,1
+oulad,random_forest,shap,1,highest_education_Lower Than A Level,0.01823110046878882,2
+oulad,random_forest,shap,1,code_module_CCC,0.013843827067501722,3
+oulad,random_forest,shap,1,highest_education_A Level or Equivalent,0.010530519711545935,4
+oulad,random_forest,shap,1,num_of_prev_attempts,0.009457398737566706,5
+oulad,random_forest,shap,1,code_presentation_2014J,0.0072262902049642485,6
+oulad,random_forest,shap,1,code_module_GGG,0.007224616026780592,7
+oulad,random_forest,shap,1,imd_band_0-10%,0.005817614991140888,8
+oulad,random_forest,shap,1,highest_education_HE Qualification,0.00540220658035305,9
+oulad,random_forest,shap,1,code_presentation_2014B,0.005164139713586649,10
+oulad,random_forest,shap,1,code_module_DDD,0.004098304362749724,11
+oulad,random_forest,shap,1,imd_band_?,0.003808770764617157,12
+oulad,random_forest,shap,1,code_presentation_2013J,0.0036480902253891454,13
+oulad,random_forest,shap,1,code_module_AAA,0.0032109492735901287,14
+oulad,random_forest,shap,1,age_band_0-35,0.003200040402324559,15
+oulad,random_forest,shap,1,disability_Y,0.0031164553331624626,16
+oulad,random_forest,shap,1,age_band_35-55,0.00296826328178252,17
+oulad,random_forest,shap,1,imd_band_10-20,0.002782386785311655,18
+oulad,random_forest,shap,1,gender_M,0.0023652437254221325,19
+oulad,random_forest,shap,1,code_presentation_2013B,0.0023318514812311016,20
+oulad,random_forest,shap,1,disability_N,0.002302556820411897,21
+oulad,random_forest,shap,1,gender_F,0.002260033523766104,22
+oulad,random_forest,shap,1,region_Scotland,0.002056977262709626,23
+oulad,random_forest,shap,1,region_Wales,0.0020519320756422093,24
+oulad,random_forest,shap,1,imd_band_80-90%,0.0020471351122845556,25
+oulad,random_forest,shap,1,region_North Western Region,0.0019153249551979406,26
+oulad,random_forest,shap,1,imd_band_90-100%,0.0018429408557009935,27
+oulad,random_forest,shap,1,imd_band_20-30%,0.0017845080406287239,28
+oulad,random_forest,shap,1,code_module_BBB,0.0017106498071025632,29
+oulad,random_forest,shap,1,code_module_EEE,0.0015276201404607489,30
+oulad,random_forest,shap,1,code_module_FFF,0.0014795570334159116,31
+oulad,random_forest,shap,1,region_London Region,0.0014517226718191252,32
+oulad,random_forest,shap,1,imd_band_60-70%,0.0012780743296840734,33
+oulad,random_forest,shap,1,region_Ireland,0.0011753076803585687,34
+oulad,random_forest,shap,1,region_South Region,0.0011445709061749573,35
+oulad,random_forest,shap,1,imd_band_70-80%,0.0011241977925362876,36
+oulad,random_forest,shap,1,region_West Midlands Region,0.0011072479599638693,37
+oulad,random_forest,shap,1,region_East Anglian Region,0.000866109131044992,38
+oulad,random_forest,shap,1,region_North Region,0.0008379407308669503,39
+oulad,random_forest,shap,1,imd_band_50-60%,0.0008037999931784997,40
+oulad,random_forest,shap,1,region_South East Region,0.0007934476792853419,41
+oulad,random_forest,shap,1,imd_band_30-40%,0.0007233751932411183,42
+oulad,random_forest,shap,1,region_East Midlands Region,0.000709445626657359,43
+oulad,random_forest,shap,1,region_South West Region,0.0006107658268378706,44
+oulad,random_forest,shap,1,region_Yorkshire Region,0.0006099670986824658,45
+oulad,random_forest,shap,1,highest_education_No Formal quals,0.0006061436775022089,46
+oulad,random_forest,shap,1,imd_band_40-50%,0.0005979466536306585,47
+oulad,random_forest,shap,1,highest_education_Post Graduate Qualification,0.0003895339766366618,48
+oulad,random_forest,shap,1,age_band_55lt=,0.00020609691242062924,49
+oulad,random_forest,lime,1,code_module_AAA,0.09713996708282004,1
+oulad,random_forest,lime,1,code_module_CCC,0.08254081495839642,2
+oulad,random_forest,lime,1,studied_credits,0.06880098466876687,3
+oulad,random_forest,lime,1,imd_band_?,0.05820085034926263,4
+oulad,random_forest,lime,1,imd_band_0-10%,0.039053283173916965,5
+oulad,random_forest,lime,1,num_of_prev_attempts,0.03899262985516787,6
+oulad,random_forest,lime,1,highest_education_Lower Than A Level,0.035688301692452115,7
+oulad,random_forest,lime,1,highest_education_A Level or Equivalent,0.028175668759127574,8
+oulad,random_forest,lime,1,highest_education_No Formal quals,0.02714246023557554,9
+oulad,random_forest,lime,1,code_module_GGG,0.025696624335320266,10
+oulad,random_forest,lime,1,disability_Y,0.023333522610138047,11
+oulad,random_forest,lime,1,region_Ireland,0.021251961616046762,12
+oulad,random_forest,lime,1,code_presentation_2014B,0.017460732230048372,13
+oulad,random_forest,lime,1,region_North Western Region,0.016360131447670814,14
+oulad,random_forest,lime,1,imd_band_10-20,0.014638361501607586,15
+oulad,random_forest,lime,1,highest_education_HE Qualification,0.014566865481456446,16
+oulad,random_forest,lime,1,code_module_DDD,0.014406227605429364,17
+oulad,random_forest,lime,1,region_Wales,0.014113619029943273,18
+oulad,random_forest,lime,1,imd_band_90-100%,0.013724832856602696,19
+oulad,random_forest,lime,1,code_presentation_2013J,0.01257378954395463,20
+oulad,random_forest,lime,1,imd_band_20-30%,0.011353098777833859,21
+oulad,random_forest,lime,1,region_Scotland,0.010985027803921965,22
+oulad,random_forest,lime,1,code_presentation_2014J,0.010822720151750842,23
+oulad,random_forest,lime,1,imd_band_80-90%,0.010606701402731405,24
+oulad,random_forest,lime,1,region_London Region,0.010287834029385537,25
+oulad,random_forest,lime,1,code_module_EEE,0.0071428379934320805,26
+oulad,random_forest,lime,1,imd_band_60-70%,0.0071194329868404065,27
+oulad,random_forest,lime,1,age_band_55lt=,0.007097064363246828,28
+oulad,random_forest,lime,1,highest_education_Post Graduate Qualification,0.007042784910577972,29
+oulad,random_forest,lime,1,code_presentation_2013B,0.006377911343198862,30
+oulad,random_forest,lime,1,region_Yorkshire Region,0.00635486511499234,31
+oulad,random_forest,lime,1,age_band_35-55,0.006163377151643777,32
+oulad,random_forest,lime,1,region_North Region,0.005800079490999105,33
+oulad,random_forest,lime,1,code_module_BBB,0.0055602582963444145,34
+oulad,random_forest,lime,1,region_West Midlands Region,0.005455492655965241,35
+oulad,random_forest,lime,1,imd_band_70-80%,0.005056096623776361,36
+oulad,random_forest,lime,1,region_South Region,0.0048154339154952265,37
+oulad,random_forest,lime,1,imd_band_50-60%,0.003925109825092111,38
+oulad,random_forest,lime,1,region_South East Region,0.0038024053528999584,39
+oulad,random_forest,lime,1,age_band_0-35,0.003639040084775399,40
+oulad,random_forest,lime,1,gender_F,0.0033523716403043935,41
+oulad,random_forest,lime,1,gender_M,0.0031900280502701896,42
+oulad,random_forest,lime,1,code_module_FFF,0.0029542823505018492,43
+oulad,random_forest,lime,1,region_East Anglian Region,0.0022998924992158032,44
+oulad,random_forest,lime,1,region_East Midlands Region,0.0020989547838487508,45
+oulad,random_forest,lime,1,imd_band_40-50%,0.002017791441024997,46
+oulad,random_forest,lime,1,imd_band_30-40%,0.0015109335556114144,47
+oulad,random_forest,lime,1,region_South West Region,0.0013928275487930992,48
+oulad,random_forest,lime,1,disability_N,0.0,49
+oulad,random_forest,permutation,1,studied_credits,0.023652980582574774,1
+oulad,random_forest,permutation,1,code_module_CCC,0.01158799252341606,2
+oulad,random_forest,permutation,1,num_of_prev_attempts,0.011022623537676468,3
+oulad,random_forest,permutation,1,highest_education_Lower Than A Level,0.008559317836234056,4
+oulad,random_forest,permutation,1,code_presentation_2014J,0.004851819152437449,5
+oulad,random_forest,permutation,1,code_module_DDD,0.0036836781881939284,6
+oulad,random_forest,permutation,1,code_module_GGG,0.003487634041675699,7
+oulad,random_forest,permutation,1,code_module_AAA,0.003387431359777778,8
+oulad,random_forest,permutation,1,highest_education_A Level or Equivalent,0.002307786917630376,9
+oulad,random_forest,permutation,1,region_Wales,0.002113577857813779,10
+oulad,random_forest,permutation,1,highest_education_HE Qualification,0.0020221935434054186,11
+oulad,random_forest,permutation,1,region_North Western Region,0.0014101832105857988,12
+oulad,random_forest,permutation,1,code_presentation_2013B,0.0008108275003607298,13
+oulad,random_forest,permutation,1,code_presentation_2014B,0.0007519628939404536,14
+oulad,random_forest,permutation,1,imd_band_0-10%,0.0005917121156067869,15
+oulad,random_forest,permutation,1,region_Scotland,0.0005741871946412699,16
+oulad,random_forest,permutation,1,code_presentation_2013J,0.0005654041673572122,17
+oulad,random_forest,permutation,1,imd_band_60-70%,0.0005520335686239145,18
+oulad,random_forest,permutation,1,age_band_55lt=,0.000526698482477069,19
+oulad,random_forest,permutation,1,highest_education_Post Graduate Qualification,0.0004682944446995722,20
+oulad,random_forest,permutation,1,imd_band_20-30%,0.00040651912857144384,21
+oulad,random_forest,permutation,1,region_South East Region,0.000301392004796804,22
+oulad,random_forest,permutation,1,region_South Region,0.00022525065740786054,23
+oulad,random_forest,permutation,1,imd_band_80-90%,0.00019838695095601247,24
+oulad,random_forest,permutation,1,region_East Anglian Region,0.00014338936753880796,25
+oulad,random_forest,permutation,1,imd_band_70-80%,0.00014259064245540168,26
+oulad,random_forest,permutation,1,imd_band_?,0.00013714472661940924,27
+oulad,random_forest,permutation,1,imd_band_50-60%,0.00011949282446336677,28
+oulad,random_forest,permutation,1,imd_band_10-20,0.00011764912327061339,29
+oulad,random_forest,permutation,1,age_band_35-55,9.951430755513375e-05,30
+oulad,random_forest,permutation,1,region_North Region,7.30582760087491e-05,31
+oulad,random_forest,permutation,1,age_band_0-35,-9.2158520665316e-05,32
+oulad,random_forest,permutation,1,code_module_FFF,-0.00011472044909388579,33
+oulad,random_forest,permutation,1,imd_band_90-100%,-0.00012259471775055708,34
+oulad,random_forest,permutation,1,code_module_BBB,-0.0001271038443887799,35
+oulad,random_forest,permutation,1,code_module_EEE,-0.00023599048320440316,36
+oulad,random_forest,permutation,1,region_East Midlands Region,-0.0002757437695681079,37
+oulad,random_forest,permutation,1,region_Ireland,-0.0002991710601024285,38
+oulad,random_forest,permutation,1,imd_band_40-50%,-0.00031898206030963233,39
+oulad,random_forest,permutation,1,region_London Region,-0.00035712244733813553,40
+oulad,random_forest,permutation,1,region_South West Region,-0.0003708247637651911,41
+oulad,random_forest,permutation,1,gender_M,-0.0003767660100583529,42
+oulad,random_forest,permutation,1,gender_F,-0.0003884344180734208,43
+oulad,random_forest,permutation,1,region_Yorkshire Region,-0.0004216225767161852,44
+oulad,random_forest,permutation,1,highest_education_No Formal quals,-0.000527605935232304,45
+oulad,random_forest,permutation,1,imd_band_30-40%,-0.0005421878894899349,46
+oulad,random_forest,permutation,1,disability_N,-0.0008218099802241863,47
+oulad,random_forest,permutation,1,region_West Midlands Region,-0.0012577579308259423,48
+oulad,random_forest,permutation,1,disability_Y,-0.002219309012715979,49
+oulad,gradient_boosting,shap,1,highest_education_Lower Than A Level,0.18844576179981232,1
+oulad,gradient_boosting,shap,1,studied_credits,0.13683634996414185,2
+oulad,gradient_boosting,shap,1,num_of_prev_attempts,0.08328139036893845,3
+oulad,gradient_boosting,shap,1,code_presentation_2014J,0.06369888037443161,4
+oulad,gradient_boosting,shap,1,code_module_DDD,0.062371764332056046,5
+oulad,gradient_boosting,shap,1,gender_F,0.059733882546424866,6
+oulad,gradient_boosting,shap,1,code_module_CCC,0.05798150971531868,7
+oulad,gradient_boosting,shap,1,code_module_GGG,0.05408778786659241,8
+oulad,gradient_boosting,shap,1,imd_band_0-10%,0.04539792984724045,9
+oulad,gradient_boosting,shap,1,age_band_0-35,0.043721821159124374,10
+oulad,gradient_boosting,shap,1,imd_band_10-20,0.04311864823102951,11
+oulad,gradient_boosting,shap,1,code_presentation_2014B,0.040972232818603516,12
+oulad,gradient_boosting,shap,1,imd_band_?,0.03128959238529205,13
+oulad,gradient_boosting,shap,1,disability_N,0.029518647119402885,14
+oulad,gradient_boosting,shap,1,region_Scotland,0.02943386882543564,15
+oulad,gradient_boosting,shap,1,code_module_BBB,0.028331000357866287,16
+oulad,gradient_boosting,shap,1,highest_education_HE Qualification,0.027591072022914886,17
+oulad,gradient_boosting,shap,1,highest_education_A Level or Equivalent,0.02727355621755123,18
+oulad,gradient_boosting,shap,1,code_module_FFF,0.027002019807696342,19
+oulad,gradient_boosting,shap,1,imd_band_80-90%,0.026443427428603172,20
+oulad,gradient_boosting,shap,1,imd_band_90-100%,0.026371991261839867,21
+oulad,gradient_boosting,shap,1,code_presentation_2013B,0.02585482783615589,22
+oulad,gradient_boosting,shap,1,code_module_AAA,0.025425361469388008,23
+oulad,gradient_boosting,shap,1,code_module_EEE,0.02512182667851448,24
+oulad,gradient_boosting,shap,1,imd_band_20-30%,0.024106012657284737,25
+oulad,gradient_boosting,shap,1,code_presentation_2013J,0.0234586950391531,26
+oulad,gradient_boosting,shap,1,region_Wales,0.02334711141884327,27
+oulad,gradient_boosting,shap,1,imd_band_60-70%,0.02201007679104805,28
+oulad,gradient_boosting,shap,1,region_South Region,0.019407790154218674,29
+oulad,gradient_boosting,shap,1,imd_band_30-40%,0.018263723701238632,30
+oulad,gradient_boosting,shap,1,region_London Region,0.01776464283466339,31
+oulad,gradient_boosting,shap,1,region_West Midlands Region,0.01727965846657753,32
+oulad,gradient_boosting,shap,1,region_North Western Region,0.016811519861221313,33
+oulad,gradient_boosting,shap,1,region_South East Region,0.0167801883071661,34
+oulad,gradient_boosting,shap,1,region_South West Region,0.015321425162255764,35
+oulad,gradient_boosting,shap,1,age_band_35-55,0.014964768663048744,36
+oulad,gradient_boosting,shap,1,highest_education_No Formal quals,0.014523185789585114,37
+oulad,gradient_boosting,shap,1,region_Yorkshire Region,0.014207066968083382,38
+oulad,gradient_boosting,shap,1,region_East Anglian Region,0.014172855764627457,39
+oulad,gradient_boosting,shap,1,imd_band_50-60%,0.013794572092592716,40
+oulad,gradient_boosting,shap,1,imd_band_70-80%,0.013579783961176872,41
+oulad,gradient_boosting,shap,1,region_Ireland,0.01284540444612503,42
+oulad,gradient_boosting,shap,1,imd_band_40-50%,0.012789829634130001,43
+oulad,gradient_boosting,shap,1,region_North Region,0.012518653646111488,44
+oulad,gradient_boosting,shap,1,region_East Midlands Region,0.011719417758286,45
+oulad,gradient_boosting,shap,1,highest_education_Post Graduate Qualification,0.005987850949168205,46
+oulad,gradient_boosting,shap,1,age_band_55lt=,0.0028342311270534992,47
+oulad,gradient_boosting,shap,1,gender_M,0.0,48
+oulad,gradient_boosting,shap,1,disability_Y,0.0,49
+oulad,gradient_boosting,lime,1,code_module_AAA,0.1635101699803965,1
+oulad,gradient_boosting,lime,1,imd_band_?,0.151574222039971,2
+oulad,gradient_boosting,lime,1,imd_band_90-100%,0.10866727407390521,3
+oulad,gradient_boosting,lime,1,highest_education_Lower Than A Level,0.10110411783271735,4
+oulad,gradient_boosting,lime,1,studied_credits,0.09314626185249036,5
+oulad,gradient_boosting,lime,1,code_module_CCC,0.07111929647598568,6
+oulad,gradient_boosting,lime,1,imd_band_0-10%,0.06378615498754321,7
+oulad,gradient_boosting,lime,1,highest_education_No Formal quals,0.06193025563452118,8
+oulad,gradient_boosting,lime,1,code_module_GGG,0.054624549463218416,9
+oulad,gradient_boosting,lime,1,imd_band_20-30%,0.050494340328088354,10
+oulad,gradient_boosting,lime,1,imd_band_70-80%,0.04514377825230095,11
+oulad,gradient_boosting,lime,1,imd_band_10-20,0.04490147132960206,12
+oulad,gradient_boosting,lime,1,code_presentation_2014B,0.04289284762223122,13
+oulad,gradient_boosting,lime,1,highest_education_A Level or Equivalent,0.04150422403235984,14
+oulad,gradient_boosting,lime,1,region_Ireland,0.040317077853580734,15
+oulad,gradient_boosting,lime,1,region_Yorkshire Region,0.03929924016216931,16
+oulad,gradient_boosting,lime,1,region_North Western Region,0.037019909135726774,17
+oulad,gradient_boosting,lime,1,age_band_55lt=,0.035404085438156256,18
+oulad,gradient_boosting,lime,1,region_East Anglian Region,0.035038351873694557,19
+oulad,gradient_boosting,lime,1,highest_education_Post Graduate Qualification,0.03479528223859248,20
+oulad,gradient_boosting,lime,1,region_South Region,0.0342387687942691,21
+oulad,gradient_boosting,lime,1,code_module_DDD,0.033382379647229815,22
+oulad,gradient_boosting,lime,1,num_of_prev_attempts,0.03302937969059402,23
+oulad,gradient_boosting,lime,1,region_North Region,0.03202822396096991,24
+oulad,gradient_boosting,lime,1,age_band_0-35,0.02794930471433645,25
+oulad,gradient_boosting,lime,1,imd_band_60-70%,0.027856898810420447,26
+oulad,gradient_boosting,lime,1,region_Scotland,0.026813986641490636,27
+oulad,gradient_boosting,lime,1,gender_F,0.02541285262677607,28
+oulad,gradient_boosting,lime,1,imd_band_40-50%,0.023336275991381463,29
+oulad,gradient_boosting,lime,1,imd_band_30-40%,0.02277370215280011,30
+oulad,gradient_boosting,lime,1,region_West Midlands Region,0.021991297552109313,31
+oulad,gradient_boosting,lime,1,imd_band_80-90%,0.020381696942218575,32
+oulad,gradient_boosting,lime,1,code_presentation_2013B,0.019376751704408432,33
+oulad,gradient_boosting,lime,1,highest_education_HE Qualification,0.016958663015508548,34
+oulad,gradient_boosting,lime,1,code_module_BBB,0.01657553045492272,35
+oulad,gradient_boosting,lime,1,region_South East Region,0.016459032239528073,36
+oulad,gradient_boosting,lime,1,region_Wales,0.016023086220600384,37
+oulad,gradient_boosting,lime,1,code_presentation_2014J,0.015591211503102763,38
+oulad,gradient_boosting,lime,1,region_London Region,0.015473803769337298,39
+oulad,gradient_boosting,lime,1,code_presentation_2013J,0.015177876300937839,40
+oulad,gradient_boosting,lime,1,code_module_EEE,0.012688862413560941,41
+oulad,gradient_boosting,lime,1,region_South West Region,0.01066195242358755,42
+oulad,gradient_boosting,lime,1,code_module_FFF,0.010591813364592036,43
+oulad,gradient_boosting,lime,1,imd_band_50-60%,0.008723290802118236,44
+oulad,gradient_boosting,lime,1,region_East Midlands Region,0.007928327765898873,45
+oulad,gradient_boosting,lime,1,age_band_35-55,0.006520549449362813,46
+oulad,gradient_boosting,lime,1,disability_Y,0.004699608695255115,47
+oulad,gradient_boosting,lime,1,gender_M,0.0028245278731315994,48
+oulad,gradient_boosting,lime,1,disability_N,0.0,49
+oulad,gradient_boosting,permutation,1,studied_credits,0.045229315757751465,1
+oulad,gradient_boosting,permutation,1,highest_education_Lower Than A Level,0.026630043983459473,2
+oulad,gradient_boosting,permutation,1,num_of_prev_attempts,0.02553101380666097,3
+oulad,gradient_boosting,permutation,1,code_module_GGG,0.01633759339650472,4
+oulad,gradient_boosting,permutation,1,code_module_CCC,0.013189395268758139,5
+oulad,gradient_boosting,permutation,1,gender_F,0.010175069173177084,6
+oulad,gradient_boosting,permutation,1,region_Scotland,0.009454091389973959,7
+oulad,gradient_boosting,permutation,1,code_module_DDD,0.007812738418579102,8
+oulad,gradient_boosting,permutation,1,imd_band_?,0.006642381350199382,9
+oulad,gradient_boosting,permutation,1,imd_band_10-20,0.0061386823654174805,10
+oulad,gradient_boosting,permutation,1,code_presentation_2014B,0.005736390749613444,11
+oulad,gradient_boosting,permutation,1,imd_band_90-100%,0.005724032719930013,12
+oulad,gradient_boosting,permutation,1,region_North Western Region,0.0049620866775512695,13
+oulad,gradient_boosting,permutation,1,code_presentation_2014J,0.0047522783279418945,14
+oulad,gradient_boosting,permutation,1,imd_band_0-10%,0.0031001965204874673,15
+oulad,gradient_boosting,permutation,1,code_module_BBB,0.0029617945353190103,16
+oulad,gradient_boosting,permutation,1,region_West Midlands Region,0.0028549830118815103,17
+oulad,gradient_boosting,permutation,1,age_band_0-35,0.002819617589314779,18
+oulad,gradient_boosting,permutation,1,age_band_35-55,0.0027405420939127603,19
+oulad,gradient_boosting,permutation,1,code_presentation_2013B,0.0026004711786905923,20
+oulad,gradient_boosting,permutation,1,disability_N,0.0023714303970336914,21
+oulad,gradient_boosting,permutation,1,region_North Region,0.002288341522216797,22
+oulad,gradient_boosting,permutation,1,code_module_EEE,0.002105236053466797,23
+oulad,gradient_boosting,permutation,1,region_Ireland,0.001804033915201823,24
+oulad,gradient_boosting,permutation,1,highest_education_Post Graduate Qualification,0.0017472902933756511,25
+oulad,gradient_boosting,permutation,1,region_London Region,0.00162200133005778,26
+oulad,gradient_boosting,permutation,1,code_module_AAA,0.0015463829040527344,27
+oulad,gradient_boosting,permutation,1,imd_band_40-50%,0.001499176025390625,28
+oulad,gradient_boosting,permutation,1,region_Yorkshire Region,0.0007333755493164062,29
+oulad,gradient_boosting,permutation,1,imd_band_70-80%,0.0005456209182739258,30
+oulad,gradient_boosting,permutation,1,highest_education_No Formal quals,0.0004980564117431641,31
+oulad,gradient_boosting,permutation,1,region_South West Region,0.0003440380096435547,32
+oulad,gradient_boosting,permutation,1,region_Wales,0.00020778179168701172,33
+oulad,gradient_boosting,permutation,1,imd_band_20-30%,1.800060272216797e-05,34
+oulad,gradient_boosting,permutation,1,gender_M,0.0,35
+oulad,gradient_boosting,permutation,1,disability_Y,0.0,36
+oulad,gradient_boosting,permutation,1,region_South East Region,-0.00017352898915608725,37
+oulad,gradient_boosting,permutation,1,region_East Anglian Region,-0.0005735556284586588,38
+oulad,gradient_boosting,permutation,1,highest_education_HE Qualification,-0.0005745093027750651,39
+oulad,gradient_boosting,permutation,1,age_band_55lt=,-0.0006995598475138346,40
+oulad,gradient_boosting,permutation,1,imd_band_30-40%,-0.0014137824376424153,41
+oulad,gradient_boosting,permutation,1,imd_band_60-70%,-0.0014252265294392903,42
+oulad,gradient_boosting,permutation,1,imd_band_50-60%,-0.001534581184387207,43
+oulad,gradient_boosting,permutation,1,region_East Midlands Region,-0.0021739800771077475,44
+oulad,gradient_boosting,permutation,1,highest_education_A Level or Equivalent,-0.0022591749827067056,45
+oulad,gradient_boosting,permutation,1,region_South Region,-0.002266089121500651,46
+oulad,gradient_boosting,permutation,1,code_presentation_2013J,-0.0023101170857747397,47
+oulad,gradient_boosting,permutation,1,imd_band_80-90%,-0.004600326220194499,48
+oulad,gradient_boosting,permutation,1,code_module_FFF,-0.0064694881439208984,49
+oulad,logistic_regression,shap,1,highest_education_Lower Than A Level,0.14558561021665886,1
+oulad,logistic_regression,shap,1,studied_credits,0.09869883744767399,2
+oulad,logistic_regression,shap,1,age_band_0-35,0.0748450909754701,3
+oulad,logistic_regression,shap,1,num_of_prev_attempts,0.0732385449218586,4
+oulad,logistic_regression,shap,1,highest_education_A Level or Equivalent,0.0667934338877786,5
+oulad,logistic_regression,shap,1,code_module_CCC,0.06648135880417054,6
+oulad,logistic_regression,shap,1,code_module_DDD,0.06501878131642844,7
+oulad,logistic_regression,shap,1,highest_education_HE Qualification,0.06336274130354802,8
+oulad,logistic_regression,shap,1,imd_band_10-20,0.058934266197366886,9
+oulad,logistic_regression,shap,1,code_presentation_2014J,0.05770160141725368,10
+oulad,logistic_regression,shap,1,code_module_GGG,0.05194674840121581,11
+oulad,logistic_regression,shap,1,gender_F,0.05070312673701278,12
+oulad,logistic_regression,shap,1,imd_band_0-10%,0.0496984103855524,13
+oulad,logistic_regression,shap,1,gender_M,0.03964309091253712,14
+oulad,logistic_regression,shap,1,age_band_35-55,0.03570494806906096,15
+oulad,logistic_regression,shap,1,imd_band_20-30%,0.0305360269735562,16
+oulad,logistic_regression,shap,1,region_Scotland,0.028096105283486807,17
+oulad,logistic_regression,shap,1,code_presentation_2013B,0.027263346161987036,18
+oulad,logistic_regression,shap,1,code_module_AAA,0.024349439304777946,19
+oulad,logistic_regression,shap,1,code_module_FFF,0.024273116872054808,20
+oulad,logistic_regression,shap,1,code_presentation_2014B,0.023871695696223456,21
+oulad,logistic_regression,shap,1,imd_band_?,0.021881296661405,22
+oulad,logistic_regression,shap,1,code_presentation_2013J,0.021246493229941592,23
+oulad,logistic_regression,shap,1,region_Wales,0.01965241723386756,24
+oulad,logistic_regression,shap,1,imd_band_30-40%,0.018984018212698375,25
+oulad,logistic_regression,shap,1,disability_Y,0.017295586547220507,26
+oulad,logistic_regression,shap,1,code_module_EEE,0.017010678832839847,27
+oulad,logistic_regression,shap,1,imd_band_90-100%,0.01696889326345859,28
+oulad,logistic_regression,shap,1,region_Ireland,0.01682865105001119,29
+oulad,logistic_regression,shap,1,imd_band_80-90%,0.016527644173267565,30
+oulad,logistic_regression,shap,1,imd_band_60-70%,0.014217799973271208,31
+oulad,logistic_regression,shap,1,region_South Region,0.013949308344684401,32
+oulad,logistic_regression,shap,1,disability_N,0.013018512970187796,33
+oulad,logistic_regression,shap,1,region_West Midlands Region,0.012704497635495022,34
+oulad,logistic_regression,shap,1,region_South East Region,0.011991125797542863,35
+oulad,logistic_regression,shap,1,region_North Region,0.010270072878287075,36
+oulad,logistic_regression,shap,1,region_South West Region,0.009181454436846233,37
+oulad,logistic_regression,shap,1,region_North Western Region,0.007740539707063743,38
+oulad,logistic_regression,shap,1,imd_band_70-80%,0.006969183265304944,39
+oulad,logistic_regression,shap,1,imd_band_40-50%,0.006877897677229189,40
+oulad,logistic_regression,shap,1,region_East Midlands Region,0.006816304889281522,41
+oulad,logistic_regression,shap,1,highest_education_Post Graduate Qualification,0.00562067601176311,42
+oulad,logistic_regression,shap,1,region_London Region,0.005611366626637831,43
+oulad,logistic_regression,shap,1,code_module_BBB,0.0038612448708947493,44
+oulad,logistic_regression,shap,1,region_Yorkshire Region,0.0037994535473740397,45
+oulad,logistic_regression,shap,1,imd_band_50-60%,0.0031157835213484948,46
+oulad,logistic_regression,shap,1,region_East Anglian Region,0.0030686931515146185,47
+oulad,logistic_regression,shap,1,highest_education_No Formal quals,0.0021198843576498683,48
+oulad,logistic_regression,shap,1,age_band_55lt=,0.0012524330717449002,49
+oulad,logistic_regression,lime,1,code_module_AAA,0.14077853384732697,1
+oulad,logistic_regression,lime,1,code_module_CCC,0.13463777721907955,2
+oulad,logistic_regression,lime,1,imd_band_?,0.12420631766427244,3
+oulad,logistic_regression,lime,1,highest_education_No Formal quals,0.10986372910349641,4
+oulad,logistic_regression,lime,1,studied_credits,0.07568133605807965,5
+oulad,logistic_regression,lime,1,imd_band_0-10%,0.06735513540663447,6
+oulad,logistic_regression,lime,1,code_module_GGG,0.059146537488579266,7
+oulad,logistic_regression,lime,1,highest_education_A Level or Equivalent,0.05519461590840614,8
+oulad,logistic_regression,lime,1,region_Ireland,0.05258493845779396,9
+oulad,logistic_regression,lime,1,highest_education_HE Qualification,0.052394852439755384,10
+oulad,logistic_regression,lime,1,code_module_DDD,0.04839037840680731,11
+oulad,logistic_regression,lime,1,num_of_prev_attempts,0.04832639259313157,12
+oulad,logistic_regression,lime,1,imd_band_10-20,0.04520536715449227,13
+oulad,logistic_regression,lime,1,highest_education_Post Graduate Qualification,0.03987156381309654,14
+oulad,logistic_regression,lime,1,region_North Region,0.03583823151653616,15
+oulad,logistic_regression,lime,1,region_Wales,0.03471203197126736,16
+oulad,logistic_regression,lime,1,imd_band_20-30%,0.030961093574959384,17
+oulad,logistic_regression,lime,1,age_band_55lt=,0.03025689284166689,18
+oulad,logistic_regression,lime,1,region_Scotland,0.02829270594507259,19
+oulad,logistic_regression,lime,1,age_band_35-55,0.02823526857649575,20
+oulad,logistic_regression,lime,1,region_North Western Region,0.027977393415170214,21
+oulad,logistic_regression,lime,1,code_presentation_2014J,0.026761332998082768,22
+oulad,logistic_regression,lime,1,code_presentation_2013B,0.02531934197337634,23
+oulad,logistic_regression,lime,1,code_presentation_2014B,0.024877356249484957,24
+oulad,logistic_regression,lime,1,gender_F,0.02485473754461801,25
+oulad,logistic_regression,lime,1,highest_education_Lower Than A Level,0.022242744292987063,26
+oulad,logistic_regression,lime,1,imd_band_60-70%,0.02162245157092384,27
+oulad,logistic_regression,lime,1,age_band_0-35,0.02057400473571543,28
+oulad,logistic_regression,lime,1,imd_band_80-90%,0.02044212837895603,29
+oulad,logistic_regression,lime,1,imd_band_90-100%,0.019802679723611598,30
+oulad,logistic_regression,lime,1,region_South East Region,0.01836022202585534,31
+oulad,logistic_regression,lime,1,region_West Midlands Region,0.018304367179992773,32
+oulad,logistic_regression,lime,1,disability_Y,0.018110400778698764,33
+oulad,logistic_regression,lime,1,imd_band_30-40%,0.017238044326244026,34
+oulad,logistic_regression,lime,1,region_South Region,0.01701246409218603,35
+oulad,logistic_regression,lime,1,code_presentation_2013J,0.016291194359199176,36
+oulad,logistic_regression,lime,1,code_module_FFF,0.01528044817989856,37
+oulad,logistic_regression,lime,1,region_London Region,0.013923744396294343,38
+oulad,logistic_regression,lime,1,code_module_EEE,0.013739788797704825,39
+oulad,logistic_regression,lime,1,imd_band_40-50%,0.013414456921108351,40
+oulad,logistic_regression,lime,1,region_East Midlands Region,0.01340805733038193,41
+oulad,logistic_regression,lime,1,region_Yorkshire Region,0.012919312711147029,42
+oulad,logistic_regression,lime,1,gender_M,0.010426964894878748,43
+oulad,logistic_regression,lime,1,region_South West Region,0.009501340229128123,44
+oulad,logistic_regression,lime,1,imd_band_70-80%,0.008425778377977422,45
+oulad,logistic_regression,lime,1,region_East Anglian Region,0.00785182977439444,46
+oulad,logistic_regression,lime,1,imd_band_50-60%,0.007219728140754797,47
+oulad,logistic_regression,lime,1,code_module_BBB,0.0011088280696856857,48
+oulad,logistic_regression,lime,1,disability_N,0.0,49
+oulad,logistic_regression,permutation,1,studied_credits,0.024209937551113486,1
+oulad,logistic_regression,permutation,1,code_module_GGG,0.015259553125503903,2
+oulad,logistic_regression,permutation,1,highest_education_Lower Than A Level,0.014667820726838698,3
+oulad,logistic_regression,permutation,1,code_module_CCC,0.013981536241817269,4
+oulad,logistic_regression,permutation,1,num_of_prev_attempts,0.01345966564582827,5
+oulad,logistic_regression,permutation,1,highest_education_A Level or Equivalent,0.009037895044041363,6
+oulad,logistic_regression,permutation,1,code_module_AAA,0.005966124426914021,7
+oulad,logistic_regression,permutation,1,highest_education_HE Qualification,0.005336934036831516,8
+oulad,logistic_regression,permutation,1,imd_band_?,0.005201749655552461,9
+oulad,logistic_regression,permutation,1,age_band_0-35,0.004675177778849256,10
+oulad,logistic_regression,permutation,1,imd_band_10-20,0.004230367989236224,11
+oulad,logistic_regression,permutation,1,code_module_DDD,0.004181040022201543,12
+oulad,logistic_regression,permutation,1,region_Wales,0.004179674714992032,13
+oulad,logistic_regression,permutation,1,gender_F,0.0035832396976232714,14
+oulad,logistic_regression,permutation,1,imd_band_0-10%,0.0032102696751747186,15
+oulad,logistic_regression,permutation,1,highest_education_Post Graduate Qualification,0.002544643842036972,16
+oulad,logistic_regression,permutation,1,code_module_FFF,0.002215760450093122,17
+oulad,logistic_regression,permutation,1,imd_band_20-30%,0.001943337422495824,18
+oulad,logistic_regression,permutation,1,region_Scotland,0.0019256947222712946,19
+oulad,logistic_regression,permutation,1,imd_band_90-100%,0.0018639295244596472,20
+oulad,logistic_regression,permutation,1,gender_M,0.001805702058075953,21
+oulad,logistic_regression,permutation,1,code_presentation_2014J,0.0016679427530803537,22
+oulad,logistic_regression,permutation,1,code_presentation_2013J,0.0015994143363079842,23
+oulad,logistic_regression,permutation,1,region_Ireland,0.0014443777458322444,24
+oulad,logistic_regression,permutation,1,disability_Y,0.0014359675950975277,25
+oulad,logistic_regression,permutation,1,age_band_35-55,0.0013813983352390924,26
+oulad,logistic_regression,permutation,1,region_North Western Region,0.0011982684454905357,27
+oulad,logistic_regression,permutation,1,region_South West Region,0.0010745560590770253,28
+oulad,logistic_regression,permutation,1,region_West Midlands Region,0.0005745203434764553,29
+oulad,logistic_regression,permutation,1,highest_education_No Formal quals,0.0005313014913367701,30
+oulad,logistic_regression,permutation,1,imd_band_40-50%,0.0004985867790068266,31
+oulad,logistic_regression,permutation,1,region_South Region,0.00044885686216374526,32
+oulad,logistic_regression,permutation,1,imd_band_60-70%,0.00034247914555981157,33
+oulad,logistic_regression,permutation,1,code_presentation_2014B,0.0002354347229146884,34
+oulad,logistic_regression,permutation,1,region_London Region,0.00019444210918950766,35
+oulad,logistic_regression,permutation,1,region_Yorkshire Region,9.263867805153758e-05,36
+oulad,logistic_regression,permutation,1,imd_band_50-60%,6.905466189725355e-05,37
+oulad,logistic_regression,permutation,1,region_East Midlands Region,6.570331495832822e-05,38
+oulad,logistic_regression,permutation,1,code_module_BBB,5.82921423854336e-05,39
+oulad,logistic_regression,permutation,1,region_East Anglian Region,5.763390785951117e-06,40
+oulad,logistic_regression,permutation,1,imd_band_70-80%,-8.172083339363923e-05,41
+oulad,logistic_regression,permutation,1,region_North Region,-0.0001385616666362092,42
+oulad,logistic_regression,permutation,1,region_South East Region,-0.00025681484377722735,43
+oulad,logistic_regression,permutation,1,age_band_55lt=,-0.00036372339186518943,44
+oulad,logistic_regression,permutation,1,code_module_EEE,-0.00040451041815929106,45
+oulad,logistic_regression,permutation,1,disability_N,-0.00046883363952991236,46
+oulad,logistic_regression,permutation,1,imd_band_30-40%,-0.0004990540362544612,47
+oulad,logistic_regression,permutation,1,code_presentation_2013B,-0.000759693450408753,48
+oulad,logistic_regression,permutation,1,imd_band_80-90%,-0.0009906882292533374,49
