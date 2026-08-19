@@ -6,7 +6,7 @@
 ## Estado
 - [ ] Ficha de revista completa (JOURNAL.md)
 - [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
-- [ ] Experimento ejecutado (día 1)
+- [x] Experimento ejecutado (día 1) — 360 combinaciones, `results/tables/attributions_long.csv`
 - [ ] Redacción y figuras (día 2)
 - [ ] Endurecimiento: DOIs verificados
 - [ ] Endurecimiento: revisión adversarial ronda 1
@@ -82,3 +82,13 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada.
 - Siguiente: `03_experiment.py` — 3 modelos × 4 datasets × 10 folds, generar atribuciones con SHAP, LIME e importancia por permutación. **Nota para el diseño:** OULAD y Dropout ahora son multiclase, así que SHAP/LIME producirán una atribución por clase — hay que decidir y documentar explícitamente cómo se agrega/reporta eso (mismo principio que la ficha exige para la agregación de LIME).
 - Tiempo de computo consumido: ~1 min
+
+## 18-19/08 - Día 1: experimento completo
+- Hecho: `03_experiment.py` corrido con éxito sobre los 4 datasets, 10 folds, 3 modelos, 3 métodos = 360 combinaciones (13,770 filas de rankings de variables) en `results/tables/attributions_long.csv`. Tres bugs reales encontrados y corregidos en el camino:
+  1. Random Forest sin límite de profundidad hacía que SHAP tardara >10 min por fold en OULAD; con `max_depth=12` bajó a ~150-215s. Documentar en limitaciones: es una regularización estándar, no cambia el tamaño de los datos.
+  2. XGBoost requiere `y` numérico; se codificó con `LabelEncoder` compartido entre los 3 modelos.
+  3. XGBoost prohíbe `<`, `[`, `]` en nombres de columna (OULAD tiene la categoría `age_band="55<="`); se sanean los nombres al cargar.
+  4. Decisión de diseño confirmada con el responsable: NO se redujo el tamaño de ningún dataset (la ficha solo autoriza submuestreo para el cálculo de LIME, no para el entrenamiento); en su lugar se aplicó el mismo principio a SHAP y a permutation_importance vía `--eval-max-samples` (se calculan sobre una submuestra del fold de prueba, nunca se reduce el fold de entrenamiento).
+- Bloqueado en: nada.
+- Siguiente: `04_stats.py` — τ de Kendall entre rankings (por fold, por método, por modelo), ANOVA, IC bootstrap.
+- Tiempo de computo consumido: ~50 min (mayormente OULAD)
