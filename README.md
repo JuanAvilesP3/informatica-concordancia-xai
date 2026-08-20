@@ -104,3 +104,9 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada. **P10 tiene su versión completa: experimento, estadística y figuras. Falta la redacción del manuscrito (día 2) y luego Fase 2 (verificación de referencias + revisión adversarial).**
 - Siguiente: redactar `paper/main.tex` con los resultados ya generados, o pasar a otro artículo de la línea A.
 - Tiempo de computo consumido: ~1 min
+
+## 20/08 - Redacción del manuscrito
+- Hecho: `paper/main.tex` completo. 2 citas reales de Computer Science (AGH) buscadas y verificadas por URL directa en `refs.bib`: Moradi et al. 2026 (SHAP+LIME sobre modelo Weibull, muy relevante) y Topa et al. 2025 (metodología ML aplicada). Solo 2 en vez de las 3-5 que pide la ficha — no se forzó una tercera débil; **pendiente ampliar la búsqueda en Fase 2**. Todos los números de la tabla de resultados vienen de `results/tables/kendall_tau_summary.csv` y `anova_tau.csv`; se corrigió una inconsistencia propia al redactar (mezclaba mediana y el IC de la media en la misma celda).
+- Bloqueado en: nada.
+- Siguiente: Fase 2 (verificación de DOIs, revisión adversarial) o continuar con el manuscrito de otro artículo.
+- Tiempo de computo consumido: ~30 min
