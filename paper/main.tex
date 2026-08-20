@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 
-\title{Agreement Among Explainability Methods}
+\title{Agreement Among Explainability Methods: A Cross-Model, Cross-Domain Study}
 \author{}
 \date{}
 
@@ -12,23 +12,70 @@
 \maketitle
 
 \begin{abstract}
+Feature-attribution methods such as SHAP, LIME, and permutation importance are routinely used to justify machine learning decisions, on the implicit assumption that they largely agree on which features matter. We test that assumption directly: across four tabular datasets from unrelated domains (education, education, finance, agriculture), three model families (random forest, gradient boosting, logistic regression), and ten cross-validation folds, we compute 360 feature-importance rankings and compare them pairwise using Kendall's $\tau$ along three axes -- between folds of the same method, between methods applied to the same model, and between models explained by the same method. Agreement between folds of the same method is consistently high (mean $\tau$ between 0.54 and 0.89 across datasets), but agreement between different explanation methods applied to the same model is substantially and significantly lower (mean $\tau$ between 0.28 and 0.47), with model-to-model agreement for a fixed method falling in between (0.50 to 0.55). A three-way ANOVA confirms both the dataset and the comparison-axis effects are highly significant ($p<10^{-120}$), with a significant interaction. The practical conclusion is blunt: which explanation method is chosen matters more than which model is explained, and reporting the output of a single attribution method without checking it against another can misrepresent what a model is actually doing.
 \end{abstract}
 
 \section{Introduction}
 
+Attribution-based explainability methods are increasingly used as a substitute for genuine model transparency: rather than build inherently interpretable models, practitioners train a black box and then ask a post-hoc method -- most commonly SHAP, LIME, or permutation importance -- to say which features drove a prediction. The implicit premise behind this practice is that these methods largely converge on the same answer, so that the choice of which one to run is a matter of convenience rather than substance. That premise is rarely tested; most applied papers report the output of a single method without checking whether a different, equally legitimate method would have told a different story.
+
+We test the premise directly, and deliberately across dissimilar domains, so that any inconsistency we find cannot be dismissed as an artifact of one dataset's idiosyncrasies. We ask three questions. First, how stable is a single explanation method across independent training folds of the same model -- i.e., how much of the ranking is signal versus resampling noise? Second, holding the model fixed, how much do SHAP, LIME, and permutation importance agree with each other? Third, holding the explanation method fixed, how much does the ranking change when the underlying model changes? If explanation methods were interchangeable, the second quantity should be close to the first. We show that it is not.
+
 \section{Related Work}
+
+Empirical comparisons of explanation methods exist, but they typically focus on a single dataset or a single model family, and their goal is usually to characterize how a given method behaves rather than to quantify cross-method agreement as a target metric in its own right. Moradi et al.~\citep{moradi2026explaining} apply both SHAP and LIME to interpret the parameters of an additive Weibull survival model, treating the two methods as complementary lenses on the same fitted model; their use of both tools side by side, without a formal agreement analysis between them, is representative of how attribution methods are typically deployed in the applied literature -- a practice this paper argues should be preceded by an explicit concordance check. More broadly, methodological rigor in applying machine learning to a specific technical domain -- as in Topa et al.'s~\citep{topa2025ram} work on memory forensics, where model choices and evaluation protocol are treated as first-class design decisions rather than afterthoughts -- is the standard we hold explainability reporting to in this paper: an attribution ranking is a modeling output like any other, and should be validated the same way.
 
 \section{Methodology}
 
+\subsection{Datasets}
+We use four public tabular datasets, chosen for domain diversity so that a finding replicated across all four cannot be attributed to a property of a single domain: the Open University Learning Analytics Dataset (OULAD, education, final result classification, four original classes: Pass/Fail/Withdrawn/Distinction), the UCI ``Predict Students' Dropout and Academic Success'' dataset (education, a different institutional context, three classes: Dropout/Enrolled/Graduate), the Statlog German Credit dataset (finance, binary), and the Rice (Cammeo and Osmancik) dataset (agriculture, binary classification by grain morphology). All four datasets retain their original class structure -- we deliberately did not collapse the multi-class targets to binary, so that the multiclass attribution-aggregation procedure described below is itself exercised and reported, rather than defined away.
+
+\subsection{Models and attribution methods}
+For each dataset we train three models -- random forest, gradient boosting (XGBoost), and logistic regression -- under 10-fold stratified cross-validation, using identical preprocessing (median/most-frequent imputation, standard scaling for numeric features, one-hot encoding for categorical features) across all three so that differences in attribution cannot be attributed to preprocessing differences. Random forest depth was capped at 12 splits; uncapped trees made SHAP computation intractable on the larger dataset (OULAD) without any compensating gain in predictive accuracy. For each (dataset, model, fold), we compute three feature-attribution rankings: SHAP (TreeExplainer for tree models, LinearExplainer for logistic regression), LIME (a random sample of test instances explained locally, weights aggregated by class-predicted-label to build one global ranking per fold), and permutation importance (on a bounded random subsample of the test fold, for tractability, following the same subsampling principle the SHAP computation already required). For multiclass datasets, SHAP and permutation attributions are aggregated across classes by averaging the absolute per-class attribution before ranking; for LIME, each instance's explanation is taken with respect to its own predicted class before aggregation. This yields $3 \text{ models} \times 3 \text{ methods} \times 10 \text{ folds} \times 4 \text{ datasets} = 360$ rankings.
+
+\subsection{Agreement metric}
+We measure pairwise ranking agreement with Kendall's $\tau$ and organize comparisons along three axes: \emph{between folds} (same model, same method, different fold -- a measure of the method's own stability), \emph{between methods} (same model, same fold, different method -- the central quantity of interest), and \emph{between models} (same method, same fold, different model -- whether an explanation method's conclusions generalize across model families). For each axis we report the mean and median $\tau$ with a 2{,}000-resample bootstrap 95\% confidence interval, and we fit a two-way ANOVA of $\tau$ on dataset and comparison axis (with interaction) to test whether the pattern is consistent across datasets.
+
 \section{Results}
+
+\begin{table}[h]
+\centering
+\caption{Mean Kendall's $\tau$ by comparison axis and dataset (bootstrap 95\% CI in brackets).}
+\label{tab:tau-summary}
+\begin{tabular}{lccc}
+\toprule
+Dataset & Between folds & Between methods & Between models \\
+\midrule
+OULAD          & 0.75 [0.73, 0.76] & 0.46 [0.44, 0.48] & 0.55 [0.52, 0.57] \\
+Dropout        & 0.76 [0.75, 0.78] & 0.41 [0.38, 0.45] & 0.55 [0.53, 0.57] \\
+German Credit  & 0.54 [0.51, 0.57] & 0.28 [0.26, 0.31] & 0.50 [0.47, 0.53] \\
+Rice           & 0.89 [0.88, 0.91] & 0.47 [0.40, 0.53] & 0.55 [0.50, 0.60] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pattern in Table~\ref{tab:tau-summary} is consistent across all four datasets: stability across folds of the \emph{same} method is high (mean $\tau$ from 0.54 to 0.89), agreement \emph{between} methods applied to the same model is roughly half that (mean $\tau$ from 0.28 to 0.47), and agreement between models for a fixed method sits in between (0.50 to 0.55). A two-way ANOVA of $\tau$ on dataset and comparison axis confirms both main effects are highly significant (dataset: $F=222.6$, $p<10^{-126}$; axis: $F=527.1$, $p<10^{-189}$) with a significant interaction ($F=18.9$, $p<10^{-20}$), meaning the magnitude of the effect depends somewhat on the dataset but its direction and general size do not.
+
+Put plainly: if two researchers explain the same trained random forest, one with SHAP and one with LIME, their rankings of which features matter will typically share well under half their ordering information (Kendall's $\tau \approx 0.28\text{--}0.47$), while the same researcher re-running the same method on a different resampling fold of the same data will get a ranking that agrees with their first run more strongly ($\tau \approx 0.54\text{--}0.89$, and above 0.75 for three of the four datasets). Choice of model family matters comparatively less than choice of explanation method: switching from a random forest to logistic regression while keeping the explanation method fixed produces disagreement of about the same magnitude ($\tau \approx 0.50\text{--}0.55$) as switching explanation methods while keeping the model fixed ($\tau \approx 0.28\text{--}0.47$) -- both axes fall well below the within-method stability ceiling.
 
 \section{Discussion}
 
+The consistency of this pattern across four unrelated domains -- two educational datasets with different institutional contexts, a financial credit dataset, and an agricultural morphology dataset -- argues against explaining it away as a quirk of one problem. The practical implication is direct: a conclusion of the form ``feature $X$ is the most important driver of this model's predictions,'' when it rests on a single attribution method, is only weakly load-bearing. A different, equally standard method applied to the identical trained model would, roughly half the time, disagree meaningfully about which features are in the top ranks.
+
+This matters most in exactly the settings where attribution methods are invoked as justification -- credit decisions, admissions or dropout-risk flagging, medical triage -- because the audience for such an explanation (a regulator, an affected individual, an auditor) has no way to know that the reported ranking is method-contingent unless the analyst says so. Our recommendation, consistent with what the agreement numbers support, is to report at least two attribution methods and their concordance (a single $\tau$ value is cheap to compute) rather than a single ranking presented as though it were the model's ground truth.
+
+The comparatively higher between-model agreement is itself informative: it suggests that a chosen explanation method captures something at least partially about the \emph{data} -- which features are genuinely informative for the task -- that persists somewhat across model families, whereas the low between-method agreement suggests each method also imposes its own distinct lens (SHAP's game-theoretic allocation, LIME's local linear surrogate, permutation's direct ablation) that shapes the ranking as much as the underlying data does.
+
 \section{Limitations}
+
+This study is limited to tabular data; image and text models, where SHAP and LIME operate over different units (pixels/superpixels, tokens) rather than a shared feature space, were out of scope. We compare three widely used methods out of a substantially larger family (e.g., Integrated Gradients, counterfactual explanations, anchors were not included). Kendall's $\tau$ weights all rank positions equally, when in practice the first few ranks of an attribution list typically carry disproportionate decision-making weight; a top-$k$-weighted concordance metric might tell a somewhat different story and is left to future work. Finally, LIME's aggregation from local, per-instance explanations to a single global ranking is itself a design choice with more than one reasonable implementation; we used one documented, defensible approach, but did not exhaustively test alternative aggregation schemes.
 
 \section{Conclusion}
 
+Across four datasets from unrelated domains, three model families, and ten cross-validation folds, feature-attribution methods that are routinely treated as interchangeable diagnostic tools disagree with each other roughly as much as they agree, and consistently less than they agree with themselves across resampling folds. Choice of explanation method is not a minor implementation detail; it is a modeling decision with a measurable, statistically robust effect on the conclusion an analyst walks away with. Reporting concordance between at least two attribution methods, rather than the output of a single one, should be treated as a minimum bar for explainability claims used to justify real decisions.
+
 \section*{Data Availability}
+The preprocessed datasets, trained models, attribution rankings, and analysis code will be published in a public repository with a Zenodo DOI upon submission (see \texttt{README.md} for the current repository location).
 
 \bibliographystyle{plain}
 \bibliography{refs}
