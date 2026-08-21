@@ -8,7 +8,7 @@
 - [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
 - [x] Experimento ejecutado (día 1) — 360 combinaciones, `results/tables/attributions_long.csv`
 - [x] Figuras generadas (4/4) — falta redacción del manuscrito (día 2)
-- [ ] Endurecimiento: DOIs verificados
+- [x] Endurecimiento: DOIs verificados
 - [ ] Endurecimiento: revisión adversarial ronda 1
 - [ ] Endurecimiento: revisión adversarial ronda 2
 - [ ] Revisión cruzada
@@ -110,3 +110,10 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada.
 - Siguiente: Fase 2 (verificación de DOIs, revisión adversarial) o continuar con el manuscrito de otro artículo.
 - Tiempo de computo consumido: ~30 min
+
+
+## 21/08 - Juan — Verificación de referencias (Fase 2)
+- Hecho: los DOIs de las 2 citas se resolvieron uno por uno (HTTP 200/302 contra doi.org) y se confirmó que el contenido de cada artículo coincide con lo citado en el manuscrito. DOIs agregados a `refs.bib` con nota de verificación y fecha.
+- Bloqueado en: nada.
+- Siguiente: revisión adversarial ronda 1 (rol de revisor de la revista destino).
+- Tiempo de computo consumido: ~15 min
