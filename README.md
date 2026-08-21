@@ -65,25 +65,25 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 
 ## Bitácora
 
-## 18/08 - Montaje
+## 18/08 - Juan — Montaje
 - Hecho: estructura de carpetas creada, plantilla de figuras copiada, repositorio Git inicializado.
 - Bloqueado en: pendiente ficha de revista y descarga de datos.
 - Siguiente: completar JOURNAL.md y descargar dataset.
 - Tiempo de computo consumido: 0h
 
-## 18/08 - Día 1: descarga de datos
+## 18/08 - Juan — Día 1: descarga de datos
 - Hecho: `01_download.py` escrito y ejecutado. Los 4 datasets descargados desde UCI ML Repository (OULAD id 349, Dropout id 697, German Credit id 144, Rice id 545 como el dataset agrícola). Todos con licencia CC BY 4.0.
 - Bloqueado en: nada.
 - Siguiente: `02_preprocess.py` — codificación de categóricas, imputación, escalado (mismo preprocesamiento para los 3 modelos).
 - Tiempo de computo consumido: ~5 min (descarga)
 
-## 18/08 - Día 1: preprocesamiento
+## 18/08 - Juan — Día 1: preprocesamiento
 - Hecho: `02_preprocess.py` escrito y ejecutado sobre los 4 datasets. Primera versión binarizaba los 4 targets a "riesgo"/"no riesgo"; **revertido a pedido del responsable** — se mantienen las clases originales: OULAD con 4 (Pass, Fail, Withdrawn, Distinction), Dropout con 3 (Dropout, Enrolled, Graduate); German Credit y Rice ya eran binarios de origen. Balances de clase razonables en los 4, sin clases degeneradas. Salidas en `data/processed/` (no versionado en git, regenerable con el script).
 - Bloqueado en: nada.
 - Siguiente: `03_experiment.py` — 3 modelos × 4 datasets × 10 folds, generar atribuciones con SHAP, LIME e importancia por permutación. **Nota para el diseño:** OULAD y Dropout ahora son multiclase, así que SHAP/LIME producirán una atribución por clase — hay que decidir y documentar explícitamente cómo se agrega/reporta eso (mismo principio que la ficha exige para la agregación de LIME).
 - Tiempo de computo consumido: ~1 min
 
-## 18-19/08 - Día 1: experimento completo
+## 18-19/08 - Juan — Día 1: experimento completo
 - Hecho: `03_experiment.py` corrido con éxito sobre los 4 datasets, 10 folds, 3 modelos, 3 métodos = 360 combinaciones (13,770 filas de rankings de variables) en `results/tables/attributions_long.csv`. Tres bugs reales encontrados y corregidos en el camino:
   1. Random Forest sin límite de profundidad hacía que SHAP tardara >10 min por fold en OULAD; con `max_depth=12` bajó a ~150-215s. Documentar en limitaciones: es una regularización estándar, no cambia el tamaño de los datos.
   2. XGBoost requiere `y` numérico; se codificó con `LabelEncoder` compartido entre los 3 modelos.
@@ -93,19 +93,19 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Siguiente: `04_stats.py` — τ de Kendall entre rankings (por fold, por método, por modelo), ANOVA, IC bootstrap.
 - Tiempo de computo consumido: ~50 min (mayormente OULAD)
 
-## 19/08 - Día 1: estadística (hallazgo central confirmado)
+## 19/08 - Juan — Día 1: estadística (hallazgo central confirmado)
 - Hecho: `04_stats.py` corrido. Resultado limpio en los 4 datasets: τ entre folds (mismo método) alto (0.54–0.89), τ entre métodos (mismo modelo) bajo (0.28–0.47), τ entre modelos (mismo método) medio (0.50–0.55). Confirma la hipótesis del artículo: la elección del método de explicabilidad pesa más que la elección del modelo. ANOVA de dos factores (dataset × eje) significativo en ambos factores y su interacción (p < 0.001). Archivos: `kendall_tau_detail.csv` (2340 comparaciones), `kendall_tau_summary.csv`, `anova_tau.csv`.
 - Bloqueado en: nada.
 - Siguiente: `05_figures.py` (mapa de calor de τ, cajas por eje, top-10 paralelo, τ por dataset — ver ficha sección 6).
 - Tiempo de computo consumido: ~1 min
 
-## 19/08 - Día 1: figuras (cierre de Fase 1 para este artículo)
+## 19/08 - Juan — Día 1: figuras (cierre de Fase 1 para este artículo)
 - Hecho: `05_figures.py` corrido — 4 figuras generadas en `results/figures/` (PDF+PNG), revisadas visualmente. Fig. 1 (la que sostiene el argumento) muestra con claridad el bloque de alta concordancia intra-método vs. la baja concordancia entre métodos. Fig. 2 y Fig. 4 confirman el patrón en los 4 datasets. Fig. 3 (top-10 en columnas paralelas) funciona pero varios nombres de variable quedan truncados — **pendiente para Fase 2 (figuras finales)**: revisar legibilidad de etiquetas largas.
 - Bloqueado en: nada. **P10 tiene su versión completa: experimento, estadística y figuras. Falta la redacción del manuscrito (día 2) y luego Fase 2 (verificación de referencias + revisión adversarial).**
 - Siguiente: redactar `paper/main.tex` con los resultados ya generados, o pasar a otro artículo de la línea A.
 - Tiempo de computo consumido: ~1 min
 
-## 20/08 - Redacción del manuscrito
+## 20/08 - Juan — Redacción del manuscrito
 - Hecho: `paper/main.tex` completo. 2 citas reales de Computer Science (AGH) buscadas y verificadas por URL directa en `refs.bib`: Moradi et al. 2026 (SHAP+LIME sobre modelo Weibull, muy relevante) y Topa et al. 2025 (metodología ML aplicada). Solo 2 en vez de las 3-5 que pide la ficha — no se forzó una tercera débil; **pendiente ampliar la búsqueda en Fase 2**. Todos los números de la tabla de resultados vienen de `results/tables/kendall_tau_summary.csv` y `anova_tau.csv`; se corrigió una inconsistencia propia al redactar (mezclaba mediana y el IC de la media en la misma celda).
 - Bloqueado en: nada.
 - Siguiente: Fase 2 (verificación de DOIs, revisión adversarial) o continuar con el manuscrito de otro artículo.
