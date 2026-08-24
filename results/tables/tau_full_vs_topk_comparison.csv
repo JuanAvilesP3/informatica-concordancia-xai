@@ -1,0 +1,5 @@
+dataset,n_features,tau_topk_mean,tau_full_mean
+dropout,36,0.244,0.4138271604938272
+german_credit,61,0.055,0.2837401335761991
+oulad,49,0.189,0.4613756613756614
+rice,7,0.467,0.4666666666666667

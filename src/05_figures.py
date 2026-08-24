@@ -44,7 +44,7 @@ def get_ranking(df, dataset, model, method, fold):
     return sub.set_index("feature")["rank"]
 
 
-def truncate(label: str, n: int = 22) -> str:
+def truncate(label: str, n: int = 34) -> str:
     return label if len(label) <= n else label[: n - 1] + "…"
 
 
@@ -122,7 +122,7 @@ def fig2_boxplots(detail):
 
 
 def fig3_top10_parallel(df):
-    fig, axes = plt.subplots(2, 2, figsize=(13, 11))
+    fig, axes = plt.subplots(2, 2, figsize=(18, 12))
     model = "random_forest"
 
     for ax, dataset in zip(axes.flat, DATASETS):
@@ -138,7 +138,7 @@ def fig3_top10_parallel(df):
             for y, feat in enumerate(top10[method]):
                 ax.scatter(x, -y, color=COLORS["primary"], s=25, zorder=3)
                 ha = "right" if x == 0 else ("left" if x == len(METHODS) - 1 else "center")
-                offset = -0.06 if x == 0 else (0.06 if x == len(METHODS) - 1 else 0)
+                offset = -0.08 if x == 0 else (0.08 if x == len(METHODS) - 1 else 0)
                 ax.text(x + offset, -y, truncate(feat), fontsize=6.5, ha=ha, va="center")
 
         for x in range(len(METHODS) - 1):
@@ -148,7 +148,7 @@ def fig3_top10_parallel(df):
                 y2 = top10[METHODS[x + 1]].index(feat)
                 ax.plot([x, x + 1], [-y1, -y2], color=COLORS["secondary"], linewidth=1, alpha=0.7, zorder=1)
 
-        ax.set_xlim(-1.3, len(METHODS) + 0.3)
+        ax.set_xlim(-2.1, len(METHODS) + 1.1)
         ax.set_ylim(-10, 1)
         ax.set_xticks(range(len(METHODS)))
         ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS])
