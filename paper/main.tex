@@ -98,7 +98,7 @@ Rice           & 0.89 [0.88, 0.91] & 0.47 [0.40, 0.53] & 0.55 [0.50, 0.60] \\
 \label{fig:tau-dataset}
 \end{figure}
 
-The pattern in Table~\ref{tab:tau-summary} and Figures~\ref{fig:heatmap-tau}, \ref{fig:boxplots-ejes}, and~\ref{fig:tau-dataset} is consistent across all four datasets: stability across folds of the \emph{same} method is high (mean $\tau$ from 0.54 to 0.89), agreement \emph{between} methods applied to the same model is roughly half that (mean $\tau$ from 0.28 to 0.47), and agreement between models for a fixed method sits in between (0.50 to 0.55). A two-way ANOVA of $\tau$ on dataset and comparison axis (Table~\ref{tab:anova}) confirms both main effects are highly significant (dataset: $F=222.6$, $p<10^{-126}$; axis: $F=527.1$, $p<10^{-189}$) with a significant interaction ($F=18.9$, $p<10^{-20}$), meaning the magnitude of the effect depends somewhat on the dataset but its direction and general size do not. Because the raw $\tau$ values are clustered (many pairs share the same underlying fold rankings), we repeat this test on the cluster-mean specification described in Methodology; both main effects remain highly significant (dataset: $F=22.5$, $p<10^{-12}$; axis: $F=122.4$, $p<10^{-37}$), confirming the pattern is not an artifact of treating correlated pairwise comparisons as independent observations.
+The pattern in Table~\ref{tab:tau-summary} and Figures~\ref{fig:heatmap-tau}, \ref{fig:boxplots-ejes}, and~\ref{fig:tau-dataset} is consistent across all four datasets: stability across folds of the \emph{same} method is high (mean $\tau$ from 0.54 to 0.89), agreement \emph{between} methods applied to the same model is roughly half that (mean $\tau$ from 0.28 to 0.47), and agreement between models for a fixed method sits in between (0.50 to 0.55). A two-way ANOVA of $\tau$ on dataset and comparison axis (Table~\ref{tab:anova}) confirms both main effects are highly significant (dataset: $F=222.6$, $p<10^{-126}$, partial $\eta^2=0.223$; axis: $F=527.1$, $p<10^{-189}$, partial $\eta^2=0.312$) with a significant but comparatively small interaction ($F=18.9$, $p<10^{-20}$, partial $\eta^2=0.047$), meaning the magnitude of the effect depends somewhat on the dataset but its direction and general size do not, and the comparison axis (fold/method/model) accounts for a somewhat larger share of variance in $\tau$ than the dataset does. Because the raw $\tau$ values are clustered (many pairs share the same underlying fold rankings), we repeat this test on the cluster-mean specification described in Methodology; both main effects remain highly significant (dataset: $F=22.5$, $p<10^{-12}$; axis: $F=122.4$, $p<10^{-37}$), confirming the pattern is not an artifact of treating correlated pairwise comparisons as independent observations.
 
 The number of features per dataset ranges from 7 (Rice) to 61 (German Credit, post-encoding), and $\tau$ on the full ranked list could plausibly overstate agreement for the higher-dimensional datasets, since most ranked positions there are low-importance features whose relative order is close to noise and may agree by chance. To check this, we recomputed between-method $\tau$ restricted to the union of each pair's top-10 features (the practically relevant portion of the ranking for a stakeholder reading off the most important predictors), for the between-method axis specifically. The result runs opposite to the noise-inflation concern: restricting to the top-10 \emph{reduces} agreement for the three higher-dimensional datasets rather than increasing it (dropout: 0.414 full-list vs.\ 0.244 top-10; German Credit: 0.284 vs.\ 0.055; OULAD: 0.461 vs.\ 0.189), while Rice, whose full feature list is already close to 10, is essentially unchanged (0.467 vs.\ 0.467). Agreement among SHAP, LIME, and permutation importance on precisely the features most likely to be reported to a stakeholder is therefore lower, not higher, than the full-list $\tau$ values in Table~\ref{tab:tau-summary} suggest, for three of the four datasets.
 
@@ -106,16 +106,16 @@ Because LIME and permutation importance are both estimated from a random subsamp
 
 \begin{table}[h]
 \centering
-\caption{Two-way ANOVA of Kendall's $\tau$ on dataset and comparison axis, raw pairwise specification ($n=2{,}340$).}
+\caption{Two-way ANOVA of Kendall's $\tau$ on dataset and comparison axis, raw pairwise specification ($n=2{,}340$). Partial $\eta^2 = SS_{\text{effect}}/(SS_{\text{effect}}+SS_{\text{residual}})$.}
 \label{tab:anova}
-\begin{tabular}{lrrrl}
+\begin{tabular}{lrrrlr}
 \toprule
-Source & Sum of squares & df & $F$ & $p$ \\
+Source & Sum of squares & df & $F$ & $p$ & Partial $\eta^2$ \\
 \midrule
-Dataset            & 24.06 & 3    & 222.63 & $5.7\times10^{-127}$ \\
-Axis               & 37.98 & 2    & 527.12 & $1.5\times10^{-189}$ \\
-Dataset $\times$ Axis & 4.10 & 6    & 18.95  & $1.2\times10^{-21}$ \\
-Residual           & 83.88 & 2{,}328 & N/A    & N/A \\
+Dataset            & 24.06 & 3    & 222.63 & $5.7\times10^{-127}$ & 0.223 \\
+Axis               & 37.98 & 2    & 527.12 & $1.5\times10^{-189}$ & 0.312 \\
+Dataset $\times$ Axis & 4.10 & 6    & 18.95  & $1.2\times10^{-21}$ & 0.047 \\
+Residual           & 83.88 & 2{,}328 & N/A    & N/A & N/A \\
 \bottomrule
 \end{tabular}
 \end{table}
