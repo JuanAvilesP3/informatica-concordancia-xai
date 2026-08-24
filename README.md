@@ -117,3 +117,17 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada.
 - Siguiente: revisión adversarial ronda 1 (rol de revisor de la revista destino).
 - Tiempo de computo consumido: ~15 min
+
+
+## 20/08 - Juan — Revisión adversarial ronda 1 (rol Computer Science AGH) + bibliografía ampliada + figuras + legibilidad
+- Hecho: bibliografía ampliada de 2 a 8 citas verificadas (SHAP, LIME, permutation importance, RF, XGBoost, y Krishna et al. 2024, que estudia el mismo fenómeno de forma independiente). Corregida la Fig. 3 (top-10 de variables por método), que tenía etiquetas de variable cortadas e ilegibles (ej. "Curricular units 2nd sem (approve...") -- se amplió el límite de truncado y el tamaño de la figura, y se regeneró desde el script original. Se insertaron las 4 figuras en el manuscrito (ninguna estaba antes). Se detectó y corrigió un riesgo estadístico: los 2,340 valores de τ de Kendall que alimentan el ANOVA no son independientes (muchos pares comparten los mismos folds). Se repitió el ANOVA sobre medias por clúster (2,340 → 276 valores) como prueba de robustez: el efecto se mantiene altamente significativo, así que no cambia la conclusión, pero ahora queda documentado explícitamente. Pasada anti-IA parcial.
+- Bloqueado en: nada.
+- Siguiente: ronda 2 de revisión adversarial + pasada anti-IA completa.
+- Tiempo de computo consumido: ~30 min
+
+
+## 20/08 - Juan — Ronda 2 + pasada anti-IA
+- Hecho: segunda lectura crítica del manuscrito completo; se confirmó que todas las figuras y tablas están referenciadas correctamente en el texto. Pasada anti-IA: se reescribieron frases repetidas con otros artículos de la línea ("practical implication", "is itself informative").
+- Bloqueado en: nada. **Con esto, la Fase 2 (revisión adversarial + anti-IA) está completa para los 5 artículos de la línea A.**
+- Siguiente: conversión a Word para las revistas que lo exigen (JGED, ECTI-CIT, CLEIej), luego ajuste final a plantilla de cada revista.
+- Tiempo de computo consumido: ~10 min

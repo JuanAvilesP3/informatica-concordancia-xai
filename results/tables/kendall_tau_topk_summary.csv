@@ -1,0 +1,5 @@
+dataset,n_features,mean,median,std,count
+dropout,36,0.244,0.218,0.273,90
+german_credit,61,0.055,0.067,0.188,90
+oulad,49,0.189,0.231,0.281,90
+rice,7,0.467,0.476,0.334,90
