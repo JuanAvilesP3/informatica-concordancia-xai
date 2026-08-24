@@ -12,6 +12,10 @@ Salidas en results/tables/:
   - kendall_tau_detail.csv   : un tau por cada par comparado (grano fino)
   - kendall_tau_summary.csv  : tau medio + IC bootstrap 95% por (dataset, eje)
   - anova_tau.csv            : ANOVA de dos factores, tau ~ dataset * eje
+  - anova_tau_cluster.csv    : robustez -- misma ANOVA sobre medias por
+                                cluster (dataset, eje, group), para no tratar
+                                los 2.340 pares crudos como independientes
+                                (Metodologia/Resultados)
 """
 
 import itertools
@@ -111,6 +115,19 @@ def main():
     anova_table.to_csv(RESULTS_DIR / "anova_tau.csv")
     print("\nanova_tau.csv:")
     print(anova_table.to_string())
+
+    # Robustez: los 2.340 tau crudos no son independientes (muchos pares
+    # comparten las mismas rankings de fold subyacentes -- ver columna
+    # "group" ya calculada arriba). Colapsamos a una media por
+    # (dataset, eje, group) -- 276 valores -- y repetimos la ANOVA sobre
+    # esas medias de cluster para ver si los efectos principales sobreviven
+    # a una especificacion mas conservadora (Metodologia/Resultados).
+    cluster = detail.groupby(["dataset", "axis", "group"], as_index=False)["tau"].mean()
+    cluster_model = ols("tau ~ C(dataset) * C(axis)", data=cluster).fit()
+    cluster_anova = sm.stats.anova_lm(cluster_model, typ=2)
+    cluster_anova.to_csv(RESULTS_DIR / "anova_tau_cluster.csv")
+    print(f"\nanova_tau_cluster.csv ({len(cluster)} medias de cluster, de {len(detail)} pares crudos):")
+    print(cluster_anova.to_string())
 
 
 if __name__ == "__main__":
