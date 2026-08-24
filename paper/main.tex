@@ -56,6 +56,33 @@ Rice           & Agriculture & Binary  & 3{,}810  & 7  & Cammeo 57.2\% / Osmanci
 \subsection{Models and attribution methods}
 For each dataset we train three models, random forest~\citep{breiman2001random}, gradient boosting (XGBoost)~\citep{chen2016xgboost}, and logistic regression, under 10-fold stratified cross-validation, using identical preprocessing (median/most-frequent imputation, standard scaling for numeric features, one-hot encoding for categorical features) across all three so that differences in attribution cannot be attributed to preprocessing differences. Random forest depth was capped at 12 splits; uncapped trees made SHAP computation intractable on the larger dataset (OULAD) without any compensating gain in predictive accuracy. For each (dataset, model, fold), we compute three feature-attribution rankings: SHAP (TreeExplainer for tree models, LinearExplainer for logistic regression), LIME (a random sample of test instances explained locally, weights aggregated by class-predicted-label to build one global ranking per fold), and permutation importance~\citep{fisher2019models} (on a bounded random subsample of the test fold, for tractability, following the same subsampling principle the SHAP computation already required). For multiclass datasets, SHAP and permutation attributions are aggregated across classes by averaging the absolute per-class attribution before ranking; for LIME, each instance's explanation is taken with respect to its own predicted class before aggregation. This yields $3 \text{ models} \times 3 \text{ methods} \times 10 \text{ folds} \times 4 \text{ datasets} = 360$ rankings.
 
+\subsection{Predictive performance}
+Because disagreement between explanation methods is only interesting relative to how much the explained model itself has actually learned, we report each model's held-out predictive performance under the same 10-fold cross-validation used for the attribution comparisons (Table~\ref{tab:performance}). Performance is well above chance ($1/n_{\text{classes}}$) for all four datasets, but far from uniform: models on Rice are strong (accuracy $>0.91$), German Credit and Dropout are moderate (accuracy $0.75$--$0.78$), and OULAD is comparatively weak (accuracy $0.44$--$0.45$ on four classes, chance $=0.25$) despite being the largest dataset by sample size. Model choice barely affects performance within a dataset (accuracy spans less than 2 percentage points across the three models on every dataset except German Credit), meaning the between-model $\tau$ axis in Table~\ref{tab:tau-summary} compares explanation rankings across models of essentially equivalent predictive quality, not a strong model against a weak one. OULAD's comparatively weak absolute performance is worth keeping in mind when interpreting that dataset's attribution rankings: a model that predicts only modestly better than chance has less genuine signal for any explanation method to recover, so some of OULAD's between-method disagreement could reflect the model's own limited signal rather than a property of the explanation methods themselves.
+
+\begin{table}[h]
+\centering
+\caption{Held-out predictive performance (mean $\pm$ SD across 10 folds), same cross-validation split used throughout.}
+\label{tab:performance}
+\begin{tabular}{llccc}
+\toprule
+Dataset & Model & Accuracy & F1 (macro) & Log-loss \\
+\midrule
+OULAD          & Random forest       & 0.446 $\pm$ 0.006 & 0.286 $\pm$ 0.006 & 1.212 $\pm$ 0.005 \\
+               & Gradient boosting   & 0.440 $\pm$ 0.006 & 0.320 $\pm$ 0.005 & 1.223 $\pm$ 0.009 \\
+               & Logistic regression & 0.450 $\pm$ 0.010 & 0.307 $\pm$ 0.009 & 1.205 $\pm$ 0.006 \\
+Dropout        & Random forest       & 0.775 $\pm$ 0.016 & 0.692 $\pm$ 0.023 & 0.572 $\pm$ 0.022 \\
+               & Gradient boosting   & 0.777 $\pm$ 0.017 & 0.710 $\pm$ 0.021 & 0.616 $\pm$ 0.058 \\
+               & Logistic regression & 0.763 $\pm$ 0.013 & 0.673 $\pm$ 0.022 & 0.577 $\pm$ 0.024 \\
+German Credit  & Random forest       & 0.758 $\pm$ 0.033 & 0.656 $\pm$ 0.049 & 0.492 $\pm$ 0.028 \\
+               & Gradient boosting   & 0.765 $\pm$ 0.024 & 0.698 $\pm$ 0.041 & 0.620 $\pm$ 0.078 \\
+               & Logistic regression & 0.751 $\pm$ 0.029 & 0.680 $\pm$ 0.040 & 0.502 $\pm$ 0.043 \\
+Rice           & Random forest       & 0.927 $\pm$ 0.013 & 0.925 $\pm$ 0.013 & 0.246 $\pm$ 0.058 \\
+               & Gradient boosting   & 0.916 $\pm$ 0.010 & 0.914 $\pm$ 0.010 & 0.251 $\pm$ 0.035 \\
+               & Logistic regression & 0.929 $\pm$ 0.012 & 0.928 $\pm$ 0.012 & 0.183 $\pm$ 0.017 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Agreement metric}
 We measure pairwise ranking agreement with Kendall's $\tau$ and organize comparisons along three axes: \emph{between folds} (same model, same method, different fold; a measure of the method's own stability), \emph{between methods} (same model, same fold, different method; the central quantity of interest), and \emph{between models} (same method, same fold, different model; whether an explanation method's conclusions generalize across model families). For each axis we report the mean and median $\tau$ with a 2{,}000-resample bootstrap 95\% confidence interval, and we fit a two-way ANOVA of $\tau$ on dataset and comparison axis (with interaction) to test whether the pattern is consistent across datasets. The 2{,}340 pairwise $\tau$ values feeding that ANOVA are not fully independent: the 405 between-fold pairs per dataset, for example, are built from only 10 underlying fold rankings per (model, method), so as a robustness check we repeat the ANOVA on cluster means (one $\tau$ per dataset, axis, and model/method-pair combination, collapsing 2{,}340 values to 276), which reduces pseudo-replication substantially; both the axis and dataset effects remain highly significant under this more conservative specification (Results).
 
