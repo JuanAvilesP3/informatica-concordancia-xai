@@ -1,10 +1,10 @@
 # P10 · Concordancia entre métodos de explicabilidad
 
-**Revista destino:** Computer Science AGH
+**Revista destino:** Informatica (Slovenian Society Informatika) — antes Computer Science AGH, ver JOURNAL.md
 **Línea:** A · **GPU:** Baja · **Días asignados:** 20-21 ago
 
 ## Estado
-- [x] Ficha de revista completa (JOURNAL.md) — **2 riesgos nuevos sin resolver, ver abajo y JOURNAL.md**
+- [x] Ficha de revista completa (JOURNAL.md)
 - [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
 - [x] Experimento ejecutado (día 1) — 360 combinaciones, `results/tables/attributions_long.csv`
 - [x] Figuras generadas (4/4)
@@ -13,8 +13,9 @@
 - [x] Endurecimiento: revisión adversarial ronda 1
 - [x] Endurecimiento: revisión adversarial ronda 2 (correcciones reales aplicadas, no solo notas de limitación)
 - [x] Endurecimiento: auditoría de reproducibilidad (cada número citado verificado contra results/tables/ y src/; se corrigieron 2 errores reales: etiquetas de clase invertidas en Tabla 1, afirmación falsa sobre German Credit)
-- [ ] **BLOQUEANTE — plantilla oficial:** la revista exige plantilla LaTeX Overleaf propia; `main.tex` usa `article` genérico. Riesgo de rechazo automático por formato. Ver JOURNAL.md.
-- [ ] **BLOQUEANTE — decisión pendiente:** la revista prohíbe contenido generado por IA salvo corrección de texto; este manuscrito se produjo con asistencia extensa de IA. Requiere decisión del usuario/responsable académico antes de enviar. Ver JOURNAL.md.
+- [x] Cambio de revista: AGH → Informatica (política de IA de AGH incompatible con cómo se produjo el manuscrito; Informatica sí permite declarar el uso de IA). Ver JOURNAL.md para el detalle completo.
+- [x] Plantilla oficial de Informatica aplicada (`Informat.sty`), migrado a dos columnas, compilado y verificado de punta a punta con un compilador LaTeX instalado localmente (9 páginas, sin advertencias).
+- [x] Declaración de uso de IA agregada en Acknowledgements, según lo exige la política de la revista.
 - [ ] Revisión cruzada (2 sep, la hace el otro practicante)
 - [ ] Repositorio en GitHub (repo local únicamente por ahora)
 - [ ] Publicado en Zenodo (DOI)
@@ -23,7 +24,7 @@
 
 ## Protocolo
 
-**Revista destino:** Computer Science (AGH University of Science and Technology)
+**Revista destino:** Informatica (Slovenian Society Informatika) — cambiada desde Computer Science (AGH University of Science and Technology) el 25/08, ver JOURNAL.md
 **Fecha de inicio:** 18/08
 **Responsable:** Juan (línea A)
 
@@ -135,3 +136,10 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada. **Con esto, la Fase 2 (revisión adversarial + anti-IA) está completa para los 5 artículos de la línea A.**
 - Siguiente: conversión a Word para las revistas que lo exigen (JGED, ECTI-CIT, CLEIej), luego ajuste final a plantilla de cada revista.
 - Tiempo de computo consumido: ~10 min
+
+
+## 24-25/08 - Juan (con Claude) — Migración de plantilla, cambio de revista, política de IA
+- Hecho: se instaló un compilador LaTeX (MiKTeX) local para verificar de verdad, no solo por lectura, que las plantillas oficiales compilan. Primero se migró `main.tex` a la plantilla real de AGH (paquete `csagh`) descargada directo del servidor de la revista; al compilar se encontró y corrigió un bug real (un campo de autor vacío rompía la compilación). Al verificar la política de la revista se encontró que AGH prohíbe explícitamente contenido generado por IA salvo corrección de texto, en conflicto directo con cómo se produjo este manuscrito. Se decidió buscar una revista alternativa en vez de forzar el encaje. Se investigó y verificó "Informatica" (Eslovenia, Scopus, sin APC): su política de IA sí permite el uso que se le dio a Claude, siempre que se declare. Se migró el manuscrito completo a la plantilla oficial de Informatica (`Informat.sty`, formato a dos columnas), se agregó una declaración de uso de IA en Acknowledgements, y se compiló y verificó de punta a punta (9 páginas, sin advertencias de overflow, todas las citas/referencias resueltas, revisado visualmente página por página). Los archivos de la plantilla de AGH se retiraron del repositorio por quedar en desuso.
+- Bloqueado en: nada. Los dos bloqueos identificados el 24/08 (plantilla, política de IA) quedan resueltos.
+- Siguiente: revisión cruzada (2 sep), subir a GitHub, Zenodo, entrega al responsable académico.
+- Tiempo de computo consumido: ~1.5 h (incluye instalar y configurar el compilador LaTeX y el visor de PDF)
