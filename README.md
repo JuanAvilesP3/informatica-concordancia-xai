@@ -4,17 +4,21 @@
 **Línea:** A · **GPU:** Baja · **Días asignados:** 20-21 ago
 
 ## Estado
-- [ ] Ficha de revista completa (JOURNAL.md)
+- [x] Ficha de revista completa (JOURNAL.md) — **2 riesgos nuevos sin resolver, ver abajo y JOURNAL.md**
 - [x] Datos descargados (data/raw/) — OULAD, Dropout, German Credit, Rice
 - [x] Experimento ejecutado (día 1) — 360 combinaciones, `results/tables/attributions_long.csv`
-- [x] Figuras generadas (4/4) — falta redacción del manuscrito (día 2)
+- [x] Figuras generadas (4/4)
+- [x] Redacción del manuscrito (día 2) — `paper/main.tex` completo
 - [x] Endurecimiento: DOIs verificados
-- [ ] Endurecimiento: revisión adversarial ronda 1
-- [ ] Endurecimiento: revisión adversarial ronda 2
-- [ ] Revisión cruzada
-- [ ] Repositorio en GitHub
+- [x] Endurecimiento: revisión adversarial ronda 1
+- [x] Endurecimiento: revisión adversarial ronda 2 (correcciones reales aplicadas, no solo notas de limitación)
+- [x] Endurecimiento: auditoría de reproducibilidad (cada número citado verificado contra results/tables/ y src/; se corrigieron 2 errores reales: etiquetas de clase invertidas en Tabla 1, afirmación falsa sobre German Credit)
+- [ ] **BLOQUEANTE — plantilla oficial:** la revista exige plantilla LaTeX Overleaf propia; `main.tex` usa `article` genérico. Riesgo de rechazo automático por formato. Ver JOURNAL.md.
+- [ ] **BLOQUEANTE — decisión pendiente:** la revista prohíbe contenido generado por IA salvo corrección de texto; este manuscrito se produjo con asistencia extensa de IA. Requiere decisión del usuario/responsable académico antes de enviar. Ver JOURNAL.md.
+- [ ] Revisión cruzada (2 sep, la hace el otro practicante)
+- [ ] Repositorio en GitHub (repo local únicamente por ahora)
 - [ ] Publicado en Zenodo (DOI)
-- [ ] Carta de presentación y declaraciones
+- [x] Carta de presentación y declaraciones (borrador en `paper/cover_letter.md` y `paper/declaraciones.md`)
 - [ ] Entregado al responsable académico
 
 ## Protocolo
