@@ -79,3 +79,65 @@
   pages     = {785--794},
   doi       = {10.1145/2939672.2939785}
 }
+
+% verificado 31/08/2026, arXiv:1806.08049 -- Alvarez-Melis, D., Jaakkola, T. --
+% "On the Robustness of Interpretability Methods" (ICML WHI 2018 Workshop)
+% Demuestra que pequeñas perturbaciones al input pueden producir explicaciones
+% radicalmente diferentes en LIME y SHAP; introduce metricas de robustez
+% (sensibilidad local) para cuantificar este fenomeno -- antecedente directo
+% de nuestra metodologia de control de ruido de muestreo (semilla repetida)
+% y del between-method tau como medida de desacuerdo inter-metodo.
+@misc{alvarezmelis2018robustness,
+  author       = {Alvarez-Melis, David and Jaakkola, Tommi S.},
+  title        = {On the Robustness of Interpretability Methods},
+  howpublished = {ICML 2018 Workshop on Human Interpretability in Machine Learning (WHI)},
+  year         = {2018},
+  note         = {arXiv:1806.08049, \url{https://arxiv.org/abs/1806.08049}}
+}
+
+% verificado 31/08/2026, arXiv:1702.08608 -- Doshi-Velez, F., Kim, B. --
+% "Towards a Rigorous Science of Interpretable Machine Learning" (2017)
+% Paper de posicion seminal que define interpretabilidad, propone una taxonomia
+% de niveles de evaluacion (aplicacion, funcional, proxy), y argumenta que la
+% interpretabilidad solo es necesaria cuando el modelo no puede ser validado
+% de otra forma; fundamenta la justificacion de por que el desacuerdo entre
+% metodos es un problema practico y no solo estadistico.
+@misc{doshivelez2017rigorous,
+  author       = {Doshi-Velez, Finale and Kim, Been},
+  title        = {Towards a Rigorous Science of Interpretable Machine Learning},
+  howpublished = {arXiv preprint},
+  year         = {2017},
+  note         = {arXiv:1702.08608, \url{https://arxiv.org/abs/1702.08608}}
+}
+
+% verificado 31/08/2026 -- Molnar, C. -- "Interpretable Machine Learning:
+% A Guide for Making Black Box Models Explainable", 3rd ed., 2025.
+% Referencia de texto completa para SHAP, LIME e importancia por permutacion;
+% la metodologia de agregacion de LIME de instancias locales a ranking global
+% que usamos esta documentada en el Capitulo 10 de esta fuente.
+@book{molnar2022iml,
+  author    = {Molnar, Christoph},
+  title     = {Interpretable Machine Learning: A Guide for Making Black Box Models Explainable},
+  edition   = {3},
+  year      = {2025},
+  note      = {Available: \url{https://christophm.github.io/interpretable-ml-book/}}
+}
+
+% verificado 31/08/2026 -- Lipton, Z.C. --
+% "The Mythos of Model Interpretability" (ICML 2016 WHI Workshop / Queue, 2018)
+% Distingue entre simulabilidad, descomponibilidad y transparencia algorítmica
+% como propiedades de interpretabilidad mutuamente independientes; su argumento
+% de que "interpretable" es un termino sobreusado sin consenso de definicion
+% es el trasfondo conceptual que motiva nuestra medicion directa del acuerdo
+% entre metodos como alternativa a asumir que todos capturan "la misma" explicacion.
+@article{lipton2018mythos,
+  author  = {Lipton, Zachary C.},
+  title   = {The Mythos of Model Interpretability},
+  journal = {Queue},
+  year    = {2018},
+  volume  = {16},
+  number  = {3},
+  pages   = {31--57},
+  doi     = {10.1145/3236386.3241340},
+  note    = {\url{https://doi.org/10.1145/3236386.3241340}}
+}
