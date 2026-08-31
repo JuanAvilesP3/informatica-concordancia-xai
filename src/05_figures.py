@@ -31,10 +31,10 @@ FIG_DIR = Path(__file__).resolve().parent.parent / "results" / "figures"
 MODELS = ["random_forest", "gradient_boosting", "logistic_regression"]
 METHODS = ["shap", "lime", "permutation"]
 DATASET_LABELS = {
-    "oulad": "OULAD (educación)",
-    "dropout": "Dropout (educación)",
-    "german_credit": "German Credit (finanzas)",
-    "rice": "Rice (agrícola)",
+    "oulad": "OULAD (Education)",
+    "dropout": "Dropout (Education)",
+    "german_credit": "German Credit (Finance)",
+    "rice": "Rice (Agriculture)",
 }
 DATASETS = list(DATASET_LABELS.keys())
 
@@ -52,7 +52,7 @@ def fig1_heatmap(df):
     arms = list(itertools.product(MODELS, METHODS))
     arm_labels = [f"{m[:2].upper()}·{me[:4]}" for m, me in arms]
 
-    fig, axes = plt.subplots(2, 2, figsize=(11, 10))
+    fig, axes = plt.subplots(2, 2, figsize=(10, 9))
     for ax, dataset in zip(axes.flat, DATASETS):
         folds = sorted(df[df.dataset == dataset]["fold"].unique())
         n = len(arms)
@@ -79,23 +79,26 @@ def fig1_heatmap(df):
         im = ax.imshow(mat, vmin=-1, vmax=1, cmap="RdBu_r", interpolation="nearest")
         ax.set_xticks(range(n)); ax.set_xticklabels(arm_labels, rotation=90, fontsize=7)
         ax.set_yticks(range(n)); ax.set_yticklabels(arm_labels, fontsize=7)
-        ax.grid(False)  # el grid global cae en el centro de cada celda (mismo problema que P8)
-        ax.set_title(DATASET_LABELS[dataset], fontsize=10)
+        ax.grid(False)
+        ax.set_title(DATASET_LABELS[dataset], fontsize=9.5)
         for i, j in itertools.product(range(n), range(n)):
             ax.text(j, i, f"{mat[i, j]:.2f}", ha="center", va="center", fontsize=5.5,
                      color="white" if abs(mat[i, j]) > 0.6 else "black")
 
-    fig.colorbar(im, ax=axes, shrink=0.7, label="τ de Kendall (promedio sobre folds)")
-    fig.suptitle("Fig. 1 — Concordancia entre los 9 pares (modelo, método)", fontsize=12)
+    fig.colorbar(im, ax=axes, shrink=0.7, label=r"Kendall's $\tau$ (mean over folds)")
     save_figure(fig, FIG_DIR / "fig1_heatmap_tau")
     plt.close(fig)
 
 
 def fig2_boxplots(detail):
     axis_order = ["entre_folds", "entre_metodos", "entre_modelos"]
-    axis_labels = {"entre_folds": "Entre folds\n(mismo método)", "entre_metodos": "Entre métodos\n(mismo modelo)", "entre_modelos": "Entre modelos\n(mismo método)"}
+    axis_labels = {
+        "entre_folds": "Between folds\n(same method)",
+        "entre_metodos": "Between methods\n(same model)",
+        "entre_modelos": "Between models\n(same method)",
+    }
 
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(8.5, 5))
     width = 0.18
     palette = [COLORS["primary"], COLORS["secondary"], COLORS["neutral"], COLORS["accent"]]
 
@@ -111,18 +114,17 @@ def fig2_boxplots(detail):
 
     ax.set_xticks(range(len(axis_order)))
     ax.set_xticklabels([axis_labels[a] for a in axis_order])
-    ax.set_ylabel("τ de Kendall")
+    ax.set_ylabel(r"Kendall's $\tau$")
     ax.set_ylim(-0.2, 1.05)
     ax.axhline(0, color="grey", linewidth=0.7)
     handles = [plt.Rectangle((0, 0), 1, 1, facecolor=palette[i], alpha=0.8) for i in range(len(DATASETS))]
     ax.legend(handles, [DATASET_LABELS[d] for d in DATASETS], fontsize=8, loc="lower left")
-    ax.set_title("Fig. 2 — τ de Kendall por eje de comparación y dataset")
     save_figure(fig, FIG_DIR / "fig2_boxplots_ejes")
     plt.close(fig)
 
 
 def fig3_top10_parallel(df):
-    fig, axes = plt.subplots(2, 2, figsize=(18, 12))
+    fig, axes = plt.subplots(2, 2, figsize=(16, 11))
     model = "random_forest"
 
     for ax, dataset in zip(axes.flat, DATASETS):
@@ -153,21 +155,20 @@ def fig3_top10_parallel(df):
         ax.set_xticks(range(len(METHODS)))
         ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS])
         ax.set_yticks([])
-        ax.set_title(DATASET_LABELS[dataset], fontsize=10)
+        ax.set_title(DATASET_LABELS[dataset], fontsize=9.5)
         for spine in ("left", "bottom"):
             ax.spines[spine].set_visible(False)
 
-    fig.suptitle(f"Fig. 3 — Top-10 de variables por método (modelo: {model})", fontsize=12)
     save_figure(fig, FIG_DIR / "fig3_top10_paralelo")
     plt.close(fig)
 
 
 def fig4_tau_por_dataset(summary):
     axis_order = ["entre_folds", "entre_metodos", "entre_modelos"]
-    axis_labels = {"entre_folds": "Entre folds", "entre_metodos": "Entre métodos", "entre_modelos": "Entre modelos"}
+    axis_labels = {"entre_folds": "Between folds", "entre_metodos": "Between methods", "entre_modelos": "Between models"}
     palette = {a: c for a, c in zip(axis_order, [COLORS["primary"], COLORS["secondary"], COLORS["neutral"]])}
 
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(8.5, 5))
     width = 0.25
     x = np.arange(len(DATASETS))
 
@@ -181,10 +182,9 @@ def fig4_tau_por_dataset(summary):
 
     ax.set_xticks(x)
     ax.set_xticklabels([DATASET_LABELS[d] for d in DATASETS], rotation=15, ha="right")
-    ax.set_ylabel("τ de Kendall medio (IC 95% bootstrap)")
+    ax.set_ylabel(r"Mean Kendall's $\tau$ (95% bootstrap CI)")
     ax.axhline(0, color="grey", linewidth=0.7)
     ax.legend(fontsize=8)
-    ax.set_title("Fig. 4 — τ de Kendall por dataset: ¿depende del dominio?")
     save_figure(fig, FIG_DIR / "fig4_tau_por_dataset")
     plt.close(fig)
 
