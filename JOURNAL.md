@@ -1,5 +1,8 @@
 # Ficha de revista — Informatica (Slovenian Society Informatika)
 
+> **NOTA DE MIGRACIÓN DE REVISTA (AGH -> INFORMATICA):**  
+> Este artículo estaba originalmente presupuestado para la revista *Computer Science* (AGH University of Science and Technology, Polonia). Sin embargo, tras la auditoría de políticas editoriales, se detectó que AGH prohíbe de forma absoluta cualquier asistencia de herramientas de IA en la preparación de manuscritos, poniendo en riesgo la sumisión. Se migró a **Informatica** (Eslovenia, Scopus Q3/Q4, Diamond OA, $0 APC en Track Normal N), cuya normativa se alinea con COPE/Elsevier y permite declarar de forma transparente el uso asistencial y controlado de herramientas lingüísticas. La carpeta conserva el prefijo `10-agh-concordancia-xai` por trazabilidad de rutas del proyecto y control de versiones.
+
 - **URL de la revista:** https://www.informatica.si/ (Eslovenia)
 - **URL del sistema de envío:** https://www.informatica.si/index.php/informatica/about/submissions (verificado 25/08/2026)
 - **Indexación (Scopus/WoS/otro):** Scopus — Diamond Open Access, publicada desde 1977 por la Slovenian Society Informatika. Verificado directamente en la web oficial.
@@ -10,6 +13,7 @@
 - **Alcance / scope declarado:** "todas las áreas de ciencias de la computación, informática y sistemas inteligentes" — encaja 100% con la investigación empírica en métodos de explicabilidad (XAI).
 - **Página / límite:** Artículos de investigación regulares: 8–20 páginas incluyendo referencias (nuestro manuscrito tiene 9 páginas en 2 columnas).
 - **Política sobre uso de IA:** *"The use of LLMs and other language-support tools for proofreading and improving clarity is permitted. If generative AI materially contributed to writing, figures, analysis, or code, disclose this in the manuscript (e.g., Acknowledgements or Methods)."* — Declarado explícitamente en la sección `Acknowledgements` del manuscrito y en `declaraciones.md`.
+- **Citas locales a Informatica:** 3 artículos publicados en Informatica sobre aprendizaje de características explicables, Random Forest con SHAP y XGBoost en analítica educativa (*Vlahek 2024, Li 2025, Yao & Zhu 2025*).
 - **Estado de preparación:**
   - [x] Manuscrito en LaTeX adaptado a `Informat.sty` y compilado a PDF (`P10_Informatica_manuscript.pdf`).
   - [x] Figuras vectoriales con etiquetas en inglés y sin títulos internos redundantes.

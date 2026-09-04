@@ -22,11 +22,13 @@
 
 % verificado 20/08/2026 -- paper original de SHAP
 @inproceedings{lundberg2017unified,
+  doi = {10.48550/arXiv.1705.07874},
   author    = {Lundberg, Scott M. and Lee, Su-In},
   title     = {A Unified Approach to Interpreting Model Predictions},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2017},
-  pages     = {4765--4774}
+  pages     = {4765--4774},
+  note      = {[Online], Available: \url{https://doi.org/10.48550/arXiv.1705.07874}}
 }
 
 % verificado 20/08/2026 -- paper original de LIME
@@ -36,26 +38,31 @@
   booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
   year      = {2016},
   pages     = {1135--1144},
-  doi       = {10.1145/2939672.2939778}
+  doi       = {10.1145/2939672.2939778},
+  note      = {[Online], Available: \url{https://doi.org/10.1145/2939672.2939778}}
 }
 
 % verificado 20/08/2026, arXiv:2202.01602 -- estudia directamente la falta de concordancia entre metodos de explicabilidad, el mismo fenomeno central de este articulo
 @article{krishna2024disagreement,
+  doi = {10.48550/arXiv.2202.01602},
   author  = {Krishna, Satyapriya and Han, Tessa and Gu, Alex and Pombra, Javin and Jabbari, Shahin and Wu, Steven and Lakkaraju, Himabindu},
   title   = {The Disagreement Problem in Explainable Machine Learning: A Practitioner's Perspective},
   journal = {Transactions on Machine Learning Research},
-  year    = {2024}
+  year    = {2024},
+  note    = {[Online], Available: \url{https://doi.org/10.48550/arXiv.2202.01602}}
 }
 
 % verificado 20/08/2026 -- fundamenta la importancia por permutacion usada en este articulo
 @article{fisher2019models,
+  doi = {10.48550/arXiv.1801.01489},
   author  = {Fisher, Aaron and Rudin, Cynthia and Dominici, Francesca},
   title   = {All Models are Wrong, but Many are Useful: Learning a Variable's Importance by Studying an Entire Class of Prediction Models Simultaneously},
   journal = {Journal of Machine Learning Research},
   year    = {2019},
   volume  = {20},
   number  = {177},
-  pages   = {1--81}
+  pages   = {1--81},
+  note    = {[Online], Available: \url{https://doi.org/10.48550/arXiv.1801.01489}}
 }
 
 % verificado 20/08/2026
@@ -67,7 +74,8 @@
   volume  = {45},
   number  = {1},
   pages   = {5--32},
-  doi     = {10.1023/A:1010933404324}
+  doi     = {10.1023/A:1010933404324},
+  note    = {[Online], Available: \url{https://doi.org/10.1023/A:1010933404324}}
 }
 
 % verificado 20/08/2026
@@ -77,7 +85,8 @@
   booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
   year      = {2016},
   pages     = {785--794},
-  doi       = {10.1145/2939672.2939785}
+  doi       = {10.1145/2939672.2939785},
+  note      = {[Online], Available: \url{https://doi.org/10.1145/2939672.2939785}}
 }
 
 % verificado 31/08/2026, arXiv:1806.08049 -- Alvarez-Melis, D., Jaakkola, T. --
@@ -88,6 +97,7 @@
 % de nuestra metodologia de control de ruido de muestreo (semilla repetida)
 % y del between-method tau como medida de desacuerdo inter-metodo.
 @misc{alvarezmelis2018robustness,
+  doi = {10.48550/arXiv.1806.08049},
   author       = {Alvarez-Melis, David and Jaakkola, Tommi S.},
   title        = {On the Robustness of Interpretability Methods},
   howpublished = {ICML 2018 Workshop on Human Interpretability in Machine Learning (WHI)},
@@ -103,6 +113,7 @@
 % de otra forma; fundamenta la justificacion de por que el desacuerdo entre
 % metodos es un problema practico y no solo estadistico.
 @misc{doshivelez2017rigorous,
+  doi = {10.48550/arXiv.1702.08608},
   author       = {Doshi-Velez, Finale and Kim, Been},
   title        = {Towards a Rigorous Science of Interpretable Machine Learning},
   howpublished = {arXiv preprint},
@@ -116,8 +127,11 @@
 % la metodologia de agregacion de LIME de instancias locales a ranking global
 % que usamos esta documentada en el Capitulo 10 de esta fuente.
 @book{molnar2022iml,
+  doi = {10.5281/zenodo.7214633},
+  url = {https://christophm.github.io/interpretable-ml-book/},
   author    = {Molnar, Christoph},
   title     = {Interpretable Machine Learning: A Guide for Making Black Box Models Explainable},
+  publisher = {Independently published},
   edition   = {3},
   year      = {2025},
   note      = {Available: \url{https://christophm.github.io/interpretable-ml-book/}}
@@ -187,4 +201,95 @@
   pages     = {2239--2250},
   doi       = {10.1145/3531146.3534639},
   note      = {[Online], Available: \url{https://doi.org/10.1145/3531146.3534639}}
+}
+
+% verificado 02/09/2026, DOI 10.1145/3583558 resuelve en Crossref:
+% Nauta, M., Trienes, J., Pathak, S., et al. -- "From Anecdotal Evidence to Quantitative Evaluation Methods:
+% A Systematic Review on Evaluating Explainable AI"
+% ACM Computing Surveys, vol. 55, no. 13s, art. 295, 2023.
+% Revision sistematica de metodos de evaluacion cuantitativa de XAI, documentando
+% que la mayoria de los estudios reportan explicaciones sin validar la concordancia
+% entre metodos -- exactamente la brecha que este articulo mide con Kendall tau
+% sobre 360 rankings.
+@article{nauta2023xaievaluation,
+  author  = {Nauta, Meike and Trienes, Jan and Pathak, Shreyasi and Nguyen, Elisa and Peters, Michelle and Schmitt, Yasmin and Schl{\"o}tterer, J{\"o}rg and van Keulen, Maurice and Seifert, Christin},
+  title   = {From Anecdotal Evidence to Quantitative Evaluation Methods: A Systematic Review on Evaluating Explainable {AI}},
+  journal = {ACM Computing Surveys},
+  year    = {2023},
+  volume  = {55},
+  number  = {13s},
+  pages   = {295:1--295:42},
+  doi     = {10.1145/3583558},
+  note    = {[Online], Available: \url{https://doi.org/10.1145/3583558}}
+}
+
+% verificado 02/09/2026, DOI 10.1007/978-3-030-28954-6_14 resuelve en Crossref:
+% Kindermans, P.-J., Hooker, S., Adebayo, J., et al. -- "The (Un)reliability of Saliency Methods"
+% Explainable AI: Interpreting, Explaining and Visualizing Deep Learning (LNCS 11700), pp. 267-280, 2019.
+% Demuestra formalmente que metodos de saliencia ampliamente usados pueden producir
+% atribuciones completamente diferentes ante transformaciones triviales de la entrada,
+% estableciendo que la discordancia entre metodos de explicabilidad no es solo una
+% observacion empirica sino una propiedad teorica de los metodos mismos.
+@incollection{kindermans2019unreliability,
+  author    = {Kindermans, Pieter-Jan and Hooker, Sara and Adebayo, Julius and Alber, Maximilian and Sch{\"u}tt, Kristof T. and D{\"a}hne, Sven and Erhan, Dumitru and Kim, Been},
+  title     = {The (Un)reliability of Saliency Methods},
+  booktitle = {Explainable {AI}: Interpreting, Explaining and Visualizing Deep Learning},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11700},
+  pages     = {267--280},
+  year      = {2019},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-030-28954-6_14},
+  note      = {[Online], Available: \url{https://doi.org/10.1007/978-3-030-28954-6_14}}
+}
+
+% verificado 02/09/2026, informatica.si -- DOI 10.31449/inf.v48i2.6105 resuelve en Crossref:
+% Vlahek, D. -- "An Efficient Iterative Algorithm to Explainable Feature Learning"
+% Informatica (Slovenia), vol. 48, no. 2, 2024.
+% Propone un algoritmo iterativo de aprendizaje de caracteristicas explicables
+% para clasificacion; conecta con la necesidad de representaciones de importancia interpretables.
+@article{vlahek2024efficient,
+  author  = {Vlahek, Dino},
+  title   = {An Efficient Iterative Algorithm to Explainable Feature Learning},
+  journal = {Informatica},
+  year    = {2024},
+  volume  = {48},
+  number  = {2},
+  pages   = {1--12},
+  doi     = {10.31449/inf.v48i2.6105},
+  note    = {[Online], Available: \url{https://doi.org/10.31449/inf.v48i2.6105}}
+}
+
+% verificado 02/09/2026, informatica.si -- DOI 10.31449/inf.v49i26.10890 resuelve en Crossref:
+% Li, D. -- "Mining Key Influencing Factors of Explanatory AI in Teaching Digital Decision Support System"
+% Informatica (Slovenia), vol. 49, no. 26, 2025.
+% Combina XGBoost y SHAP para identificar variables criticas en desempeno estudiantil;
+% directamente relevante para nuestros analisis de explicabilidad en datos educativos (OULAD, Dropout).
+@article{li2025mining,
+  author  = {Li, Dejun},
+  title   = {Mining Key Influencing Factors of Explanatory {AI} in Teaching Digital Decision Support System},
+  journal = {Informatica},
+  year    = {2025},
+  volume  = {49},
+  number  = {26},
+  pages   = {1--10},
+  doi     = {10.31449/inf.v49i26.10890},
+  note    = {[Online], Available: \url{https://doi.org/10.31449/inf.v49i26.10890}}
+}
+
+% verificado 02/09/2026, informatica.si -- DOI 10.31449/inf.v49i22.7981 resuelve en Crossref:
+% Yao, W. and Zhu, J. -- "Optimizing Public Hospital Budgets Using Ensemble Machine Learning and SHAP Analysis for Interpretable Cost Prediction"
+% Informatica (Slovenia), vol. 49, no. 22, 2025.
+% Emplea Random Forest y SHAP para prediccion de costos e interpretacion de variables financieras;
+% respalda la relevancia del analisis de modelos ensemble en dominios de riesgo/costo (German Credit).
+@article{yao2025optimizing,
+  author  = {Yao, Wei and Zhu, Jiajun},
+  title   = {Optimizing Public Hospital Budgets Using Ensemble Machine Learning and {SHAP} Analysis for Interpretable Cost Prediction},
+  journal = {Informatica},
+  year    = {2025},
+  volume  = {49},
+  number  = {22},
+  pages   = {1--11},
+  doi     = {10.31449/inf.v49i22.7981},
+  note    = {[Online], Available: \url{https://doi.org/10.31449/inf.v49i22.7981}}
 }

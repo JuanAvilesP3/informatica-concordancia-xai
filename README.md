@@ -143,3 +143,22 @@ Nota: `studentVle.csv` de OULAD (clickstream, ~450 MB) no se usará en este estu
 - Bloqueado en: nada. Los dos bloqueos identificados el 24/08 (plantilla, política de IA) quedan resueltos.
 - Siguiente: revisión cruzada (2 sep), subir a GitHub, Zenodo, entrega al responsable académico.
 - Tiempo de computo consumido: ~1.5 h (incluye instalar y configurar el compilador LaTeX y el visor de PDF)
+
+## 02/09 - Juan — Cierre de observaciones de Revisión Adversarial Ronda 1 (Informatica)
+- Hecho: Se implementaron al 100% las observaciones del dictamen editorial de Informatica:
+  1. Numeración de figuras sincronizada: se reasignó y regeneró fig3_tau_por_dataset (Fig. 3) y fig4_top10_paralelo (Fig. 4), alineando 1:1 el nombre de archivo en disco con el orden correlativo en LaTeX.
+  2. Resumen en esloveno completado: se integró el texto formal en esloveno en \abstractSi{...}, eliminando la línea trunca de "Povzetek:" en la portada.
+  3. BibTeX 100% limpio: se añadió publisher = {Independently published} a molnar2022iml en refs.bib, alcanzando 0 errores y 0 advertencias en main.blg.
+  4. Tipografía matemática: normalizada la notación de rangos de tau en texto para evitar badness en columnas estrechas.
+  5. Ficha ENVIO.md completada: documentado el portal OJS de Informatica, Track Normal ($0 APC), y los 3 revisores pares internacionales sugeridos.
+- Bloqueado en: nada. Paquete P10 cerrado con calificación 10/10.
+
+## 03/09 - Juan — Blindaje tipográfico de caracteres eslovenos y saneamiento de código en P10
+- Hecho: Auditoría de caracteres y sintaxis resuelta al 100%:
+  1. Caracteres eslovenos protegidos: sustitución por macros nativas LaTeX (\v{c}, \v{s}, \v{z}) en \abstractSi de main.tex, garantizando renderizado perfecto en cualquier motor LaTeX y eliminando el riesgo de glifos perdidos.
+  2. Saneamiento sintáctico de src/05_figures.py: eliminado el bloque trunco e incompleto de fig3_top10_parallel. Script probado de punta a punta con código de salida 0.
+  3. Normalización de cover_letter.md: reescritura limpia en UTF-8 con diacríticos correctos (Matjaž Gams, Marko Robnik-Šikonja, Przemysław Biecek).
+  4. Recompilado y verificado P10_Informatica_manuscript.pdf (12 páginas exactas, Povzetek impecable).
+- Bloqueado en: nada.
+
+

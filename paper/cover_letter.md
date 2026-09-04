@@ -26,7 +26,7 @@ We confirm that:
 
 In accordance with the journal's submission policies, we suggest the following three independent expert reviewers in XAI and machine learning interpretability:
 
-1. **Prof. Dr. Przemyslaw Biecek**  
+1. **Prof. Dr. Przemysław Biecek**  
    *Affiliation:* Faculty of Mathematics and Information Science, Warsaw University of Technology, Poland  
    *E-mail:* `przemyslaw.biecek@pw.edu.pl`  
    *Expertise:* Explainable Artificial Intelligence, Model Interpretability, Attribution Benchmarks  

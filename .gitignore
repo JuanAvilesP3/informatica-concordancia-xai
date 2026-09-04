@@ -3,11 +3,11 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/*
 !data/raw/.gitkeep
-data/processed/
 *.aux
 *.log
 *.out
+*.bbl
+*.blg
 *.synctex.gz
-paper/*.bbl
-paper/*.blg
-paper/*.pdf
+~$*.docx
+data/processed/
