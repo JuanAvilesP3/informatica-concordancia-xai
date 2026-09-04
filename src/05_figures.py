@@ -123,47 +123,8 @@ def fig2_boxplots(detail):
     plt.close(fig)
 
 
-def fig3_top10_parallel(df):
-    fig, axes = plt.subplots(2, 2, figsize=(16, 11))
-    model = "random_forest"
 
-    for ax, dataset in zip(axes.flat, DATASETS):
-        sub = df[(df.dataset == dataset) & (df.model == model)]
-        mean_rank = sub.groupby(["method", "feature"])["rank"].mean().reset_index()
-
-        top10 = {}
-        for method in METHODS:
-            m = mean_rank[mean_rank.method == method].nsmallest(10, "rank")
-            top10[method] = list(m["feature"])
-
-        for x, method in enumerate(METHODS):
-            for y, feat in enumerate(top10[method]):
-                ax.scatter(x, -y, color=COLORS["primary"], s=25, zorder=3)
-                ha = "right" if x == 0 else ("left" if x == len(METHODS) - 1 else "center")
-                offset = -0.08 if x == 0 else (0.08 if x == len(METHODS) - 1 else 0)
-                ax.text(x + offset, -y, truncate(feat), fontsize=6.5, ha=ha, va="center")
-
-        for x in range(len(METHODS) - 1):
-            common = set(top10[METHODS[x]]) & set(top10[METHODS[x + 1]])
-            for feat in common:
-                y1 = top10[METHODS[x]].index(feat)
-                y2 = top10[METHODS[x + 1]].index(feat)
-                ax.plot([x, x + 1], [-y1, -y2], color=COLORS["secondary"], linewidth=1, alpha=0.7, zorder=1)
-
-        ax.set_xlim(-2.1, len(METHODS) + 1.1)
-        ax.set_ylim(-10, 1)
-        ax.set_xticks(range(len(METHODS)))
-        ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS])
-        ax.set_yticks([])
-        ax.set_title(DATASET_LABELS[dataset], fontsize=9.5)
-        for spine in ("left", "bottom"):
-            ax.spines[spine].set_visible(False)
-
-    save_figure(fig, FIG_DIR / "fig3_top10_paralelo")
-    plt.close(fig)
-
-
-def fig4_tau_por_dataset(summary):
+def fig3_tau_por_dataset(summary):
     axis_order = ["entre_folds", "entre_metodos", "entre_modelos"]
     axis_labels = {"entre_folds": "Between folds", "entre_metodos": "Between methods", "entre_modelos": "Between models"}
     palette = {a: c for a, c in zip(axis_order, [COLORS["primary"], COLORS["secondary"], COLORS["neutral"]])}
@@ -185,7 +146,48 @@ def fig4_tau_por_dataset(summary):
     ax.set_ylabel(r"Mean Kendall's $\tau$ (95% bootstrap CI)")
     ax.axhline(0, color="grey", linewidth=0.7)
     ax.legend(fontsize=8)
-    save_figure(fig, FIG_DIR / "fig4_tau_por_dataset")
+    save_figure(fig, FIG_DIR / "fig3_tau_por_dataset")
+    plt.close(fig)
+
+
+def fig4_top10_parallel(df):
+    fig, axes = plt.subplots(2, 2, figsize=(14, 8))
+    model = "random_forest"
+
+    for ax, dataset in zip(axes.flat, DATASETS):
+        sub = df[(df.dataset == dataset) & (df.model == model)]
+        mean_rank = sub.groupby(["method", "feature"])["rank"].mean().reset_index()
+
+        top10 = {}
+        for method in METHODS:
+            m = mean_rank[mean_rank.method == method].nsmallest(10, "rank")
+            top10[method] = list(m["feature"])
+
+        for x, method in enumerate(METHODS):
+            for y, feat in enumerate(top10[method]):
+                ax.text(x, 9 - y, truncate(feat), ha="center", va="center", fontsize=8,
+                        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor=COLORS["primary"], linewidth=0.8))
+
+        method_x = {m: i for i, m in enumerate(METHODS)}
+        for m1, m2 in [("shap", "lime"), ("lime", "permutation")]:
+            shared = set(top10[m1]) & set(top10[m2])
+            for feat in shared:
+                y1 = 9 - top10[m1].index(feat)
+                y2 = 9 - top10[m2].index(feat)
+                ax.plot([method_x[m1] + 0.35, method_x[m2] - 0.35], [y1, y2],
+                        color=COLORS["secondary"], linewidth=1.5, alpha=0.7)
+
+        ax.set_xlim(-0.6, 2.6)
+        ax.set_ylim(-0.8, 9.8)
+        ax.set_xticks(range(len(METHODS)))
+        ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS], fontsize=10, fontweight="bold")
+        ax.set_yticks([])
+        ax.set_title(f"{DATASET_LABELS[dataset]} ({model})", fontsize=11)
+        for spine in ["top", "right", "left", "bottom"]:
+            ax.spines[spine].set_visible(False)
+
+    fig.subplots_adjust(wspace=0.05, hspace=0.3)
+    save_figure(fig, FIG_DIR / "fig4_top10_paralelo")
     plt.close(fig)
 
 
@@ -201,10 +203,10 @@ def main():
     print("Fig. 1 lista")
     fig2_boxplots(detail)
     print("Fig. 2 lista")
-    fig3_top10_parallel(df)
-    print("Fig. 3 lista")
-    fig4_tau_por_dataset(summary)
-    print("Fig. 4 lista")
+    fig3_tau_por_dataset(summary)
+    print("Fig. 3 lista (tau por dataset)")
+    fig4_top10_parallel(df)
+    print("Fig. 4 lista (top-10 paralelo)")
 
     print(f"\nCompletado: 4 figuras guardadas en {FIG_DIR}")
 
