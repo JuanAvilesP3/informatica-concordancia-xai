@@ -15,12 +15,12 @@
 \begin{document}
 
 \title{Agreement Among Explainability Methods: A Cross-Model, Cross-Domain Study}
-\author{Author Name \\
-   Department / Faculty \\
-   Institution Name, City, Country \\
-   author@email.edu}
+\author{Italo Javier Tenempaguay-Granizo\footnote{Corresponding author: italo.tenempaguay@espoch.edu.ec. ORCID: 0009-0001-5753-4279}, Juan Pablo Aviles-Esparza\footnote{ORCID: 0009-0007-0058-8069}, and Isaac David Torres-Paredes\footnote{ORCID: 0009-0001-7057-9316} \\
+   Software Engineering, Faculty of Informatics and Electronics \\
+   Escuela Superior Politécnica de Chimborazo (ESPOCH), Riobamba 060155, Ecuador \\
+   \{italo.tenempaguay, juan.aviles, isaac.torres\}@espoch.edu.ec}
 \titleodd{Agreement Among Explainability Methods}
-\authoreven{Author Name}
+\authoreven{I. J. Tenempaguay-Granizo et al.}
 \keywords{explainable machine learning, feature attribution, SHAP, LIME, permutation importance, Kendall's tau, model interpretability}
 
 \abstract{Feature-attribution methods such as SHAP, LIME, and permutation importance are routinely used to justify machine learning decisions, on the implicit assumption that they largely agree on which features matter. We test that assumption directly: across four tabular datasets covering three domains (two educational, one financial, one agricultural), three model families (random forest, gradient boosting, logistic regression), and ten cross-validation folds, we compute 360 feature-importance rankings and compare them pairwise using Kendall's $\tau$ along three axes: between folds of the same method, between methods applied to the same model, and between models explained by the same method. Agreement between folds of the same method is consistently high (mean $\tau$ between 0.54 and 0.89, above 0.75 for three of the four datasets), but agreement between different explanation methods applied to the same model is substantially and significantly lower (mean $\tau$ between 0.28 and 0.47), with model-to-model agreement for a fixed method falling in between (0.50 to 0.55). Crucially, agreement drops even further (e.g., $\tau=0.055$ on German Credit) when restricted to the top-10 features actually reported to stakeholders. A two-way ANOVA confirms both the dataset and the comparison-axis effects are highly significant ($p<10^{-120}$), with a significant interaction. Which explanation method is chosen matters more than which model is explained, and reporting the output of a single attribution method without checking it against another can misrepresent which features a model relies on.}
@@ -196,7 +196,10 @@ Across four datasets from unrelated domains, three model families, and ten cross
 \clearpage
 
 \section*{Data Availability}
-The preprocessed datasets, trained models, attribution rankings, and analysis code will be published in a public repository with a Zenodo DOI upon submission (see \texttt{README.md} for the current repository location).
+The preprocessed datasets, trained models, attribution rankings, and analysis code are permanently archived and openly accessible in Zenodo at \url{https://doi.org/10.5281/zenodo.22907630} and GitHub at \url{https://github.com/JuanAvilesP3/informatica-concordancia-xai}.
+
+\section*{Author Contributions}
+\textbf{Juan Pablo Aviles-Esparza:} Conceptualization, Methodology, Software, Writing - Original Draft. \textbf{Italo Javier Tenempaguay-Granizo:} Data Curation, Formal Analysis, Validation, Writing - Review \& Editing. \textbf{Isaac David Torres-Paredes:} Supervision, Project Administration, Funding Acquisition, Writing - Review \& Editing.
 
 \subsection*{Acknowledgement}
 During the preparation of this manuscript, the authors used large language models solely as a controlled assistive tool for language refinement, grammatical editing, and LaTeX formatting. All research hypotheses, experimental design, model training, statistical computations, and scientific interpretations were entirely conceived, conducted, and validated by the human authors, who assume full responsibility for the integrity of the work.
