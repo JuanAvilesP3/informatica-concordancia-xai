@@ -18,7 +18,7 @@
 - [x] Declaración de uso de IA agregada en Acknowledgements, según lo exige la política de la revista.
 - [ ] Revisión cruzada (2 sep, la hace el otro practicante)
 - [ ] Repositorio en GitHub (repo local únicamente por ahora)
-- [ ] Publicado en Zenodo (DOI)
+- [x] Publicado en Zenodo (DOI: [10.5281/zenodo.22907630](https://doi.org/10.5281/zenodo.22907630))
 - [x] Carta de presentación y declaraciones (borrador en `paper/cover_letter.md` y `paper/declaraciones.md`)
 - [ ] Entregado al responsable académico
 

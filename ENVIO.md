@@ -11,8 +11,10 @@
   2. `paper/declaraciones.md` (Declaraciones CRediT, COPE de IA, conflictos de interés y disponibilidad de datos).
   3. Paquete ZIP de fuentes LaTeX (`main.tex`, `refs.bib`, `informat.sty` y carpeta `figures/`).
 - **Autores en orden:**
-  - Los campos de nombre, afiliación institucional, correo oficial y ORCID quedan listos para que el responsable académico (Isaac Torres) y los coautores los ingresen al momento del registro en el portal OJS.
-- **Autor de correspondencia:** Isaac Torres / Juan (a definir según cuenta OJS de envío).
+  1. **Italo Javier Tenempaguay-Granizo** (`italo.tenempaguay@espoch.edu.ec`, ESPOCH, ORCID: `0009-0001-5753-4279`).
+  2. **Juan Pablo Aviles-Esparza** (`juan.aviles@espoch.edu.ec`, ESPOCH, ORCID: `0009-0007-0058-8069`).
+  3. **Isaac David Torres-Paredes** (`isaac.torres@espoch.edu.ec`, ESPOCH, ORCID: `0009-0001-7057-9316`).
+- **Autor de correspondencia:** Italo Javier Tenempaguay-Granizo (`italo.tenempaguay@espoch.edu.ec`).
 - **Categorías / Palabras clave a ingresar en el formulario OJS:**
   `Explainable Artificial Intelligence (XAI)`, `Feature Attribution`, `Concordance Analysis`, `Kendall's tau`, `Tabular Machine Learning`, `Model Interpretability`.
 - **Revisores pares sugeridos (3 expertos internacionales en XAI):**

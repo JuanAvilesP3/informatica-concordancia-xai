@@ -44,8 +44,8 @@ In accordance with the journal's submission policies, we suggest the following t
 Thank you very much for your time, editorial evaluation, and consideration of our manuscript.
 
 Sincerely,
-
-**The Authors**  
-Department / Faculty  
-Institution Name, City, Country  
-*Corresponding e-mail:* `author@email.edu`
+ 
+**Italo Tenempaguay-Granizo** (on behalf of all coauthors)  
+Software Engineering, Faculty of Informatics and Electronics  
+Escuela Superior Politécnica de Chimborazo (ESPOCH), Riobamba 060155, Ecuador  
+*Corresponding e-mail:* `italo.tenempaguay@espoch.edu.ec`
