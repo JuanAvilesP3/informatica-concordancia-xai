@@ -3,6 +3,7 @@
 - **Revista destino:** *Informatica: An International Journal of Computing and Informatics* (Slovenian Society Informatika, Liubliana, Eslovenia).
 - **Indexación:** Scopus (Q3/Q4), SJR, DOAJ, EBSCO, dblp.
 - **URL del portal de envío (OJS):** [https://www.informatica.si/index.php/informatica/about/submissions](https://www.informatica.si/index.php/informatica/about/submissions)
+- **Modalidad de revisión por pares:** **Simple Ciego (Single-Blind Peer Review)**. La política editorial oficial de *Informatica* establece explícitamente que los revisores conocen la identidad de los autores; no se requiere anonimizar el manuscrito.
 - **Modalidad / Track de procesamiento:** Track Normal (N) — Regular Research Paper (revisión estándar).
 - **Cobra APC?:** **NO ($0 USD)**. Política 100% Diamond Open Access verificada en JOURNAL.md.
 - **Archivo principal a subir:** [`paper/P10_Informatica_manuscript.pdf`](file:///c:/Users/Juan/Desktop/PAPERS/10-agh-concordancia-xai/paper/P10_Informatica_manuscript.pdf) (12 páginas compiladas con la plantilla oficial `informat.sty` en formato A4).
