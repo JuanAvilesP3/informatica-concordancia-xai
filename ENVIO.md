@@ -8,7 +8,7 @@
 - **Archivo principal a subir:** [`paper/P10_Informatica_manuscript.pdf`](file:///c:/Users/Juan/Desktop/PAPERS/10-agh-concordancia-xai/paper/P10_Informatica_manuscript.pdf) (12 páginas compiladas con la plantilla oficial `informat.sty` en formato A4).
 - **Archivos complementarios / Código fuente:**
   1. `paper/cover_letter.md` (Carta formal al Editor en Jefe Prof. Matjaž Gams).
-  2. `paper/declaraciones.md` (Declaraciones CRediT, COPE de IA, conflictos de interés y disponibilidad de datos).
+  2. `paper/declaraciones.md` (Declaraciones CRediT, COPE de IA, conflictos de interés y disponibilidad de datos en Zenodo: DOI 10.5281/zenodo.22907630).
   3. Paquete ZIP de fuentes LaTeX (`main.tex`, `refs.bib`, `informat.sty` y carpeta `figures/`).
 - **Autores en orden:**
   1. **Italo Javier Tenempaguay-Granizo** (`italo.tenempaguay@espoch.edu.ec`, ESPOCH, ORCID: `0009-0001-5753-4279`).
