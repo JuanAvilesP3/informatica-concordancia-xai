@@ -155,8 +155,24 @@ def fig3_tau_por_dataset(summary):
     plt.close(fig)
 
 
+def format_label(feat: str) -> str:
+    feat = feat.replace("Curricular units 2nd sem (", "CU 2nd (")
+    feat = feat.replace("Curricular units 1st sem (", "CU 1st (")
+    feat = feat.replace("Curricular units ", "CU ")
+    feat = feat.replace("checking_account_status_", "chk_status_")
+    feat = feat.replace("highest_education_", "edu_")
+    feat = feat.replace("savings_account_", "savings_")
+    feat = feat.replace("credit_history_", "cred_hist_")
+    feat = feat.replace("Major_Axis_Length", "Major_Axis_Len")
+    feat = feat.replace("Minor_Axis_Length", "Minor_Axis_Len")
+    feat = feat.replace("num_of_prev_attempts", "prev_attempts")
+    if len(feat) > 18:
+        return feat[:17] + "..."
+    return feat
+
+
 def fig4_top10_parallel(df):
-    fig, axes = plt.subplots(2, 2, figsize=(14, 8))
+    fig, axes = plt.subplots(2, 2, figsize=(13, 8))
     model = "random_forest"
 
     for ax, dataset in zip(axes.flat, DATASETS):
@@ -170,8 +186,8 @@ def fig4_top10_parallel(df):
 
         for x, method in enumerate(METHODS):
             for y, feat in enumerate(top10[method]):
-                ax.text(x, 9 - y, truncate(feat), ha="center", va="center", fontsize=8,
-                        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor=COLORS["primary"], linewidth=0.8))
+                ax.text(x, 9 - y, format_label(feat), ha="center", va="center", fontsize=6.8,
+                        bbox=dict(boxstyle="round,pad=0.18", facecolor="white", edgecolor=COLORS["primary"], linewidth=0.6))
 
         method_x = {m: i for i, m in enumerate(METHODS)}
         for m1, m2 in [("shap", "lime"), ("lime", "permutation")]:
@@ -179,19 +195,19 @@ def fig4_top10_parallel(df):
             for feat in shared:
                 y1 = 9 - top10[m1].index(feat)
                 y2 = 9 - top10[m2].index(feat)
-                ax.plot([method_x[m1] + 0.35, method_x[m2] - 0.35], [y1, y2],
-                        color=COLORS["secondary"], linewidth=1.5, alpha=0.7)
+                ax.plot([method_x[m1] + 0.25, method_x[m2] - 0.25], [y1, y2],
+                        color=COLORS["secondary"], linewidth=1.2, alpha=0.75)
 
-        ax.set_xlim(-0.6, 2.6)
+        ax.set_xlim(-0.45, 2.45)
         ax.set_ylim(-0.8, 9.8)
         ax.set_xticks(range(len(METHODS)))
-        ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS], fontsize=10, fontweight="bold")
+        ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS], fontsize=9.5, fontweight="bold")
         ax.set_yticks([])
-        ax.set_title(f"{DATASET_LABELS[dataset]} ({model})", fontsize=11)
+        ax.set_title(f"{DATASET_LABELS[dataset]} ({model})", fontsize=10.5, pad=8)
         for spine in ["top", "right", "left", "bottom"]:
             ax.spines[spine].set_visible(False)
 
-    fig.subplots_adjust(wspace=0.05, hspace=0.3)
+    fig.subplots_adjust(wspace=0.12, hspace=0.28)
     save_figure(fig, FIG_DIR / "fig4_top10_paralelo")
     save_figure(fig, PAPER_FIG_DIR / "fig4_top10_paralelo")
     plt.close(fig)
