@@ -86,7 +86,7 @@ Explainable Artificial Intelligence (XAI), Feature Attribution, Concordance Anal
 
 ## 6. Enlaces de Reproducibilidad y Datos Abiertos
 - **Repositorio público en GitHub:** [https://github.com/JuanAvilesP3/informatica-concordancia-xai.git](https://github.com/JuanAvilesP3/informatica-concordancia-xai.git)
-- **Depósito permanente en Zenodo:** [https://doi.org/10.5281/zenodo.22907630](https://doi.org/10.5281/zenodo.22907630) (DOI: `10.5281/zenodo.22907630`).
+- **Depósito permanente en Zenodo:** [https://doi.org/10.5281/zenodo.23005761](https://doi.org/10.5281/zenodo.23005761) (DOI: `10.5281/zenodo.23005761`).
 
 ---
 
