@@ -122,21 +122,21 @@ Rice           & 0.89 [0.88, 0.91] & 0.47 [0.40, 0.53] & 0.55 [0.50, 0.60] \\
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.85\textwidth]{../results/figures/fig1_heatmap_tau.pdf}
+\includegraphics[width=0.85\textwidth]{figures/fig1_heatmap_tau.pdf}
 \caption{Pairwise Kendall's $\tau$ concordance among the nine (model, method) combinations, by dataset.}
 \label{fig:heatmap-tau}
 \end{figure*}
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.75\textwidth]{../results/figures/fig2_boxplots_ejes.pdf}
+\includegraphics[width=0.75\textwidth]{figures/fig2_boxplots_ejes.pdf}
 \caption{Kendall's $\tau$ by comparison axis and dataset.}
 \label{fig:boxplots-ejes}
 \end{figure*}
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.75\textwidth]{../results/figures/fig3_tau_por_dataset.pdf}
+\includegraphics[width=0.75\textwidth]{figures/fig3_tau_por_dataset.pdf}
 \caption{Kendall's $\tau$ by dataset: does the agreement pattern depend on the application domain?}
 \label{fig:tau-dataset}
 \end{figure*}
@@ -167,7 +167,7 @@ Put plainly: if two researchers explain the same trained random forest, one with
 
 \begin{figure*}[tp]
 \centering
-\includegraphics[width=0.95\textwidth]{../results/figures/fig4_top10_paralelo.pdf}
+\includegraphics[width=0.95\textwidth]{figures/fig4_top10_paralelo.pdf}
 \caption{Top-10 features by SHAP, LIME, and permutation importance (random forest), all four datasets; lines connect a feature that appears in the top 10 of both adjacent methods.}
 \label{fig:top10}
 \end{figure*}
@@ -186,7 +186,11 @@ Our quantitative estimate of the disagreement's magnitude is consistent with, an
 
 \section{Limitations}
 
-This study is limited to tabular data; image and text models, where SHAP and LIME operate over different units (pixels/superpixels, tokens) rather than a shared feature space, were out of scope. We compare three widely used methods out of a substantially larger family (e.g., Integrated Gradients, counterfactual explanations, anchors were not included). LIME's aggregation from local, per-instance explanations to a single global ranking is itself a design choice with more than one reasonable implementation; we used one documented, defensible approach, but did not exhaustively test alternative aggregation schemes. The between-model axis additionally confounds model family with explainer algorithm, since SHAP uses \texttt{TreeExplainer} for the tree-based models and \texttt{LinearExplainer} for logistic regression; disagreement attributed to ``model'' on that axis may partly reflect this estimator change. We checked this directly: if the explainer swap were inflating SHAP's between-model disagreement, SHAP should show the \emph{lowest} between-model $\tau$ of the three methods, since it is the only one whose estimator changes across models. It shows the highest instead (mean between-model $\tau$: SHAP $=0.595$, LIME $=0.580$, permutation importance $=0.439$, pooled across datasets and folds), which runs opposite to what the confound would predict and is more consistent with permutation importance, not SHAP, being the outlier on this axis for reasons unrelated to the explainer-swap concern. This does not rule out every possible effect of the estimator change, but it argues against it being a major driver of the reported between-model figures.
+This study is limited to tabular data; image and text models, where SHAP and LIME operate over different units (pixels/superpixels, tokens) rather than a shared feature space, were out of scope. We compare three widely used methods out of a substantially larger family (e.g., Integrated Gradients, counterfactual explanations, anchors were not included). LIME's aggregation from local, per-instance explanations to a single global ranking is itself a design choice with more than one reasonable implementation; we used one documented, defensible approach, but did not exhaustively test alternative aggregation schemes. Furthermore, LIME discretizes continuous features into quantiles by default to stabilize linear surrogate fitting, whereas SHAP and permutation importance evaluate features in continuous space; while this follows standard applied practice, part of the between-method divergence reflects this structural difference in perturbation geometry.
+
+In multiclass settings (OULAD and Dropout), SHAP aggregates attribution across all candidate classes, whereas LIME conditions on the predicted class; however, on strictly binary tasks (German Credit and Rice), where this outcome asymmetry does not exist, inter-method agreement remains equally suppressed ($\tau \in [0.28, 0.47]$), demonstrating that the disagreement is fundamental rather than an artifact of class-aggregation asymmetry. Preprocessing (standardization and imputation) was applied uniformly; tree-based ensembles (Random Forest and XGBoost) are invariant to monotonic scaling, and the high intra-method fold stability ($\tau > 0.89$ on Rice) confirms that preprocessing design does not induce ranking distortion.
+
+The between-model axis additionally confounds model family with explainer algorithm, since SHAP uses \texttt{TreeExplainer} for the tree-based models and \texttt{LinearExplainer} for logistic regression; disagreement attributed to ``model'' on that axis may partly reflect this estimator change. We checked this directly: if the explainer swap were inflating SHAP's between-model disagreement, SHAP should show the \emph{lowest} between-model $\tau$ of the three methods, since it is the only one whose estimator changes across models. It shows the highest instead (mean between-model $\tau$: SHAP $=0.595$, LIME $=0.580$, permutation importance $=0.439$, pooled across datasets and folds), which runs opposite to what the confound would predict and is more consistent with permutation importance, not SHAP, being the outlier on this axis for reasons unrelated to the explainer-swap concern. This does not rule out every possible effect of the estimator change, but it argues against it being a major driver of the reported between-model figures.
 
 \FloatBarrier
 \section{Conclusion}
