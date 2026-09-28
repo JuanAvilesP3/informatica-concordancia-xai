@@ -149,8 +149,9 @@ def lime_ranking(model, X_train: pd.DataFrame, X_eval: pd.DataFrame, class_names
         )
         for feat_desc, weight in exp.as_list(label=pred_class):
             # feat_desc viene como "feature <= valor" o similar; se
-            # recupera el nombre de columna original por coincidencia.
-            for col in X_train.columns:
+            # recupera el nombre original ordenando por longitud descendente
+            # para evitar que prefijos colisionen (ej. Area vs Convex_Area).
+            for col in sorted(X_train.columns, key=len, reverse=True):
                 if col in feat_desc:
                     weights_sum[col] += abs(weight)
                     break

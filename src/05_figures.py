@@ -27,6 +27,8 @@ from figures_style import COLORS, apply_style, save_figure
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results" / "tables"
 FIG_DIR = Path(__file__).resolve().parent.parent / "results" / "figures"
+PAPER_FIG_DIR = Path(__file__).resolve().parent.parent / "paper" / "figures"
+PAPER_FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 MODELS = ["random_forest", "gradient_boosting", "logistic_regression"]
 METHODS = ["shap", "lime", "permutation"]
@@ -87,6 +89,7 @@ def fig1_heatmap(df):
 
     fig.colorbar(im, ax=axes, shrink=0.7, label=r"Kendall's $\tau$ (mean over folds)")
     save_figure(fig, FIG_DIR / "fig1_heatmap_tau")
+    save_figure(fig, PAPER_FIG_DIR / "fig1_heatmap_tau")
     plt.close(fig)
 
 
@@ -120,6 +123,7 @@ def fig2_boxplots(detail):
     handles = [plt.Rectangle((0, 0), 1, 1, facecolor=palette[i], alpha=0.8) for i in range(len(DATASETS))]
     ax.legend(handles, [DATASET_LABELS[d] for d in DATASETS], fontsize=8, loc="lower left")
     save_figure(fig, FIG_DIR / "fig2_boxplots_ejes")
+    save_figure(fig, PAPER_FIG_DIR / "fig2_boxplots_ejes")
     plt.close(fig)
 
 
@@ -147,6 +151,7 @@ def fig3_tau_por_dataset(summary):
     ax.axhline(0, color="grey", linewidth=0.7)
     ax.legend(fontsize=8)
     save_figure(fig, FIG_DIR / "fig3_tau_por_dataset")
+    save_figure(fig, PAPER_FIG_DIR / "fig3_tau_por_dataset")
     plt.close(fig)
 
 
@@ -188,6 +193,7 @@ def fig4_top10_parallel(df):
 
     fig.subplots_adjust(wspace=0.05, hspace=0.3)
     save_figure(fig, FIG_DIR / "fig4_top10_paralelo")
+    save_figure(fig, PAPER_FIG_DIR / "fig4_top10_paralelo")
     plt.close(fig)
 
 
