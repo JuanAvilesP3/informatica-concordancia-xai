@@ -6,7 +6,7 @@ Companion ligero a 03_experiment.py: entrena los mismos 3 modelos sobre
 los mismos 4 datasets con los mismos folds (StratifiedKFold, seed=42,
 10 folds) pero SOLO mide desempeno predictivo (accuracy, F1 macro,
 log-loss), sin generar atribuciones SHAP/LIME/permutacion (el paso
-caro). Responde a un hallazgo de la revision interna ronda 2: el
+caro). Responde a un hallazgo de la revision interna: el
 articulo mide desacuerdo entre metodos de explicabilidad pero nunca
 reporta si los modelos explicados son siquiera buenos -- una tabla de
 referencia de desempeno contextualiza si el desacuerdo importa (un

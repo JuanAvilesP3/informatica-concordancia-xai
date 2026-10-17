@@ -2,7 +2,7 @@
 P10 - Concordancia entre metodos de explicabilidad
 03b_repeated_seed_control.py
 
-Control pedido por la revision interna: LIME (muestrea una
+Control pedido en la revision interna: LIME (muestrea una
 submuestra de instancias del fold de prueba) e importancia por
 permutacion (submuestrea el fold de prueba y permuta con una semilla)
 son metodos ESTOCASTICOS. Parte del desacuerdo "entre metodos" que

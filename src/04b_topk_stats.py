@@ -2,7 +2,7 @@
 P10 - Concordancia entre metodos de explicabilidad
 04b_topk_stats.py
 
-La revision interna señalo que el numero de features va de 7
+En la revision interna se señalo que el numero de features va de 7
 (Rice) a 61 (German Credit, post-encoding), y que tau de Kendall
 sobre la lista COMPLETA es mecanicamente mas grueso (sesgado hacia
 valores altos) en listas cortas -- lo que podria producir el efecto
