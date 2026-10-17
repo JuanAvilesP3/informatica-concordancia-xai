@@ -41,6 +41,9 @@ DATASET_LABELS = {
 DATASETS = list(DATASET_LABELS.keys())
 
 
+HATCHES = ["", "///", "...", "xx"]
+
+
 def get_ranking(df, dataset, model, method, fold):
     sub = df[(df.dataset == dataset) & (df.model == model) & (df.method == method) & (df.fold == fold)]
     return sub.set_index("feature")["rank"]
@@ -52,7 +55,10 @@ def truncate(label: str, n: int = 34) -> str:
 
 def fig1_heatmap(df):
     arms = list(itertools.product(MODELS, METHODS))
-    arm_labels = [f"{m[:2].upper()}·{me[:4]}" for m, me in arms]
+    # Revision cruzada (16/10): etiquetas legibles y sin numeros en las celdas.
+    short_model = {"random_forest": "RF", "gradient_boosting": "XGB", "logistic_regression": "LR"}
+    short_method = {"shap": "SHAP", "lime": "LIME", "permutation": "Perm."}
+    arm_labels = [f"{short_model.get(m, m[:2].upper())} {short_method.get(me, me)}" for m, me in arms]
 
     fig, axes = plt.subplots(2, 2, figsize=(10, 9))
     for ax, dataset in zip(axes.flat, DATASETS):
@@ -79,13 +85,10 @@ def fig1_heatmap(df):
             mat[i, j] = np.mean(taus) if taus else np.nan
 
         im = ax.imshow(mat, vmin=-1, vmax=1, cmap="RdBu_r", interpolation="nearest")
-        ax.set_xticks(range(n)); ax.set_xticklabels(arm_labels, rotation=90, fontsize=7)
-        ax.set_yticks(range(n)); ax.set_yticklabels(arm_labels, fontsize=7)
+        ax.set_xticks(range(n)); ax.set_xticklabels(arm_labels, rotation=90, fontsize=8)
+        ax.set_yticks(range(n)); ax.set_yticklabels(arm_labels, fontsize=8)
         ax.grid(False)
         ax.set_title(DATASET_LABELS[dataset], fontsize=9.5)
-        for i, j in itertools.product(range(n), range(n)):
-            ax.text(j, i, f"{mat[i, j]:.2f}", ha="center", va="center", fontsize=5.5,
-                     color="white" if abs(mat[i, j]) > 0.6 else "black")
 
     fig.colorbar(im, ax=axes, shrink=0.7, label=r"Kendall's $\tau$ (mean over folds)")
     save_figure(fig, FIG_DIR / "fig1_heatmap_tau")
@@ -112,6 +115,7 @@ def fig2_boxplots(detail):
         for box in bp["boxes"]:
             box.set_facecolor(palette[d_idx % len(palette)])
             box.set_alpha(0.8)
+            box.set_hatch(HATCHES[d_idx % len(HATCHES)])
         for median in bp["medians"]:
             median.set_color("black")
 
@@ -120,7 +124,7 @@ def fig2_boxplots(detail):
     ax.set_ylabel(r"Kendall's $\tau$")
     ax.set_ylim(-0.2, 1.05)
     ax.axhline(0, color="grey", linewidth=0.7)
-    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=palette[i], alpha=0.8) for i in range(len(DATASETS))]
+    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=palette[i], alpha=0.8, hatch=HATCHES[i]) for i in range(len(DATASETS))]
     ax.legend(handles, [DATASET_LABELS[d] for d in DATASETS], fontsize=8, loc="lower left")
     save_figure(fig, FIG_DIR / "fig2_boxplots_ejes")
     save_figure(fig, PAPER_FIG_DIR / "fig2_boxplots_ejes")
@@ -143,7 +147,7 @@ def fig3_tau_por_dataset(summary):
         err_lo = means - rows["ci95_lo"].values
         err_hi = rows["ci95_hi"].values - means
         ax.bar(x + (i - 1) * width, means, width=width * 0.9, color=palette[axis], label=axis_labels[axis],
-               yerr=[err_lo, err_hi], capsize=3)
+               yerr=[err_lo, err_hi], capsize=3, hatch=HATCHES[i], edgecolor="black", linewidth=0.5)
 
     ax.set_xticks(x)
     ax.set_xticklabels([DATASET_LABELS[d] for d in DATASETS], rotation=15, ha="right")
@@ -166,8 +170,8 @@ def format_label(feat: str) -> str:
     feat = feat.replace("Major_Axis_Length", "Major_Axis_Len")
     feat = feat.replace("Minor_Axis_Length", "Minor_Axis_Len")
     feat = feat.replace("num_of_prev_attempts", "prev_attempts")
-    if len(feat) > 18:
-        return feat[:17] + "..."
+    if len(feat) > 24:
+        return feat[:23] + "..."
     return feat
 
 
@@ -186,7 +190,7 @@ def fig4_top10_parallel(df):
 
         for x, method in enumerate(METHODS):
             for y, feat in enumerate(top10[method]):
-                ax.text(x, 9 - y, format_label(feat), ha="center", va="center", fontsize=6.8,
+                ax.text(x, 9 - y, format_label(feat), ha="center", va="center", fontsize=6.4,
                         bbox=dict(boxstyle="round,pad=0.18", facecolor="white", edgecolor=COLORS["primary"], linewidth=0.6))
 
         method_x = {m: i for i, m in enumerate(METHODS)}
@@ -201,9 +205,15 @@ def fig4_top10_parallel(df):
         ax.set_xlim(-0.45, 2.45)
         ax.set_ylim(-0.8, 9.8)
         ax.set_xticks(range(len(METHODS)))
-        ax.set_xticklabels([m.upper() if m == "shap" else m.capitalize() for m in METHODS], fontsize=9.5, fontweight="bold")
+        ax.set_xticklabels([{"shap": "SHAP", "lime": "LIME", "permutation": "Permutation"}[m] for m in METHODS], fontsize=9.5, fontweight="bold")
         ax.set_yticks([])
-        ax.set_title(f"{DATASET_LABELS[dataset]} ({model})", fontsize=10.5, pad=8)
+        n_feat = sub.feature.nunique()
+        k_sp = len(set(top10["shap"]) & set(top10["permutation"]))
+        k_tot = min(10, n_feat)
+        extra = f", all {n_feat} features" if n_feat < 10 else ""
+        ax.set_title(f"{DATASET_LABELS[dataset]} (random forest{extra})", fontsize=10.5, pad=8)
+        ax.text(1, -0.75, f"SHAP and Permutation share {k_sp} of {k_tot} features", ha="center", va="center",
+                fontsize=7.5, style="italic")
         for spine in ["top", "right", "left", "bottom"]:
             ax.spines[spine].set_visible(False)
 

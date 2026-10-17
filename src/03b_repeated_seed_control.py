@@ -24,9 +24,16 @@ Cubre 1 fold representativo (fold 0) x los 3 modelos x los 4
 datasets, para mantener el costo acotado; no se repite en los 10
 folds porque el objetivo es acotar el ruido de estimador, no
 recalcular el estudio completo.
+
+Revision cruzada (16/10/2026): (1) la semilla de cada repeticion usaba hash(), que
+Python aleatoriza en cada proceso; ahora usa zlib.crc32, estable entre corridas.
+(2) SHAP tambien submuestrea el fold de prueba cuando tiene mas de EVAL_MAX_SAMPLES
+instancias (solo OULAD); en esos casos se repite tambien SHAP. En los demas datasets
+SHAP usa todas las instancias y es determinista (TreeExplainer/LinearExplainer).
 """
 
 import itertools
+import zlib
 from pathlib import Path
 
 import numpy as np
@@ -73,14 +80,21 @@ def main():
 
             lime_rankings = []
             perm_rankings = []
+            shap_rankings = []
+            shap_sampled = len(X_test) > EVAL_MAX_SAMPLES
             for rep in range(N_REPEATS):
-                rng = np.random.RandomState(1000 * (rep + 1) + hash(dataset_name + model_name) % 1000)
+                rng = np.random.RandomState(1000 * (rep + 1) + zlib.crc32((dataset_name + model_name).encode()) % 1000)
                 lime_r = exp.lime_ranking(fitted, X_train, X_test, class_names, LIME_INSTANCES, rng)
                 perm_r = exp.permutation_ranking(fitted, X_test, y_test, PERMUTATION_REPEATS, EVAL_MAX_SAMPLES, rng)
                 lime_rankings.append(lime_r.rank(ascending=False))
                 perm_rankings.append(perm_r.rank(ascending=False))
+                if shap_sampled:
+                    shap_r = exp.shap_ranking(fitted, model_name, X_train, X_test, EVAL_MAX_SAMPLES, rng)
+                    shap_rankings.append(shap_r.rank(ascending=False))
 
-            for method, rankings in [("lime", lime_rankings), ("permutation", perm_rankings)]:
+            for method, rankings in [("lime", lime_rankings), ("permutation", perm_rankings), ("shap", shap_rankings)]:
+                if not rankings:
+                    continue
                 for i, j in itertools.combinations(range(N_REPEATS), 2):
                     tau, _ = kendalltau(rankings[i].reindex(rankings[0].index),
                                         rankings[j].reindex(rankings[0].index))
